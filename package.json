@@ -1,0 +1,24 @@
+{
+  "name": "gs_db",
+  "version": "1.0.0",
+  "description": "Database serving our book emporium",
+  "main": "server.js",
+  "scripts": {
+    "seed:dev": "nodemon ./seed/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "postgresql",
+    "javascript"
+  ],
+  "author": "Tim Kent, Sarah Pesch, Peter Sam",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
