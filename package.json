@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "seed:dev": "nodemon ./seed/index.js",
+    "start:dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,7 +17,11 @@
   "author": "Tim Kent, Sarah Pesch, Peter Sam",
   "license": "ISC",
   "dependencies": {
-    "pg": "^8.7.3"
+    "pg": "^8.7.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"

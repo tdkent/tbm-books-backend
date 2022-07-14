@@ -6,10 +6,10 @@ const rebuildDB = async() => {
   try {
     await dropTables();
     await createTables();
-    await createBooks();
     await createAuthors();
+    await createBooks();
     await createUsers();
-    await createOrders();
+   // await createOrders();
     await createReviews();
   }
   catch(err) {
