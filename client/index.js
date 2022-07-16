@@ -1,7 +1,7 @@
 const { Pool } = require("pg");
 
 const connectionString =
-  /* process.env.DATABASE_URL || */ "https://localhost:5432/gs-books";
+  process.env.DATABASE_URL || "https://localhost:5432/gs-books";
 
 const client = new Pool({
   connectionString,
