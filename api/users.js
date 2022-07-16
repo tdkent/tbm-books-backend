@@ -1,34 +1,70 @@
 const express = require("express");
 const router = express.Router();
+const jwt = require("jsonwebtoken");
+const secret = require("../config/secret");
 
-const jwt = require('jsonwebtoken');
-const secret = require('../config/secret');
+const { getUserByEmail, createUser, checkUser } = require("../db");
 
-const {getUserByEmail, createUser} = require('../db')
-
-// POST /api/register
-router.post("/register", (req, res, next) => {
-  const { userEmail, password } = req.body
+// POST /api/users/register
+router.post("/register", async (req, res, next) => {
+  const { userEmail, password } = req.body;
   try {
     const check = await getUserByEmail(userEmail);
-    if(check.length) {
+    if (check.length) {
       next({
         name: "Registration Error",
-        message: `An account using ${userEmail} already exists.`
-      })
-    } else if(password.length < 8) {
+        message: `An account using ${userEmail} already exists.`,
+      });
+    } else if (password.length < 8) {
       next({
         name: "Registration Error",
-        message: "Passwords need to be least characters long."
-      })
+        message: "Passwords need to be least characters long.",
+      });
     } else {
-      const newUser = createUser({ userEmail, password})
-      const token = jwt.sign({id: newUser.id, email: newUser.email}, secret.jwtSecret);
+      const newUser = createUser({ userEmail, password });
+      const token = jwt.sign(
+        { id: newUser.id, email: newUser.email },
+        secret.jwtSecret
+      );
       res.send({
         message: `New account created using ${userEmail}. Thanks for signing up!`,
         token,
-        user: { id: newUser.id }
-      })
+        user: { id: newUser.id },
+      });
+    }
+  } catch (err) {
+    next(err);
+  }
+});
+
+// POST /api/users/login
+router.post("/login", async (req, res, next) => {
+  const { userEmail, password } = req.body;
+  try {
+    const check = await getUserByEmail(userEmail);
+    if (!check.length) {
+      next({
+        name: "Authorization Error",
+        message: `No accounts exist for user ${userEmail}. Please try again, or create an account.`,
+      });
+    } else {
+      const user = await checkUser({ userEmail, password });
+      if (!user.length) {
+        next({
+          name: "Authorization Error",
+          message: "Incorrect password. Please try again.",
+        });
+      } else {
+        const token = jwt.sign(
+          { id: user.id, email: user.email },
+          secret.jwtSecret
+        );
+        res.send({
+          message: `Welcome back, ${user.email}. You're logged in!`,
+          token,
+          id: user.id,
+        });
+      }
     }
   } catch (err) {
     next(err);
