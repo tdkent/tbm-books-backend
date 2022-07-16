@@ -34,7 +34,7 @@ const getUserByEmail = async (userEmail) => {
   try {
     const { rows } = await client.query(
       `
-      select id, email from users
+      select * from users
       where email = $1;
     `,
       [userEmail]
@@ -45,8 +45,26 @@ const getUserByEmail = async (userEmail) => {
   }
 };
 
+const checkUser = async ({ userEmail, password }) => {
+  try {
+    const { rows } = await client.query(
+      `
+      select id, email, password
+      from users
+      where email = $1;
+    `,
+      [userEmail]
+    );
+    const match = bcrpyt.compare(password, rows[0].password);
+    if(match) return rows[0];
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
 module.exports = {
   createUser,
   getAllUsers,
   getUserByEmail,
+  checkUser,
 };
