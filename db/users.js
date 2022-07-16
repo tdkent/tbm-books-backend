@@ -1,18 +1,21 @@
 const client = require("../client");
+const bcrpyt = require("bcrypt");
+const saltRounds = 10;
 
-const createUser = async ({ username, password }) => {
+const createUser = async ({ email, password }) => {
   try {
+    const hash = await bcrpyt.hash(password, saltRounds);
     const { rows } = await client.query(
       `
-      insert into users(username, password)
+      insert into users(email, password)
       values($1, $2)
-      returning id, username;
+      returning id, email;
     `,
-      [username, password]
+      [email, hash]
     );
     return rows;
   } catch (err) {
-    console.error("An occurred in createUser:", err);
+    console.error("An error occurred in createUser:", err);
   }
 };
 
@@ -27,7 +30,23 @@ const getAllUsers = async () => {
   }
 };
 
+const getUserByEmail = async (userEmail) => {
+  try {
+    const { rows } = await client.query(
+      `
+      select id, email from users
+      where email = $1;
+    `,
+      [userEmail]
+    );
+    return rows;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
 module.exports = {
   createUser,
   getAllUsers,
+  getUserByEmail,
 };
