@@ -42,7 +42,7 @@ const getUserByEmail = async (userEmail) => {
   }
 };
 
-const checkUser = async ({ userEmail, password }) => {
+const checkUser = async (userEmail, password) => {
   try {
     const { rows } = await client.query(
       `
@@ -53,7 +53,9 @@ const checkUser = async ({ userEmail, password }) => {
       [userEmail]
     );
     const match = bcrpyt.compare(password, rows[0].password);
-    if (match) return rows[0];
+    if(match) {
+      return rows;
+    }
   } catch (err) {
     console.error("An error occurred:", err);
   }

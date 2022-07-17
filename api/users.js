@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-// const secret = require("../config/secret");
-const { JWT_SECRET = "neverTell" } = process.env;
+// const secrets = require("../config/secrets");
+const { JWT_SECRET = "fullstack" } = process.env;
 
 const { getUserByEmail, createUser, checkUser } = require("../db");
 
@@ -49,18 +49,24 @@ router.post("/login", async (req, res, next) => {
         message: `No accounts exist for user ${userEmail}. Please try again, or create an account.`,
       });
     } else {
-      const user = await checkUser({ userEmail, password });
+      const user = await checkUser(userEmail, password);
       if (!user.length) {
         next({
           name: "Authorization Error",
           message: "Incorrect password. Please try again.",
         });
       } else {
-        const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET);
+        const token = jwt.sign(
+          { id: user[0].id, userEmail: user[0].userEmail },
+          JWT_SECRET
+        );
         res.send({
-          message: `Welcome back, ${user.email}. You're logged in!`,
+          message: `Welcome back, ${user[0].userEmail}. You're logged in!`,
           token,
-          id: user.id,
+          user: {
+            id: user[0].id,
+            userEmail: user[0].userEmail,
+          },
         });
       }
     }
