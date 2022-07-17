@@ -90,8 +90,8 @@ const getUserProfileById = async (userId) => {
     }
     const userProfile = {
       ...user[0],
-      orders: arr
-    }
+      orders: arr,
+    };
     console.log("user profile: ", userProfile);
     return userProfile;
   } catch (err) {
@@ -114,10 +114,26 @@ const getUserByEmail = async (userEmail) => {
   }
 };
 
+const getUserById = async (userId) => {
+  try {
+    const { rows } = await client.query(
+      `
+      select id, "userEmail" from users
+      where id = $1;
+    `,
+      [userId]
+    );
+    return rows[0];
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
 module.exports = {
   createUser,
   getAllUsers,
   getUserByEmail,
   checkUser,
   getUserProfileById,
+  getUserById,
 };
