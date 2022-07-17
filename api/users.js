@@ -11,7 +11,7 @@ router.post("/register", async (req, res, next) => {
   try {
     console.log("userEmail, password: ", userEmail, password);
     const check = await getUserByEmail(userEmail);
-    console.log("check: ", check, check.length);
+    console.log("check: ", check);
     if (!check) {
       next({
         name: "Registration Error",
