@@ -19,29 +19,6 @@ const createUser = async ({ userEmail, password }) => {
   }
 };
 
-const getAllUsers = async () => {
-  try {
-    const { rows } = await client.query(`
-      select * from users;
-    `);
-    return rows;
-  } catch (err) {
-    console.error("An error occurred:", err);
-  }
-};
-
-const getUserByEmail = async (userEmail) => {
-  try {
-    const { rows } = await client.query(`
-      select * from users
-      where "userEmail"=$1;
-    `, [userEmail])
-    return rows;
-  } catch (err) {
-    console.error("An error occurred:", err);
-  }
-};
-
 const checkUser = async (userEmail, password) => {
   try {
     const { rows } = await client.query(
@@ -59,9 +36,52 @@ const checkUser = async (userEmail, password) => {
   }
 };
 
+const getAllUsers = async () => {
+  try {
+    const { rows } = await client.query(`
+      select * from users;
+    `);
+    return rows;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const getUserById = async (userId) => {
+  try {
+    const { rows } = await client.query(
+      `
+      select id, "userEmail"
+      from users
+      where id = $1;
+    `,
+      [userId]
+    );
+    return rows[0];
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const getUserByEmail = async (userEmail) => {
+  try {
+    const { rows } = await client.query(
+      `
+      select * from users
+      where "userEmail"=$1;
+    `,
+      [userEmail]
+    );
+    return rows;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
 module.exports = {
   createUser,
   getAllUsers,
   getUserByEmail,
   checkUser,
+  getUserById,
 };
