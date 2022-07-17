@@ -9,8 +9,8 @@ const rebuildDB = async() => {
     await createAuthors();
     await createBooks();
     await createUsers();
-   // await createOrders();
     await createReviews();
+    await createOrders();
   }
   catch(err) {
     console.error("An error occurred:", err)

@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 // const secrets = require("../config/secrets");
 const { JWT_SECRET = "fullstack" } = process.env;
 
-const { getUserByEmail, createUser, checkUser, getUserById } = require("../db");
+const { getUserByEmail, createUser, checkUser, getUserProfileById } = require("../db");
 
 // POST /api/users/register
 router.post("/register", async (req, res, next) => {
@@ -86,7 +86,7 @@ router.get("/me", async (req, res, next) => {
   } else {
     const { id: userId } = req.user;
     try {
-      const user = await getUserById(userId);
+      const user = await getUserProfileById(userId);
       res.send(user);
     } catch (err) {
       next(err);
