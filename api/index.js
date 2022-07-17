@@ -15,4 +15,8 @@ router.use("/books", booksRouter);
 const authorsRouter = require('./authors');
 router.use('/authors', authorsRouter);
 
+// ROUTER: /api/users
+const usersRouter = require('./users');
+router.use('/users', usersRouter);
+
 module.exports = router;
