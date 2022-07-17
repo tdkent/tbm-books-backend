@@ -16,10 +16,10 @@ router.post("/register", async (req, res, next) => {
         name: "Registration Error",
         message: `An account using ${userEmail} already exists.`,
       });
-    } else if (password === "password") {
+    } else if (password.length < 8) {
       next({
         name: "Registration Error",
-        message: "Password needs to not be 'password!'.",
+        message: "Passwords need to be at least 8 characters long.",
       });
     } else {
       const newUser = createUser({ userEmail, password });
