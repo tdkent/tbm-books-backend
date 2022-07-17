@@ -9,10 +9,8 @@ const { getUserByEmail, createUser, checkUser } = require("../db");
 router.post("/register", async (req, res, next) => {
   const { userEmail, password } = req.body;
   try {
-    console.log("userEmail, password: ", userEmail, password);
     const check = await getUserByEmail(userEmail);
-    console.log("check: ", check);
-    if (!check) {
+    if (check.length) {
       next({
         name: "Registration Error",
         message: `An account using ${userEmail} already exists.`,

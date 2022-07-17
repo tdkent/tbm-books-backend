@@ -13,7 +13,7 @@ const createUser = async ({ email, password }) => {
     `,
       [email, hash]
     );
-    return rows;
+    return rows[0];
   } catch (err) {
     console.error("An error occurred in createUser:", err);
   }
