@@ -9,7 +9,9 @@ const {
   getAllUsers,
   createUserOrder,
   createOrderDetails,
-  getAllOrders,
+  getAllUsersOrders,
+  getCompleteOrderById,
+  getUserProfileById,
 } = require("../db");
 const { authorsData } = require("./authorData");
 const { booksData } = require("./bookData");
@@ -120,8 +122,8 @@ const createOrders = async () => {
       },
     ];
     const newOrders = await Promise.all(data.map(createUserOrder));
-    console.log("New orders added to users_orders: ", newOrders);
-    const [userOrder1, userOrder2, userOrder3] = await getAllOrders();
+    // console.log("New orders added to users_orders: ", newOrders);
+    const [userOrder1, userOrder2, userOrder3] = await getAllUsersOrders();
     const [pride, sense, emma, mansfield, moby] = await getAllBooksNoReviews();
     const [q1, q2] = ordersDetails;
     const detailsData = [
@@ -157,7 +159,13 @@ const createOrders = async () => {
       }
     ];
     const newOrdersDetails = await Promise.all(detailsData.map(createOrderDetails));
-    console.log("New details added to orders_details table: ", newOrdersDetails);
+    // console.log("New details added to orders_details table: ", newOrdersDetails);
+    let orderId = userOrder1.id;
+    const details = await getCompleteOrderById(orderId);
+    // console.log("details: ", details);
+    let userId = tim.id;
+    const userProfile = await getUserProfileById(userId);
+    //console.log("user profile: ", userProfile);
   } catch (err) {
     console.error("An error occurred:", err);
   }

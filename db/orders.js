@@ -32,7 +32,7 @@ const createOrderDetails = async ({ orderId, bookId, quantity }) => {
   }
 };
 
-const getAllOrders = async () => {
+const getAllUsersOrders = async () => {
   try {
     const { rows } = await client.query(`
       select * from users_orders;
@@ -42,8 +42,33 @@ const getAllOrders = async () => {
     console.error("An error occurred:", err);
   }
 };
+
+// const getCompleteOrderById = async ({ orderId }) => {
+//   try {
+//     const { rows: userOrder } = await client.query(`
+//       select * from users_orders
+//       where id = $1;
+//     `, [orderId]);
+//     const { rows: orderDetails } = await client.query(`
+//     select orders_details."bookId", orders_details.quantity, books.title
+//     from orders_details
+//     join books
+//     on orders_details."bookId" = books.id
+//     where "orderId" = $1;
+//   `, [orderId]);
+//     const order = {
+//       ...userOrder[0],
+//       details: orderDetails
+//     }
+//     return [ order ]
+//   } catch (err) {
+//     console.error("An error occurred:", err);
+//   }
+// };
+
 module.exports = {
   createUserOrder,
-  getAllOrders,
+  getAllUsersOrders,
   createOrderDetails,
+  // getCompleteOrderById,
 };
