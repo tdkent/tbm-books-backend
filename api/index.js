@@ -1,5 +1,7 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+const jwt = require("jsonwebtoken");
+const { JWT_SECRET = "fullstack" } = process.env;
 
 // GET /api/health
 router.get("/health", async (req, res, next) => {
@@ -7,16 +9,41 @@ router.get("/health", async (req, res, next) => {
   next();
 });
 
+// Authorization
+router.use(async (req, res, next) => {
+  const prefix = "Bearer ";
+  const auth = req.header("Authorization");
+  if (!auth) next();
+  else if (auth.startsWith(prefix)) {
+    const token = auth.slice(prefix.length);
+    try {
+      const { id: userId } = jwt.verify(token, JWT_SECRET);
+      if (userId) {
+        req.user = await getUserById(userId);
+        next();
+      }
+    } catch ({ name, message }) {
+      next({ name, message });
+    }
+  } else {
+    next({
+      name: "Authorization Header Error",
+      message: `Authorization token must start with ${prefix}`,
+    });
+  }
+});
+
 // ROUTER: /api/books
-const booksRouter = require('./books');
+const booksRouter = require("./books");
 router.use("/books", booksRouter);
 
 // ROUTER: /api/authors
-const authorsRouter = require('./authors');
-router.use('/authors', authorsRouter);
+const authorsRouter = require("./authors");
+router.use("/authors", authorsRouter);
 
 // ROUTER: /api/users
-const usersRouter = require('./users');
-router.use('/users', usersRouter);
+const usersRouter = require("./users");
+const { getUserById } = require("../db");
+router.use("/users", usersRouter);
 
 module.exports = router;

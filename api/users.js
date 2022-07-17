@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 // const secrets = require("../config/secrets");
 const { JWT_SECRET = "fullstack" } = process.env;
 
-const { getUserByEmail, createUser, checkUser } = require("../db");
+const { getUserByEmail, createUser, checkUser, getUserById } = require("../db");
 
 // POST /api/users/register
 router.post("/register", async (req, res, next) => {
@@ -72,6 +72,25 @@ router.post("/login", async (req, res, next) => {
     }
   } catch (err) {
     next(err);
+  }
+});
+
+// GET: /api/users/me
+router.get("/me", async (req, res, next) => {
+  if (!req.user) {
+    res.status(401);
+    next({
+      name: "Authorization Error",
+      message: "You must be logged in to perform this action.",
+    });
+  } else {
+    const { id: userId } = req.user;
+    try {
+      const user = await getUserById(userId);
+      res.send(user);
+    } catch (err) {
+      next(err);
+    }
   }
 });
 
