@@ -50,7 +50,7 @@ router.post("/login", async (req, res, next) => {
       });
     } else {
       const user = await checkUser(userEmail, password);
-      if (!user.length) {
+      if (!user) {
         next({
           name: "Authorization Error",
           message: "Incorrect password. Please try again.",
