@@ -10,7 +10,7 @@ router.post("/register", async (req, res, next) => {
   const { userEmail, password } = req.body;
   try {
     const check = await getUserByEmail(userEmail);
-    if (check.length) {
+    if (check.id) {
       next({
         name: "Registration Error",
         message: `An account using ${userEmail} already exists.`,

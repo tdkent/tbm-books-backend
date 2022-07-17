@@ -39,7 +39,7 @@ const getUserByEmail = async (userEmail) => {
     `,
       [userEmail]
     );
-    return rows;
+    return rows[0];
   } catch (err) {
     console.error("An error occurred:", err);
   }
