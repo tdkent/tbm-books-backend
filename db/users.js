@@ -52,10 +52,8 @@ const checkUser = async (userEmail, password) => {
     `,
       [userEmail]
     );
-    const match = bcrpyt.compare(password, rows[0].password);
-    if(match === true) {
-      return rows
-    } else return false;
+    const match = await bcrpyt.compare(password, rows[0].password);
+    return match ? rows : false;
   } catch (err) {
     console.error("An error occurred:", err);
   }
