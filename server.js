@@ -11,5 +11,3 @@ server.listen(PORT, () => {
 })
 
 client.connect();
-
-// Hello World Again
