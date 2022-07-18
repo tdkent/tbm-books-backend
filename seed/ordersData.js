@@ -1,13 +1,13 @@
 const usersOrders = [
   {
     isComplete: false,
-    price: 50.05,
+    price: 49.98,
   },
   {
     isComplete: true,
-    price: 43.31,
+    price: 39.98,
   },
-  { isComplete: true, price: 12.09 },
+  { isComplete: true, price: 11.99 },
 ];
 
 const ordersDetails = [
