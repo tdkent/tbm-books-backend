@@ -1,15 +1,13 @@
 const client = require("../client");
 const {dropTables, createTables} = require("./seedTables");
-const { createAuthors, createBooks, createUsers, createOrders, createReviews } = require('./seedData')
+const { createBooks, createUsers, createOrders } = require('./seedData')
 
 const rebuildDB = async() => {
   try {
     await dropTables();
     await createTables();
-    await createAuthors();
     await createBooks();
     await createUsers();
-    await createReviews();
     await createOrders();
   }
   catch(err) {
