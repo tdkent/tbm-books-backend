@@ -47,4 +47,5 @@ Return parameters
 
 GET /users/me
 
-Requires a token 
+Requires a token
+- working on this still, should return user's id and email, and their order history.
