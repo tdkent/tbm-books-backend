@@ -47,5 +47,20 @@ Return parameters
 
 GET /users/me
 
-Requires a token
-- working on this still, should return user's id and email, and their order history.
+Use to fetch the users basic id info and orders history.
+
+Request parameters
+- requires a token to be sent in the Headers
+- "Authentication": `Bearer ${token}`
+
+Return parameters
+- id (users id)
+- userEmail
+- orders (array)
+  - orderId (number) - id of order
+  - isComplete (boolean) - false indicates items are still in the user's cart
+  - price (number) - total cost of the order
+  - orderDetails(array) - contains an object for each book that was purchased
+    - bookId (number): id of book purcashed
+    - quantity (number)
+    - title (string)
