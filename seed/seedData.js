@@ -10,8 +10,6 @@ const {
   createUserOrder,
   createOrderDetails,
   getAllUsersOrders,
-  getCompleteOrderById,
-  getUserProfileById,
 } = require("../db");
 const { authorsData } = require("./authorData");
 const { booksData } = require("./bookData");
