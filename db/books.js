@@ -2,23 +2,23 @@ const res = require("express/lib/response");
 const client = require("../client");
 
 const createBook = async ({
-  authorId,
+  isbn,
   title,
+  author,
   year,
-  pages,
-  description,
-  price,
-  inventory,
-  imageLink,
+  publisher,
+  imageLinkS,
+  imageLinkM,
+  imageLinkL
 }) => {
   try {
     const { rows } = await client.query(
       `
-      insert into books("authorId", title, year, pages, description, price, inventory, imageLink)
+      insert into books(isbn, title, author, year, publisher, imageLinkS, imageLinkM, imageLinkL)
       values ($1, $2, $3, $4, $5, $6, $7, $8)
       returning *;
     `,
-      [authorId, title, year, pages, description, price, inventory, imageLink]
+      [isbn, title, author, year, publisher, imageLinkS, imageLinkM, imageLinkL]
     );
     return rows;
   } catch (err) {

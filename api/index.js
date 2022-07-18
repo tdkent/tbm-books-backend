@@ -3,6 +3,8 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET = "fullstack" } = process.env;
 
+const { getUserById } = require("../db");
+
 // GET /api/health
 router.get("/health", async (req, res, next) => {
   res.send({ message: "Hello, the server is healthy." });
@@ -43,7 +45,6 @@ router.use("/authors", authorsRouter);
 
 // ROUTER: /api/users
 const usersRouter = require("./users");
-const { getUserById } = require("../db");
 router.use("/users", usersRouter);
 
 module.exports = router;
