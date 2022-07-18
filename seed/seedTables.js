@@ -30,14 +30,14 @@ const createTables = async () => {
       );
       create table books(
         id serial primary key,
-        "authorId" smallint references authors(id),
-        title varchar(255) not null,
-        year smallint not null,
-        pages smallint not null,
-        description text not null,
-        price numeric not null,
-        inventory numeric not null,
-        imageLink text not null
+        isbn varchar(255),
+        title varchar(255),
+        author varchar(255),
+        year varchar(255),
+        publisher varchar(255),
+        imageLinkS text,
+        imageLinkM text,
+        imageLinkL text
       );
       create table users(
         id serial primary key,

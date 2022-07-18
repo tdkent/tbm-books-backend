@@ -30,17 +30,8 @@ const createAuthors = async () => {
 const createBooks = async () => {
   try {
     console.log("Adding books to 'books' table...");
-    const [austen, melville] = await getAllAuthorsNoBooks();
-    const [pride, sense, emma, mansfield, moby] = booksData;
-    const data = [
-      { authorId: austen.id, ...pride },
-      { authorId: austen.id, ...sense },
-      { authorId: austen.id, ...emma },
-      { authorId: austen.id, ...mansfield },
-      { authorId: melville.id, ...moby },
-    ];
-    const books = await Promise.all(data.map(createBook));
-    // console.log("Books created:", books);
+    const books = await Promise.all(booksData.map(createBook));
+    console.log("Books created:", books);
   } catch (err) {
     console.error("An error occurred:", err);
   }
