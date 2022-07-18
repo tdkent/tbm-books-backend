@@ -9,16 +9,35 @@ const createBook = async ({
   publisher,
   imageLinkS,
   imageLinkM,
-  imageLinkL
+  imageLinkL,
+  description,
+  rating,
+  globalRatings,
+  price,
+  inventory,
 }) => {
   try {
     const { rows } = await client.query(
       `
-      insert into books(isbn, title, author, year, publisher, imageLinkS, imageLinkM, imageLinkL)
-      values ($1, $2, $3, $4, $5, $6, $7, $8)
+      insert into books(isbn, title, author, year, publisher, imageLinkS, imageLinkM, imageLinkL, description, rating, globalRatings, price, inventory)
+      values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
       returning *;
     `,
-      [isbn, title, author, year, publisher, imageLinkS, imageLinkM, imageLinkL]
+      [
+        isbn,
+        title,
+        author,
+        year,
+        publisher,
+        imageLinkS,
+        imageLinkM,
+        imageLinkL,
+        description,
+        rating,
+        globalRatings,
+        price,
+        inventory,
+      ]
     );
     return rows;
   } catch (err) {
@@ -26,51 +45,27 @@ const createBook = async ({
   }
 };
 
-const getAllBooksNoReviews = async () => {
+const getAllBooks = async () => {
   try {
     const { rows } = await client.query(`
       select * from books;
     `);
     return rows;
   } catch (err) {
-    console.error("An error occurred in createBook: ", err);
-  }
-};
-
-const getAllBooksWithReviews = async () => {
-  try {
-    const { rows: books } = await client.query(`
-      select 
-        books.*,
-        authors."firstName",
-        authors."lastName" 
-      from books
-      join authors
-      on books."authorId" = authors.id
-    `);
-    let booksArr = [];
-    for (const book of books) {
-      const { rows: reviews } = await client.query(
-        `
-        select id, "userId", content from reviews
-        where "bookId" = $1
-      `,
-        [book.id]
-      );
-      const bookWithReviews = { ...book, reviews };
-      booksArr.push(bookWithReviews);
-    }
-    return booksArr;
-  } catch (err) {
     console.error("An error occurred:", err);
   }
 };
 
-const getBookById = async (bookId) => {
+const getBookById = async (id) => {
   try {
-    const books = await getAllBooksWithReviews();
-    const filtered = books.filter(book => book.id == bookId);
-    return filtered;
+    const { rows } = await client.query(
+      `
+      select * from books
+      where id = $1;
+    `,
+      [id]
+    );
+    return rows;
   } catch (err) {
     console.error("An error occurred:", err);
   }
@@ -78,7 +73,6 @@ const getBookById = async (bookId) => {
 
 module.exports = {
   createBook,
-  getAllBooksNoReviews,
-  getAllBooksWithReviews,
+  getAllBooks,
   getBookById,
 };

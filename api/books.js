@@ -1,23 +1,23 @@
 const express = require("express");
 const router = express.Router();
 
-const { getAllBooksWithReviews, getBookById } = require("../db");
+const { getAllBooks, getBookById } = require("../db");
 
 // GET /api/books
 router.get("/", async (req, res, next) => {
   try {
-    const data = await getAllBooksWithReviews();
+    const data = await getAllBooks();
     res.send(data);
   } catch (err) {
     next(err);
   }
 });
 
-// GET /api/books/:bookId
-router.get("/:bookId", async (req, res, next) => {
-  const { bookId } = req.params;
+// GET /api/books/:id
+router.get("/:id", async (req, res, next) => {
+  const { id } = req.params;
   try {
-    const book = await getBookById(bookId);
+    const book = await getBookById(id);
     res.send(book);
   } catch (err) {
     next(err);
