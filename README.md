@@ -13,7 +13,24 @@ Books Endpoints
 
 GET /api/books
 
-Sends a list of all books in the database in a single array of objects. Certain values for each book are randomly generated.
+Sends a list of all books in the database in a single array of objects. No request parameters.
+Note that some books have broken links to their image files.
+
+Return Parameters
+- id (number): Use to identify the book in the database.
+- isbn (string)
+- title (string)
+- author (string)
+- year (string): can be converted to number if necessary
+- publisher (string)
+- imageLinkS (string): thumbnail of book cover
+- imageLinkM (string): small image of book cover
+- imageLinkL (string): larger image of book cover
+- description (string): randomly generated Lorem text paragraph of 5 sentences.
+- rating (string): randomly generated one-decimal number between 2.0 and 5.0
+- globalRatings (string): represents number of ratings (randomly generated between 0-5000).
+- price (string): randomly generated between 8.99 and 29.99 (all prices end with .99).
+- inventory (number): randomly generated number between 10-100.
 
 GET /api/books/:id
 
