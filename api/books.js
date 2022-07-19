@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { getAllBooks, getBookById } = require("../db");
+const { getAllBooks, getBookById, getAllBooksByGenre } = require("../db");
 
 // GET /api/books
 router.get("/", async (req, res, next) => {
@@ -19,6 +19,22 @@ router.get("/:id", async (req, res, next) => {
   try {
     const book = await getBookById(id);
     res.send(book);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// GET /api/books/genre/:genre
+router.get("/genre/:genre", async (req, res, next) => {
+  const { genre } = req.params;
+  try {
+    const result = await getAllBooksByGenre(genre);
+    if (!result.length)
+      next({
+        name: "No Results Error",
+        message: "No results found for that genre. Please try again.",
+      });
+    else res.send(result);
   } catch (err) {
     next(err);
   }
