@@ -10,6 +10,7 @@ const createBook = async ({
   imageLinkS,
   imageLinkM,
   imageLinkL,
+  genre,
   description,
   rating,
   globalRatings,
@@ -19,8 +20,8 @@ const createBook = async ({
   try {
     const { rows } = await client.query(
       `
-      insert into books(isbn, title, author, year, publisher, imageLinkS, imageLinkM, imageLinkL, description, rating, globalRatings, price, inventory)
-      values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+      insert into books(isbn, title, author, year, publisher, "imageLinkS", "imageLinkM", "imageLinkL", genre, description, rating, "globalRatings", price, inventory)
+      values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
       returning *;
     `,
       [
@@ -32,6 +33,7 @@ const createBook = async ({
         imageLinkS,
         imageLinkM,
         imageLinkL,
+        genre,
         description,
         rating,
         globalRatings,
