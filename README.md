@@ -1,59 +1,100 @@
-Book Store API Docs
+# Book Store API Docs
 
-Heroku Database Base URL: https://sensationnel-maison-12931.herokuapp.com
+### Heroku Database
 
-General Error Handling
+[Database URL](https://sensationnel-maison-12931.herokuapp.com)
 
-Errors are returned in an object containing
+### Generated Users
+
+1. userEmail: fake1@fakemail | password: password123 (Has orders attached to account)
+2. userEmail: fake2@fakemail | password: password123 (No orders)
+
+### Errors
+
+Sent as objects containing:
+
 - error (string): Automatically generated
 - name (string): Name of error. Could be used as a header in an error message to user
 - message (string): Provides more detail about the error for the user.
 
-Books Endpoints
+## Endpoints
 
-GET /api/books
+### Books
 
-Sends a list of all books in the database in a single array of objects. Certain values for each book are randomly generated.
+##### GET /api/books
 
-GET /api/books/:id
+Sends a list of all books in the database in a single array of objects. Note that some books have broken links to their image files.
 
-Returns data for a single book. Use the id value of the book as the route parameter.
+Return Parameters
 
-Users Endpoints
+- id (number): Use to identify the book in the database.
+- isbn (string)
+- title (string)
+- author (string)
+- year (string): can be converted to number if necessary
+- publisher (string)
+- imageLinkS (string): thumbnail of book cover
+- imageLinkM (string): small image of book cover
+- imageLinkL (string): larger image of book cover
+- genre (string): randomly generated from 7 values: Horror, Science-Fiction, General Fiction, Mystery, Thriller, Comedy, Romance
+- description (string): randomly generated Lorem text paragraph of 5 sentences.
+- rating (string): randomly generated one-decimal number between 2.0 and 5.0
+- globalRatings (string): represents number of ratings (randomly generated between 0-5000).
+- price (string): randomly generated between 8.99 and 29.99 (all prices end with .99).
+- inventory (number): randomly generated number between 10-100.
 
-POST /users/register
+##### GET /api/books/:id
 
-Request parameters
+Returns an array containing a single book object with the same keys as above.
+
+##### GET /api/books/genre/:genre
+
+Returns an array of book objects matching the requested genre parameter. Note that genre names are uppercased (Horror, Science-Fiction, etc.).
+
+### Users
+
+##### POST /users/register
+
+**Request parameters**
+
 - userEmail (string, required) - not currenly validating email structure on the server side
 - password (string, required) - must be at least 8 characters
 
-Return parameters
-- id: identifies user in database
-- message: success message
+**Return parameters**
+
+- message (string): success message
 - token
+- user(object)
+  - id (number)
+  - userEmail (string)
+ 
+##### POST /users/login
 
-POST /users/login
+**Request parameters**
 
-Request parameters
 - userEmail (string, required) - not currenly validating email structure on the server side
 - password (string, required) - must be at least 8 characters
 
-Return parameters
-- user (object)
-  - id
-  - userEmail
-- message: success message
-- token
+**Return parameters**
 
-GET /users/me
+- message (string): success message
+- token
+- user(object)
+  - id (number)
+  - userEmail (string)
+
+##### GET /users/me
 
 Use to fetch the users basic id info and orders history.
 
-Request parameters
-- requires a token to be sent in the Headers
-- "Authentication": `Bearer ${token}`
+**Request parameters**
 
-Return parameters
+Requires a token to be sent in the Headers:
+
+`"Authentication": "Bearer" ${token}`
+
+**Return parameters**
+
 - id (users id)
 - userEmail
 - orders (array)
