@@ -73,8 +73,21 @@ const getBookById = async (id) => {
   }
 };
 
+const getAllBooksByGenre = async (genre) => {
+  try {
+    const { rows } = await client.query(`
+      select * from books
+      where genre = $1;
+    `, [genre]);
+    return rows;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
 module.exports = {
   createBook,
   getAllBooks,
   getBookById,
+  getAllBooksByGenre,
 };
