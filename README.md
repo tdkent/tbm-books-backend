@@ -1,5 +1,7 @@
 # Book Store API Docs
 
+## General Info
+
 ### Heroku Database
 
 [Database URL](https://sensationnel-maison-12931.herokuapp.com)
@@ -21,7 +23,7 @@ Sent as objects containing:
 
 ### Books
 
-##### GET /api/books
+#### GET /api/books
 
 Sends a list of all books in the database in a single array of objects. Note that some books have broken links to their image files.
 
@@ -43,17 +45,23 @@ Return Parameters
 - price (string): randomly generated between 8.99 and 29.99 (all prices end with .99).
 - inventory (number): randomly generated number between 10-100.
 
-##### GET /api/books/:id
+#### GET /api/books/:id
 
 Returns an array containing a single book object with the same keys as above.
 
-##### GET /api/books/genre/:genre
+#### GET /api/books/genre/:genre
 
 Returns an array of book objects matching the requested genre parameter. Note that genre names are uppercased (Horror, Science-Fiction, etc.).
 
+#### GET /api/books/top-tens
+
+Returns an array of arrays, each containing a "top-ten" list:
+1. The top ten "most rated" books (i.e., the most number of global ratings, regardless of rating).
+2. The top ten "highest rated" books (i.e., the highest rated book, regardless of the number of global ratings).
+
 ### Users
 
-##### POST /users/register
+#### POST /users/register
 
 **Request parameters**
 
@@ -68,7 +76,7 @@ Returns an array of book objects matching the requested genre parameter. Note th
   - id (number)
   - userEmail (string)
  
-##### POST /users/login
+#### POST /users/login
 
 **Request parameters**
 
@@ -83,7 +91,7 @@ Returns an array of book objects matching the requested genre parameter. Note th
   - id (number)
   - userEmail (string)
 
-##### GET /users/me
+#### GET /users/me
 
 Use to fetch the users basic id info and orders history.
 
