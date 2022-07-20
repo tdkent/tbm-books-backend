@@ -75,11 +75,32 @@ const getBookById = async (id) => {
 
 const getAllBooksByGenre = async (genre) => {
   try {
-    const { rows } = await client.query(`
+    const { rows } = await client.query(
+      `
       select * from books
       where genre = $1;
-    `, [genre]);
+    `,
+      [genre]
+    );
     return rows;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const getBooksTopTens = async () => {
+  try {
+    const { rows: globalRatings } = await client.query(`
+      select * from books
+      order by "globalRatings" desc
+      limit 10;
+    `);
+    const { rows: ratings } = await client.query(`
+      select * from books
+      order by rating desc
+      limit 10;
+    `)
+    return [ globalRatings, ratings ];
   } catch (err) {
     console.error("An error occurred:", err);
   }
@@ -90,4 +111,5 @@ module.exports = {
   getAllBooks,
   getBookById,
   getAllBooksByGenre,
+  getBooksTopTens,
 };
