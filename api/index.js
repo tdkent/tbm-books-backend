@@ -47,4 +47,8 @@ router.use("/authors", authorsRouter);
 const usersRouter = require("./users");
 router.use("/users", usersRouter);
 
+// ROUTER: /api/search
+const searchRouter = require("./search");
+router.use("/search", searchRouter);
+
 module.exports = router;

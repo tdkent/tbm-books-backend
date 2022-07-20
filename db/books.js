@@ -1,4 +1,3 @@
-const res = require("express/lib/response");
 const client = require("../client");
 
 const createBook = async ({
