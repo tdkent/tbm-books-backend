@@ -4,10 +4,11 @@ const router = express.Router();
 const { searchBasic } = require("../db");
 
 // GET /api/search/:usersearch
-router.get("/:searchstring", async (req, res, next) => {
-  const { searchstring } = req.params;
+router.get("/:searchString", async (req, res, next) => {
+  const { searchString } = req.params;
   try {
-    const result = await searchBasic(searchstring);
+    console.log(req.params, searchString);
+    const result = await searchBasic(searchString);
     if (!result.length) {
       next({
         name: "No Results Error",
