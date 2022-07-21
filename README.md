@@ -21,11 +21,17 @@ Sent as objects containing:
 
 ## Endpoints
 
+### Search
+
+#### GET /api/search/:searchString
+
+Sends an array of objects containing every book with a partial match or better to the search query (currently searches against Title, Author, Publisher). Partial words will return results. Bad spelling / capitilization will return no results.
+
 ### Books
 
-#### GET /api/books
+**General Return Schema**
 
-Sends a list of all books in the database in a single array of objects. Note that some books have broken links to their image files.
+Requests to the /api/books/... endpoints will return an array containing one object for each book returned.
 
 Return Parameters
 
@@ -45,19 +51,23 @@ Return Parameters
 - price (string): randomly generated between 8.99 and 29.99 (all prices end with .99).
 - inventory (number): randomly generated number between 10-100.
 
+#### GET /api/books
+
+Sends all books in the database in a single array of objects. Note that some books have broken links to their image files.
+
 #### GET /api/books/:id
 
-Returns an array containing a single book object with the same keys as above.
+Returns an array containing a single book object. The :id parameter in the URL corresponds to the id of the book.
 
 #### GET /api/books/genre/:genre
 
-Returns an array of book objects matching the requested genre parameter. Note that genre names are uppercased (Horror, Science-Fiction, etc.).
+Returns an array of book objects matching the requested genre parameter. The :genre parameter in the URL must be capitalized (i.e. Horror, Science-Fiction).
 
 #### GET /api/books/top-tens
 
-Returns an array of arrays, each containing a "top-ten" list:
-1. The top ten "most rated" books (i.e., the most number of global ratings, regardless of rating).
-2. The top ten "highest rated" books (i.e., the highest rated book, regardless of the number of global ratings).
+Returns an array containing two arrays:
+- Array #1: The top ten "most rated" books (i.e., the most number of global ratings, regardless of rating).
+- Array #2: The top ten "highest rated" books (i.e., the highest rated book, regardless of the number of global ratings).
 
 ### Users
 
