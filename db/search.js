@@ -4,7 +4,9 @@ const searchBasic = async (searchString) => {
   try {
     const { rows } = await client.query(`
       select * from books
-      where title like '%${searchString}%';
+      where title like '%${searchString}%'
+      or author like '%${searchString}%'
+      or publisher like '%${searchString}%';
     `);
     return rows;
   } catch (err) {
