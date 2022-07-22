@@ -51,4 +51,8 @@ router.use("/users", usersRouter);
 const searchRouter = require("./search");
 router.use("/search", searchRouter);
 
+// ORDERS: /api/orders
+const ordersRouter = require("./orders");
+router.use("/orders", ordersRouter);
+
 module.exports = router;
