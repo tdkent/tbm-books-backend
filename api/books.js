@@ -7,6 +7,7 @@ const {
   getAllBooksByGenre,
   getBooksCuratedRankings,
   getBooksCuratedRatings,
+  getAllFeatured,
 } = require("../db");
 
 // GET /api/books
@@ -62,8 +63,19 @@ router.get("/lists/curated-ratings", async (req, res, next) => {
   try {
     const result = await getBooksCuratedRatings();
     res.send(result);
+    } catch (err) {
+    next(err);
+  }
+});
+    
+// GET /api/books/lists/featured
+router.get("/lists/featured", async (req, res, next) => {
+  try {
+    const data = await getAllFeatured();
+    res.send(data);
   } catch (err) {
     next(err);
   }
 });
+
 module.exports = router;
