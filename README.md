@@ -63,13 +63,13 @@ Returns an array containing a single book object. The :id parameter in the URL c
 
 Returns an array of book objects matching the requested genre parameter. The :genre parameter in the URL must be capitalized (i.e. Horror, Science-Fiction).
 
-#### GET /api/books/top-tens
+#### GET /api/books/lists/top-tens
 
 Returns an array containing two arrays:
 - Array #1: The top ten "most rated" books (i.e., the most number of global ratings, regardless of rating).
 - Array #2: The top ten "highest rated" books (i.e., the highest rated book, regardless of the number of global ratings).
 
-### GET /api/book/featured
+#### GET /api/books/lists/featured
 
 Returns an array containing our personally chosen top books
 

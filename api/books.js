@@ -57,7 +57,7 @@ router.get("/lists/top-tens", async (req, res, next) => {
   }
 });
 
-// GET /api/books/f
+// GET /api/books/lists/featured
 router.get("/lists/featured", async (req, res, next) => {
   try {
     const data = await getAllFeatured();
