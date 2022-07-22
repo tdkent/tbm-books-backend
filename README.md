@@ -69,6 +69,10 @@ Returns an array containing two arrays:
 - Array #1: The top ten "most rated" books (i.e., the most number of global ratings, regardless of rating).
 - Array #2: The top ten "highest rated" books (i.e., the highest rated book, regardless of the number of global ratings).
 
+### GET /api/book/featured
+
+Returns an array containing are personally chosen top books
+
 ### Users
 
 #### POST /users/register

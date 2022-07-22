@@ -50,6 +50,7 @@ const getAllBooks = async () => {
   try {
     const { rows } = await client.query(`
       select * from books;
+      
     `);
     return rows;
   } catch (err) {
@@ -104,6 +105,17 @@ const getBooksTopTens = async () => {
     console.error("An error occurred:", err);
   }
 };
+const getAllFeatured = async () => {
+  try {
+    const { rows: id } = await client.query(`
+      select * from books
+      where id <11
+    `);
+    return [ id ];
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
 
 module.exports = {
   createBook,
@@ -111,4 +123,5 @@ module.exports = {
   getBookById,
   getAllBooksByGenre,
   getBooksTopTens,
+  getAllFeatured
 };
