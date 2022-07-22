@@ -17,18 +17,27 @@ const { usersOrders, ordersDetails } = require("./ordersData");
 const createBooks = async () => {
   try {
     console.log("Adding books to 'books' table...");
+    const assignGenre = () => {
+      const genres = ['Comedy', 'General Fiction', 'Horror', 'Mystery', 'Romance', 'Science-Fiction', 'Thriller'];
+      return genres[Math.floor(Math.random() * 7)];
+    }
+    const assignRating = () => Number((2 + Math.random() * 3).toFixed(1));
+    const assignGlobalRating = () => Math.floor(Math.random() * 5001);
+    const assignPrice = () => Number((Math.floor(Math.random() * 12) + 8.99).toFixed(2));
+    const assignInventory = () => Math.floor(Math.random() * 91) + 10;
     const addKeysToBooksData = booksData.map((book) => {
       return {
         ...book,
+        genre: assignGenre(),
         description: faker.lorem.paragraph(5),
-        rating: Number((2 + Math.random() * 3).toFixed(1)),
-        globalRatings: Math.floor(Math.random() * 5001),
-        price: Number((Math.floor(Math.random() * 12) + 8.99).toFixed(2)),
-        inventory: Math.floor(Math.random() * 91) + 10,
+        rating: assignRating(),
+        globalRatings: assignGlobalRating(),
+        price: assignPrice(),
+        inventory: assignInventory(),
       };
     });
     const books = await Promise.all(addKeysToBooksData.map(createBook));
-    console.log("Books created.");
+    console.log("Books created.", books);
   } catch (err) {
     console.error("An error occurred:", err);
   }
@@ -38,7 +47,7 @@ const createUsers = async () => {
   try {
     console.log("Adding users to the 'users' table...");
     const users = await Promise.all(usersData.map(createUser));
-    console.log("Users created:", users);
+    //console.log("Users created:", users);
   } catch (err) {
     console.error("An error occurred:", err);
   }
@@ -67,7 +76,7 @@ const createOrders = async () => {
       },
     ];
     const newOrders = await Promise.all(data.map(createUserOrder));
-    console.log("New orders added to users_orders: ", newOrders);
+    //console.log("New orders added to users_orders: ", newOrders);
     const [userOrder1, userOrder2, userOrder3] = await getAllUsersOrders();
     const [book1, book2, book3, book4, book5, book6] = await getAllBooks();
     const [q1, q2] = ordersDetails;
@@ -106,10 +115,7 @@ const createOrders = async () => {
     const newOrdersDetails = await Promise.all(
       detailsData.map(createOrderDetails)
     );
-    console.log(
-      "New details added to orders_details table: ",
-      newOrdersDetails
-    );
+    //console.log("New details added to orders_details table: ", newOrdersDetails);
   } catch (err) {
     console.error("An error occurred:", err);
   }

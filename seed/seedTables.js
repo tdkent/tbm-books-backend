@@ -6,10 +6,8 @@ const dropTables = async () => {
     await client.query(`
       drop table if exists orders_details;
       drop table if exists users_orders;
-      drop table if exists reviews;
       drop table if exists users;
       drop table if exists books;
-      drop table if exists authors;
     `);
     console.log("Dropping tables complete.");
   } catch (err) {
@@ -23,19 +21,20 @@ const createTables = async () => {
     await client.query(`
       create table books(
         id serial primary key,
-        isbn varchar(255),
-        title varchar(255),
-        author varchar(255),
+        isbn varchar(255) not null,
+        title varchar(255) not null,
+        author varchar(255) not null,
         year varchar(255),
         publisher varchar(255),
-        imageLinkS text,
-        imageLinkM text,
-        imageLinkL text,
-        description text,
-        rating numeric,
-        globalRatings numeric,
-        price numeric,
-        inventory smallint
+        "imageLinkS" text,
+        "imageLinkM" text,
+        "imageLinkL" text,
+        genre varchar(255) not null,
+        description text not null,
+        rating numeric not null,
+        "globalRatings" int not null,
+        price numeric not null,
+        inventory smallint not null
       );
       create table users(
         id serial primary key,
@@ -52,7 +51,7 @@ const createTables = async () => {
         id serial primary key,
         "orderId" smallint references users_orders(id),
         "bookId" smallint references books(id),
-        quantity smallint not null
+        quantity smallint default 1
       );
     `);
     console.log("Finished building new tables.");
