@@ -100,25 +100,30 @@ const getBooksCuratedRankings = async () => {
     console.error("An error occurred:", err);
   }
 };
+
+const getBooksCuratedRatings = async () => {
+  try {
+    const { rows } = await client.query(`
+    select * from books
+    order by rating desc
+    limit 10;
+  `);
+    return rows;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
 const getAllFeatured = async () => {
   try {
     const { rows: id } = await client.query(`
       select * from books
       where id <11
     `);
-    return [ id ];
+    return [id];
   } catch (err) {
     console.error("An error occurred:", err);
   }
-};
-
-const getBooksCuratedRatings = async () => {
-  const { rows } = await client.query(`
-  select * from books
-  order by rating desc
-  limit 10;
-`);
-  return rows;
 };
 
 module.exports = {
@@ -127,5 +132,6 @@ module.exports = {
   getBookById,
   getAllBooksByGenre,
   getBooksCuratedRankings,
-  getAllFeatured
+  getBooksCuratedRatings,
+  getAllFeatured,
 };
