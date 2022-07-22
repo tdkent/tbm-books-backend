@@ -71,7 +71,7 @@ Returns an array containing two arrays:
 
 ### GET /api/book/featured
 
-Returns an array containing are personally chosen top books
+Returns an array containing our personally chosen top books
 
 ### Users
 
