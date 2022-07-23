@@ -30,8 +30,8 @@ router.post("/register", async (req, res, next) => {
         message: `New account created using ${userEmail}. Thanks for signing up!`,
         token,
         user: {
-          id: user[0].id,
-          userEmail: user[0].userEmail,
+          id: newUser.id,
+          userEmail: newUser.userEmail,
         },
       });
     }

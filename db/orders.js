@@ -43,8 +43,43 @@ const getAllUsersOrders = async () => {
   }
 };
 
+const postAddToCart = async (userId, price, bookId) => {
+  try {
+    const { rows: check } = await client.query(
+      `
+      select id from users_orders
+      where "userId" = $1
+      and "isComplete" = false;
+    `,
+      [userId]
+    );
+    if (!check.length) {
+      // start new order
+      const { rows: newOrder } = await client.query(
+        `
+        insert into users_orders("userId", price)
+        values ($1, $2)
+        returning *;
+      `,
+        [userId, price]
+      );
+      const { rows: details } = await client.query(
+        `
+      insert into orders_details("orderId", "bookId")
+      values ($1, $2)
+      returning *;
+    `,
+        [newOrder[0].id, bookId]
+      );
+    }
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
 module.exports = {
   createUserOrder,
   getAllUsersOrders,
   createOrderDetails,
+  postAddToCart,
 };

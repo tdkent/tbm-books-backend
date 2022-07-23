@@ -5,7 +5,8 @@ const {
   getAllBooks,
   getBookById,
   getAllBooksByGenre,
-  getBooksTopTens,
+  getBooksCuratedRankings,
+  getBooksCuratedRatings,
   getAllFeatured,
 } = require("../db");
 
@@ -47,16 +48,26 @@ router.get("/genre/:genre", async (req, res, next) => {
   }
 });
 
-// GET /api/books/lists/top-tens
-router.get("/lists/top-tens", async (req, res, next) => {
+// GET /api/books/lists/top-ten-rankings
+router.get("/lists/curated-rankings", async (req, res, next) => {
   try {
-    const result = await getBooksTopTens();
+    const result = await getBooksCuratedRankings();
     res.send(result);
   } catch (err) {
     next(err);
   }
 });
 
+//GET api/books/lits/curated-ratings
+router.get("/lists/curated-ratings", async (req, res, next) => {
+  try {
+    const result = await getBooksCuratedRatings();
+    res.send(result);
+    } catch (err) {
+    next(err);
+  }
+});
+    
 // GET /api/books/lists/featured
 router.get("/lists/featured", async (req, res, next) => {
   try {

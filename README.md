@@ -19,6 +19,7 @@ Sent as objects containing:
 - name (string): Name of error. Could be used as a header in an error message to user
 - message (string): Provides more detail about the error for the user.
 
+
 ## Endpoints
 
 ### Search
@@ -51,9 +52,36 @@ Return Parameters
 - price (string): randomly generated between 8.99 and 29.99 (all prices end with .99).
 - inventory (number): randomly generated number between 10-100.
 
+Fake Users For Testing:
+- userEmail: fake1@fakemail | password: password123
+Has orders attached to account.
+- userEmail: fake2@fakemail | password: password123
+No orders attached to account.
+
+Books Endpoints
+
+
 #### GET /api/books
 
-Sends all books in the database in a single array of objects. Note that some books have broken links to their image files.
+Sends a list of all books in the database in a single array of objects. No request parameters.
+Note that some books have broken links to their image files.
+
+Return Parameters
+- id (number): Use to identify the book in the database.
+- isbn (string)
+- title (string)
+- author (string)
+- year (string): can be converted to number if necessary
+- publisher (string)
+- imageLinkS (string): thumbnail of book cover
+- imageLinkM (string): small image of book cover
+- imageLinkL (string): larger image of book cover
+- genre (string): randomly generated from 7 values: Horror, Science-Fiction, General Fiction, Mystery, Thriller, Comedy, Romance
+- description (string): randomly generated Lorem text paragraph of 5 sentences.
+- rating (string): randomly generated one-decimal number between 2.0 and 5.0
+- globalRatings (string): represents number of ratings (randomly generated between 0-5000).
+- price (string): randomly generated between 8.99 and 29.99 (all prices end with .99).
+- inventory (number): randomly generated number between 10-100.
 
 #### GET /api/books/:id
 

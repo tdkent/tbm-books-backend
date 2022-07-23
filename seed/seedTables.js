@@ -52,7 +52,7 @@ const createTables = async () => {
         id serial primary key,
         "orderId" smallint references users_orders(id),
         "bookId" smallint references books(id),
-        quantity smallint not null
+        quantity smallint default 1
       );
     `);
     console.log("Finished building new tables.");
