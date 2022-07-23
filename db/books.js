@@ -120,7 +120,7 @@ const getAllFeatured = async () => {
       select * from books
       where id <11
     `);
-    return [id];
+    return id;
   } catch (err) {
     console.error("An error occurred:", err);
   }
