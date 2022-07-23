@@ -34,7 +34,8 @@ const createTables = async () => {
         rating numeric not null,
         "globalRatings" int not null,
         price numeric not null,
-        inventory smallint not null
+        inventory smallint not null,
+        "isFeatured" boolean default false
       );
       create table users(
         id serial primary key,
