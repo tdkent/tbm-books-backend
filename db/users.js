@@ -36,58 +36,6 @@ const checkUser = async (userEmail, password) => {
   }
 };
 
-const getUserProfileById = async (userId) => {
-  try {
-    const { rows: user } = await client.query(
-      `
-      select id, "userEmail" from users
-      where id = $1;
-    `,
-      [userId]
-    );
-    const { rows: usersOrders } = await client.query(
-      `
-      select id from users_orders
-      where "userId" = $1;
-    `,
-      [userId]
-    );
-    let arr = [];
-    for (const order of usersOrders) {
-      const { rows: userOrder } = await client.query(
-        `
-      select id as "orderId", "isComplete", "orderPrice" from users_orders
-      where id = $1;
-    `,
-        [order.id]
-      );
-      const { rows: orderDetails } = await client.query(
-        `
-    select orders_details."bookId", orders_details."bookPrice", orders_details.quantity, books.title
-    from orders_details
-    join books
-    on orders_details."bookId" = books.id
-    where "orderId" = $1;
-  `,
-        [order.id]
-      );
-      const completeOrder = {
-        ...userOrder[0],
-        orderDetails,
-      };
-      arr.push(completeOrder);
-    }
-    const userProfile = {
-      ...user[0],
-      orders: arr,
-    };
-    console.log("user profile: ", userProfile);
-    return userProfile;
-  } catch (err) {
-    console.error("An error occurred:", err);
-  }
-};
-
 const getUserByEmail = async (userEmail) => {
   try {
     const { rows } = await client.query(
@@ -118,10 +66,102 @@ const getUserById = async (userId) => {
   }
 };
 
+const getUserProfileById = async (userId) => {
+  try {
+    const { rows: user } = await client.query(
+      `
+      select id, "userEmail" from users
+      where id = $1;
+    `,
+      [userId]
+    );
+    const { rows: usersOrders } = await client.query(
+      `
+      select id from users_orders
+      where "userId" = $1;
+    `,
+      [userId]
+    );
+    let arr = [];
+    for (const order of usersOrders) {
+      const { rows: userOrder } = await client.query(
+        `
+      select id as "orderId", "isComplete", "orderPrice" from users_orders
+      where id = $1;
+    `,
+        [order.id]
+      );
+      const { rows: orderDetails } = await client.query(
+        `
+    select
+      orders_details."bookId",
+      orders_details."bookPrice",
+      orders_details.quantity,
+      books.title,
+      books."imageLinkS"
+    from orders_details
+    join books
+    on orders_details."bookId" = books.id
+    where "orderId" = $1;
+  `,
+        [order.id]
+      );
+      const completeOrder = {
+        ...userOrder[0],
+        orderDetails,
+      };
+      arr.push(completeOrder);
+    }
+    const userProfile = {
+      ...user[0],
+      orders: arr,
+    };
+    console.log("user profile: ", userProfile);
+    return userProfile;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const getUserCartById = async (userId) => {
+  try {
+    const { rows: order } = await client.query(`
+      select id as "orderId", "orderPrice" from users_orders
+      where "userId" = $1
+      and "isComplete" = false;
+    `, [userId]);
+    //orderId = order[0].id
+    const { rows: details } = await client.query(`
+      select 
+        orders_details."bookId",
+        orders_details."bookPrice",
+        orders_details.quantity,
+        books.title,
+        books."imageLinkS"
+      from orders_details
+      join books
+      on orders_details."bookId" = books.id
+      where "orderId" = $1;
+    `, [order[0].orderId]);
+    let arr = []
+    for(const item of details) {
+      arr.push(item);
+    };
+    const usersCart = {
+      ...order[0],
+      orderDetails: arr,
+    }
+    return usersCart;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
 module.exports = {
   createUser,
   getUserByEmail,
   checkUser,
   getUserProfileById,
+  getUserCartById,
   getUserById,
 };
