@@ -78,13 +78,16 @@ const postAddItemToCart = async (userId, bookPrice, bookId, quantity) => {
       return [orderData];
     } else {
       const newQuantity = checkBook[0].quantity + Number(quantity);
-      const { rows: updateBookQuantity } = await client.query(`
+      const { rows: updateBookQuantity } = await client.query(
+        `
         update orders_details
         set quantity = $1
         where "orderId" = $2
         and "bookId" = $3
         returning "bookId", "bookPrice", quantity;
-      `, [newQuantity, openOrder[0].id, bookId]);
+      `,
+        [newQuantity, openOrder[0].id, bookId]
+      );
       const orderData = {
         orderId: openOrder[0].id,
         userId: openOrder[0].userId,
@@ -99,6 +102,39 @@ const postAddItemToCart = async (userId, bookPrice, bookId, quantity) => {
   }
 };
 
+const deleteItemFromCart = async (
+  orderId,
+  orderPrice,
+  bookId,
+  bookPrice,
+  quantity
+) => {
+  try {
+    const { rows: deleted } = await client.query(
+      `
+      delete from orders_details
+      where "orderId" = $1
+      and "bookId" = $2
+      returning "bookId";
+    `,
+      [orderId, bookId]
+    );
+    const updateOrderPrice = Number(orderPrice) - Number(bookPrice) * Number(quantity);
+    await client.query(
+      `
+      update users_orders
+      set "orderPrice" = $1
+      where "orderId" = $2;
+    `,
+      [updateOrderPrice, orderId]
+    );
+    return deleted;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
 module.exports = {
   postAddItemToCart,
+  deleteItemFromCart,
 };
