@@ -9,7 +9,7 @@ const createBook = async ({
   imageLinkS,
   imageLinkM,
   imageLinkL,
-  isFeatured,
+  isFeatured = false,
   genre,
   description,
   rating,
