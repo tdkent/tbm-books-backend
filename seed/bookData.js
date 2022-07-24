@@ -7,7 +7,8 @@ const booksData = [
     publisher: 'Harper Perennial',
     imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/81sdaZn6jWL._AC_SX75_CR,0,0,75,75_.jpg',
     imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/81ft08BIP3L._AC_SX75_CR,0,0,75,75_.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/81ft08BIP3L.jpg'
+    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/81ft08BIP3L.jpg',
+    isFeatured:true
   },
   {
     isbn: '0743474198',
@@ -17,7 +18,8 @@ const booksData = [
     publisher: 'Harper Perennial',
     imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/61s0HVfmm0L.jpg',
     imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/71pQENJZ27L.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/81aY1lxk+9L.jpg'
+    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/81aY1lxk+9L.jpg',
+    isFeatured:true
   },
   {
     isbn: '0743457226',
@@ -27,7 +29,8 @@ const booksData = [
     publisher: 'Pocket',
     imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/81k5sx8YOhL.jpg',
     imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/81k5sx8YOhL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/81k5sx8YOhL.jpg'
+    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/81k5sx8YOhL.jpg',
+    isFeatured:true
   },
   {
     isbn: '074349346X',
@@ -107,7 +110,8 @@ const booksData = [
     publisher: 'Signet; 50th Anniversary edition',
     imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/31B7EUeHUHL.jpg',
     imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/81kvJzpj9oL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/71wdbkiRokL.jpg'
+    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/71wdbkiRokL.jpg',
+    isFeatured:true
   },
   {
     isbn: '9781781165287',
@@ -117,7 +121,8 @@ const booksData = [
     publisher: 'Titan Books; Illustrated edition',
     imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/41JAYqqK+UL.jpg',
     imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/41JAYqqK+UL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/91EiE+zQcmL.jpg'
+    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/91EiE+zQcmL.jpg',
+    isFeatured:true
   },
   {
     isbn: '1552782662',
@@ -127,7 +132,8 @@ const booksData = [
     publisher: 'Chicago Review Press; Reprint edition',
     imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/31PoDBwn2mL.jpg',
     imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/51T0G+cbkmL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/61LTNLuJuiL.jpg'
+    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/61LTNLuJuiL.jpg',
+    isFeatured:true
   },
   {
     isbn: '1481845705',
@@ -137,7 +143,8 @@ const booksData = [
     publisher: 'CreateSpace Independent Publishing Platform ',
     imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/31BU2+sSuNL.jpg',
     imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/71O-48D-SwL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/41EfpJ4sZnL.jpg'
+    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/41EfpJ4sZnL.jpg',
+    isFeatured:true
   },
   {
     isbn: '0316389706',
@@ -147,7 +154,8 @@ const booksData = [
     publisher: 'Countryman Press',
     imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/31GMkYHQAaL.jpg',
     imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/A1gDSFhLaiL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/71oh805MbkL.jpg'
+    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/71oh805MbkL.jpg',
+    isFeatured:true
   },
   {
     isbn: '1497643074',
@@ -157,7 +165,8 @@ const booksData = [
     publisher: 'Open Road Media',
     imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/91h49rQQd-L.jpg',
     imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/91h49rQQd-L.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/91h49rQQd-L.jpg'
+    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/91h49rQQd-L.jpg',
+    isFeatured:true
   },
   {
     isbn: '0440414806',
@@ -167,7 +176,8 @@ const booksData = [
     publisher: 'Yearling',
     imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/814TCW6Y7hL.jpg',
     imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/814TCW6Y7hL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/814TCW6Y7hL.jpg'
+    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/814TCW6Y7hL.jpg',
+    isFeatured:true
   },
   {
     isbn: '0802714277',
@@ -177,7 +187,8 @@ const booksData = [
     publisher: 'Penguin Publishing Group; 0040-Anniversary edition',
     imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/91OoNH1+MHL.jpg',
     imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/91OoNH1+MHL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/91OoNH1+MHL.jpg'
+    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/91OoNH1+MHL.jpg',
+    isFeatured:true
   },
   {
     isbn: '0743474198',
