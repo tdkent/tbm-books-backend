@@ -7,7 +7,6 @@ const { searchBasic } = require("../db");
 router.get("/:searchString", async (req, res, next) => {
   const { searchString } = req.params;
   try {
-    console.log(req.params, searchString);
     const result = await searchBasic(searchString);
     if (!result.length) {
       next({

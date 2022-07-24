@@ -35,7 +35,6 @@ router.get("/:id", async (req, res, next) => {
 router.get("/genre/:genre", async (req, res, next) => {
   const { genre } = req.params;
   try {
-    console.log("genre", genre);
     const result = await getAllBooksByGenre(genre);
     if (!result.length)
       next({
