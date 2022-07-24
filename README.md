@@ -160,14 +160,29 @@ Returns an object containing the main order data, with another array containing 
 
 #### POST /api/orders/cart
 
-No request parameters, however, the user must be logged in for the order data to be added to the database. 
-
 - Creates a new order if the user’s cart is empty.
 - Adds to the existing order if the user’s has an open cart already.
 - Tracks total order price
 - Tracks order details (books added, quantity, price of each book)
 
-** Return parameters**
+**Request Parameters**
+
+- Does not require a token to be sent, however the user must be logged in for the order to be added to the database.
+- Requires user’s id, book price, book id, quantity
+
+```
+method: “POST”,
+headers: {
+        “Content-Type”: “application/json”,
+},
+body: JSON.stringify({
+        userId,
+        bookPrice,
+        bookId,
+        quantity,
+})
+```
+
+**Return parameters**
 
 Returns an array with a single object containing book and order data.
-
