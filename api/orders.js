@@ -17,8 +17,10 @@ router.post("/cart", async (req, res, next) => {
 // DELETE /api/orders/cart
 router.delete("/cart", async (req, res, next) => {
   const { orderId, orderPrice, bookId, bookPrice, quantity } = req.body;
+  console.log(orderId, orderPrice, bookId, bookPrice, quantity);
   try {
     const result = await deleteItemFromCart(orderId, orderPrice, bookId, bookPrice, quantity);
+    console.log("result of book delete:", result);
     if (result.length) {
       res.send({
         name: "Cart Updated",

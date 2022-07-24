@@ -125,13 +125,17 @@ const getUserProfileById = async (userId) => {
 
 const getUserCartById = async (userId) => {
   try {
-    const { rows: order } = await client.query(`
+    const { rows: order } = await client.query(
+      `
       select id as "orderId", "orderPrice" from users_orders
       where "userId" = $1
       and "isComplete" = false;
-    `, [userId]);
+    `,
+      [userId]
+    );
     //orderId = order[0].id
-    const { rows: details } = await client.query(`
+    const { rows: details } = await client.query(
+      `
       select 
         orders_details."bookId",
         orders_details."bookPrice",
@@ -142,15 +146,17 @@ const getUserCartById = async (userId) => {
       join books
       on orders_details."bookId" = books.id
       where "orderId" = $1;
-    `, [order[0].orderId]);
-    let arr = []
-    for(const item of details) {
+    `,
+      [order[0].orderId]
+    );
+    let arr = [];
+    for (const item of details) {
       arr.push(item);
-    };
+    }
     const usersCart = {
       ...order[0],
       orderDetails: arr,
-    }
+    };
     return usersCart;
   } catch (err) {
     console.error("An error occurred:", err);

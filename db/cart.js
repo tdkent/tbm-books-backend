@@ -124,7 +124,7 @@ const deleteItemFromCart = async (
       `
       update users_orders
       set "orderPrice" = $1
-      where "orderId" = $2;
+      where id = $2;
     `,
       [updateOrderPrice, orderId]
     );
