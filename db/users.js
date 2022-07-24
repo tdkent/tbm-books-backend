@@ -67,14 +67,14 @@ const getUserProfileById = async (userId) => {
     for (const order of usersOrders) {
       const { rows: userOrder } = await client.query(
         `
-      select id as "orderId", "isComplete", price from users_orders
+      select id as "orderId", "isComplete", "orderPrice" from users_orders
       where id = $1;
     `,
         [order.id]
       );
       const { rows: orderDetails } = await client.query(
         `
-    select orders_details."bookId", orders_details.quantity, books.title
+    select orders_details."bookId", orders_details."bookPrice", orders_details.quantity, books.title
     from orders_details
     join books
     on orders_details."bookId" = books.id

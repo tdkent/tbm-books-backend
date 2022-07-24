@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-const { postAddToCart } = require("../db");
+const {postAddItemToCart} = require('../db')
+
 // POST /api/orders/cart
 router.post("/cart", async (req, res, next) => {
-  const { userId, price, bookId} = req.body;
+  const { userId, bookPrice, bookId, quantity} = req.body;
   try {
-    const result = await postAddToCart(userId, price, bookId);
+    const result = await postAddItemToCart(userId, bookPrice, bookId, quantity);
     res.send(result);
   } catch (err) {
     next(err);

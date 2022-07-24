@@ -62,23 +62,25 @@ const createOrders = async () => {
       {
         userId: user1.id,
         isComplete: order1.isComplete,
-        price: order1.price,
+        orderPrice: order1.orderPrice,
       },
       {
         userId: user1.id,
         isComplete: order2.isComplete,
-        price: order2.price,
+        orderPrice: order2.orderPrice,
       },
       {
         userId: user1.id,
         isComplete: order3.isComplete,
-        price: order3.price,
+        orderPrice: order3.orderPrice,
       },
     ];
     const newOrders = await Promise.all(data.map(createUserOrder));
     //console.log("New orders added to users_orders: ", newOrders);
     const [userOrder1, userOrder2, userOrder3] = await getAllUsersOrders();
+    console.log(userOrder1, userOrder2, userOrder3)
     const [book1, book2, book3, book4, book5, book6] = await getAllBooks();
+    console.log(book1, book2, book3, book4, book5,  book6);
     const [q1, q2] = ordersDetails;
     const detailsData = [
       {

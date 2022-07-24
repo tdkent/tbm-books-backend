@@ -4010,8 +4010,6 @@ const booksData = [
     imageLinkM: "http://images.amazon.com/images/P/055329198X.01.MZZZZZZZ.jpg",
     imageLinkL: "http://images.amazon.com/images/P/055329198X.01.LZZZZZZZ.jpg"
   }
-
-
 ];
 
 module.exports = { booksData };
