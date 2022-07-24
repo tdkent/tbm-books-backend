@@ -35,7 +35,7 @@ const createTables = async () => {
         "globalRatings" int not null,
         price numeric not null,
         inventory smallint not null,
-        "isFeatured" boolean default false
+        "isFeatured" boolean
       );
       create table users(
         id serial primary key,
@@ -44,16 +44,16 @@ const createTables = async () => {
       );
       create table users_orders(
         id serial primary key,
-        "userId" smallint references users(id),
+        "userId" smallint references users(id) not null,
         "isComplete" boolean default false,
         "orderPrice" numeric not null
       );
       create table orders_details(
         id serial primary key,
-        "orderId" smallint references users_orders(id),
-        "bookId" smallint references books(id),
+        "orderId" smallint references users_orders(id) not null,
+        "bookId" smallint references books(id) not null,
         "bookPrice" numeric,
-        quantity smallint
+        quantity smallint not null
       );
     `);
     console.log("Finished building new tables.");

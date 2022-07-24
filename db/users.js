@@ -36,17 +36,6 @@ const checkUser = async (userEmail, password) => {
   }
 };
 
-const getAllUsers = async () => {
-  try {
-    const { rows } = await client.query(`
-      select * from users;
-    `);
-    return rows;
-  } catch (err) {
-    console.error("An error occurred:", err);
-  }
-};
-
 const getUserProfileById = async (userId) => {
   try {
     const { rows: user } = await client.query(
@@ -131,7 +120,6 @@ const getUserById = async (userId) => {
 
 module.exports = {
   createUser,
-  getAllUsers,
   getUserByEmail,
   checkUser,
   getUserProfileById,

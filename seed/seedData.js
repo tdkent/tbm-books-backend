@@ -3,7 +3,7 @@ const faker = require("faker");
 const {
   createBook,
   createUser,
-  getAllUsers,
+  getUserById,
   createUserOrder,
   createOrderDetails,
   getAllUsersOrders,
@@ -37,7 +37,7 @@ const createBooks = async () => {
       };
     });
     const books = await Promise.all(addKeysToBooksData.map(createBook));
-    console.log("Books created.", books);
+    console.log("Books created. Current count: 400. Random example:", books[Math.floor(Math.random() * 401)]);
   } catch (err) {
     console.error("An error occurred:", err);
   }
@@ -47,7 +47,6 @@ const createUsers = async () => {
   try {
     console.log("Adding users to the 'users' table...");
     const users = await Promise.all(usersData.map(createUser));
-    //console.log("Users created:", users);
   } catch (err) {
     console.error("An error occurred:", err);
   }
@@ -56,7 +55,7 @@ const createUsers = async () => {
 const createOrders = async () => {
   try {
     console.log("Adding orders to users_orders table...");
-    const [user1] = await getAllUsers();
+    const user1 = await getUserById(1);
     const [order1, order2, order3] = usersOrders;
     const data = [
       {
@@ -76,48 +75,52 @@ const createOrders = async () => {
       },
     ];
     const newOrders = await Promise.all(data.map(createUserOrder));
-    //console.log("New orders added to users_orders: ", newOrders);
+    // console.log("New orders added to users_orders: ", newOrders);
     const [userOrder1, userOrder2, userOrder3] = await getAllUsersOrders();
-    console.log(userOrder1, userOrder2, userOrder3)
     const [book1, book2, book3, book4, book5, book6] = await getAllBooks();
-    console.log(book1, book2, book3, book4, book5,  book6);
     const [q1, q2] = ordersDetails;
     const detailsData = [
       {
         orderId: userOrder1.id,
         bookId: book1.id,
+        bookPrice: book1.price,
         quantity: q2.quantity,
       },
       {
         orderId: userOrder1.id,
         bookId: book2.id,
+        bookPrice: book2.price,
         quantity: q2.quantity,
       },
       {
         orderId: userOrder2.id,
         bookId: book3.id,
+        bookPrice: book3.price,
         quantity: q1.quantity,
       },
       {
         orderId: userOrder3.id,
         bookId: book4.id,
+        bookPrice: book4.price,
         quantity: q2.quantity,
       },
       {
         orderId: userOrder3.id,
         bookId: book5.id,
+        bookPrice: book5.price,
         quantity: q2.quantity,
       },
       {
         orderId: userOrder3.id,
         bookId: book6.id,
+        bookPrice: book6.price,
         quantity: q1.quantity,
       },
     ];
     const newOrdersDetails = await Promise.all(
       detailsData.map(createOrderDetails)
     );
-    //console.log("New details added to orders_details table: ", newOrdersDetails);
+    // console.log("New details added to orders_details table: ", newOrdersDetails);
   } catch (err) {
     console.error("An error occurred:", err);
   }
