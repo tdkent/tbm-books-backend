@@ -1,6 +1,8 @@
-# Book Store API Docs
+# Vivlío API Docs
 
 ## General Info
+
+Vivlío is the Greek word for ‘book’.
 
 ### Heroku Database
 
@@ -168,7 +170,7 @@ Returns an object containing the main order data, with another array containing 
 **Request Parameters**
 
 - Does not require a token to be sent, however the user must be logged in for the order to be added to the database.
-- Requires user’s id, book price, book id, quantity
+- Requires user’s id, book price, book id, quantity.
 
 ```
 method: “POST”,
@@ -186,3 +188,30 @@ body: JSON.stringify({
 **Return parameters**
 
 Returns an array with a single object containing book and order data.
+
+#### DELETE /api/orders/cart
+
+Deletes an item from the cart.
+
+**Request Parameters**
+
+- Requires the order id, book id, book price, quantity.
+
+```
+method: “POST”,
+headers: {
+        “Content-Type”: “application/json”,
+},
+body: JSON.stringify({
+        orderId,
+        bookId,
+        bookPrice,
+        quantity,
+})
+```
+
+**Return Parameters**
+
+Object:
+- name (string): States whether deletion was un/successful.
+- message (string): States whether deletion was un/successful.
