@@ -38,8 +38,7 @@ const postAddItemToCart = async (userId, bookPrice, bookId, quantity) => {
     };
     return [orderData];
   } else {
-    const updateOrderPrice =
-      Number(openOrder[0].orderPrice) + Number(bookPrice) * Number(quantity);
+    const updateOrderPrice = Number(openOrder[0].orderPrice) + Number(bookPrice) * Number(quantity);
     const { rows: updateOrder } = await client.query(
       `
       update users_orders
@@ -119,15 +118,32 @@ const deleteItemFromCart = async (
     `,
       [orderId, bookId]
     );
-    const updateOrderPrice = Number(orderPrice) - Number(bookPrice) * Number(quantity);
-    await client.query(
+    const { rows: order } = await client.query(
       `
-      update users_orders
-      set "orderPrice" = $1
-      where id = $2;
+      select "orderPrice" from users_orders
+      where id = $1;
     `,
-      [updateOrderPrice, orderId]
+      [orderId]
     );
+    const updatedOrderPrice = Number(order[0].orderPrice) - Number(bookPrice) * Number(quantity);
+    if (updatedOrderPrice > 0.01) {
+      await client.query(
+        `
+        update users_orders
+        set "orderPrice" = $1
+        where id = $2;
+      `,
+        [updatedOrderPrice, orderId]
+      );
+    } else {
+      await client.query(
+        `
+        delete from users_orders
+        where id = $1;
+      `,
+        [orderId]
+      );
+    }
     return deleted;
   } catch (err) {
     console.error("An error occurred:", err);

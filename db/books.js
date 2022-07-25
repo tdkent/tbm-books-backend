@@ -122,7 +122,7 @@ const getAllFeatured = async () => {
       select * from books
       where "isFeatured" = true;
     `);
-    return id;
+    return rows;
   } catch (err) {
     console.error("An error occurred:", err);
   }
