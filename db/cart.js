@@ -38,8 +38,7 @@ const postAddItemToCart = async (userId, bookPrice, bookId, quantity) => {
     };
     return [orderData];
   } else {
-    const updateOrderPrice =
-      Number(openOrder[0].orderPrice) + Number(bookPrice) * Number(quantity);
+    const updateOrderPrice = Number(openOrder[0].orderPrice) + Number(bookPrice) * Number(quantity);
     const { rows: updateOrder } = await client.query(
       `
       update users_orders
@@ -78,13 +77,16 @@ const postAddItemToCart = async (userId, bookPrice, bookId, quantity) => {
       return [orderData];
     } else {
       const newQuantity = checkBook[0].quantity + Number(quantity);
-      const { rows: updateBookQuantity } = await client.query(`
+      const { rows: updateBookQuantity } = await client.query(
+        `
         update orders_details
         set quantity = $1
         where "orderId" = $2
         and "bookId" = $3
         returning "bookId", "bookPrice", quantity;
-      `, [newQuantity, openOrder[0].id, bookId]);
+      `,
+        [newQuantity, openOrder[0].id, bookId]
+      );
       const orderData = {
         orderId: openOrder[0].id,
         userId: openOrder[0].userId,
@@ -99,6 +101,56 @@ const postAddItemToCart = async (userId, bookPrice, bookId, quantity) => {
   }
 };
 
+const deleteItemFromCart = async (
+  orderId,
+  orderPrice,
+  bookId,
+  bookPrice,
+  quantity
+) => {
+  try {
+    const { rows: deleted } = await client.query(
+      `
+      delete from orders_details
+      where "orderId" = $1
+      and "bookId" = $2
+      returning "bookId";
+    `,
+      [orderId, bookId]
+    );
+    const { rows: order } = await client.query(
+      `
+      select "orderPrice" from users_orders
+      where id = $1;
+    `,
+      [orderId]
+    );
+    const updatedOrderPrice = Number(order[0].orderPrice) - Number(bookPrice) * Number(quantity);
+    if (updatedOrderPrice > 0.01) {
+      await client.query(
+        `
+        update users_orders
+        set "orderPrice" = $1
+        where id = $2;
+      `,
+        [updatedOrderPrice, orderId]
+      );
+    } else {
+      await client.query(
+        `
+        delete from users_orders
+        where id = $1;
+      `,
+        [orderId]
+      );
+    }
+    return deleted;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
 module.exports = {
   postAddItemToCart,
+  deleteItemFromCart,
 };

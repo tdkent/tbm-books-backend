@@ -46,13 +46,13 @@ const createTables = async () => {
         id serial primary key,
         "userId" smallint references users(id) not null,
         "isComplete" boolean default false,
-        "orderPrice" numeric not null
+        "orderPrice" numeric(6, 2) not null
       );
       create table orders_details(
         id serial primary key,
         "orderId" smallint references users_orders(id) not null,
         "bookId" smallint references books(id) not null,
-        "bookPrice" numeric,
+        "bookPrice" numeric(4, 2),
         quantity smallint not null
       );
     `);
