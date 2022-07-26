@@ -115,7 +115,7 @@ const booksData = [
   },
   {
     isbn: '9781781165287',
-    title: 'Shadows Over Innsmouth',
+    title: 'The Shadow over Innsmouth',
     author: 'H.P. Lovecraft',
     year: '2013',
     publisher: 'Titan Books; Illustrated edition',
@@ -1589,36 +1589,6 @@ const booksData = [
     imageLinkS: "http://images.amazon.com/images/P/0060930365.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060930365.01.MZZZZZZZ.jpg",
     imageLinkL: "http://images.amazon.com/images/P/0060930365.01.LZZZZZZZ.jpg"
-  },
-  {
-    isbn: "0060177586",
-    title: "Standing Firm: A Vice-Presidential Memoir",
-    author: "Dan Quayle",
-    year: 1994,
-    publisher: "Harpercollins",
-    imageLinkS: "http://images.amazon.com/images/P/0060177586.01.THUMBZZZ.jpg",
-    imageLinkM: "http://images.amazon.com/images/P/0060177586.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060177586.01.LZZZZZZZ.jpg"
-  },
-  {
-    isbn: "0071416331",
-    title: "Team Bush : Leadership Lessons from the Bush White House",
-    author: "Donald F. Kettl",
-    year: 2003,
-    publisher: "McGraw-Hill",
-    imageLinkS: "http://images.amazon.com/images/P/0071416331.01.THUMBZZZ.jpg",
-    imageLinkM: "http://images.amazon.com/images/P/0071416331.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0071416331.01.LZZZZZZZ.jpg"
-  },
-  {
-    isbn: "0375509038",
-    title: "The Right Man : The Surprise Presidency of George W. Bush",
-    author: "DAVID FRUM",
-    year: 2003,
-    publisher: "Random House",
-    imageLinkS: "http://images.amazon.com/images/P/0375509038.01.THUMBZZZ.jpg",
-    imageLinkM: "http://images.amazon.com/images/P/0375509038.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0375509038.01.LZZZZZZZ.jpg"
   },
   {
     isbn: "0553062042",

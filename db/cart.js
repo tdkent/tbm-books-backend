@@ -27,18 +27,19 @@ const postAddItemToCart = async (userId, bookPrice, bookId, quantity) => {
     `,
       [newOrder[0].id, bookId, bookPrice, quantity]
     );
-    const orderData = {
-      orderId: newOrder[0].id,
-      userId: newOrder[0].userId,
-      isComplete: newOrder[0].isComplete,
-      orderPrice: newOrder[0].orderPrice,
-      bookId: newOrderDetails[0].bookId,
-      bookPrice: newOrderDetails[0].bookPrice,
-      quantity: newOrderDetails[0].quantity,
-    };
-    return [orderData];
+    // const orderData = {
+    //   orderId: newOrder[0].id,
+    //   userId: newOrder[0].userId,
+    //   isComplete: newOrder[0].isComplete,
+    //   orderPrice: newOrder[0].orderPrice,
+    //   bookId: newOrderDetails[0].bookId,
+    //   bookPrice: newOrderDetails[0].bookPrice,
+    //   quantity: newOrderDetails[0].quantity,
+    // };
+    // return [orderData];
   } else {
-    const updateOrderPrice = Number(openOrder[0].orderPrice) + Number(bookPrice) * Number(quantity);
+    const updateOrderPrice =
+      Number(openOrder[0].orderPrice) + Number(bookPrice) * Number(quantity);
     const { rows: updateOrder } = await client.query(
       `
       update users_orders
@@ -65,16 +66,16 @@ const postAddItemToCart = async (userId, bookPrice, bookId, quantity) => {
       `,
         [openOrder[0].id, bookId, bookPrice, quantity]
       );
-      const orderData = {
-        orderId: openOrder[0].id,
-        userId: openOrder[0].userId,
-        isComplete: openOrder[0].isComplete,
-        orderPrice: updateOrder[0].orderPrice,
-        bookId: updateOrderDetails[0].bookId,
-        bookPrice: updateOrderDetails[0].bookPrice,
-        quantity: updateOrderDetails[0].quantity,
-      };
-      return [orderData];
+      // const orderData = {
+      //   orderId: openOrder[0].id,
+      //   userId: openOrder[0].userId,
+      //   isComplete: openOrder[0].isComplete,
+      //   orderPrice: updateOrder[0].orderPrice,
+      //   bookId: updateOrderDetails[0].bookId,
+      //   bookPrice: updateOrderDetails[0].bookPrice,
+      //   quantity: updateOrderDetails[0].quantity,
+      // };
+      // return [orderData];
     } else {
       const newQuantity = checkBook[0].quantity + Number(quantity);
       const { rows: updateBookQuantity } = await client.query(
@@ -87,16 +88,16 @@ const postAddItemToCart = async (userId, bookPrice, bookId, quantity) => {
       `,
         [newQuantity, openOrder[0].id, bookId]
       );
-      const orderData = {
-        orderId: openOrder[0].id,
-        userId: openOrder[0].userId,
-        isComplete: openOrder[0].isComplete,
-        orderPrice: updateOrder[0].orderPrice,
-        bookId: updateBookQuantity[0].bookId,
-        bookPrice: updateBookQuantity[0].bookPrice,
-        quantity: updateBookQuantity[0].quantity,
-      };
-      return [orderData];
+    //   const orderData = {
+    //     orderId: openOrder[0].id,
+    //     userId: openOrder[0].userId,
+    //     isComplete: openOrder[0].isComplete,
+    //     orderPrice: updateOrder[0].orderPrice,
+    //     bookId: updateBookQuantity[0].bookId,
+    //     bookPrice: updateBookQuantity[0].bookPrice,
+    //     quantity: updateBookQuantity[0].quantity,
+    //   };
+    //   return [orderData];
     }
   }
 };
@@ -125,7 +126,8 @@ const deleteItemFromCart = async (
     `,
       [orderId]
     );
-    const updatedOrderPrice = Number(order[0].orderPrice) - Number(bookPrice) * Number(quantity);
+    const updatedOrderPrice =
+      Number(order[0].orderPrice) - Number(bookPrice) * Number(quantity);
     if (updatedOrderPrice > 0.01) {
       await client.query(
         `
@@ -150,7 +152,42 @@ const deleteItemFromCart = async (
   }
 };
 
+const editCartQuantity = async (
+  orderId,
+  orderPrice,
+  bookId,
+  bookPrice,
+  oldQuantity,
+  newQuantity
+) => {
+  try {
+    const { rows: updated } = await client.query(
+      `
+      update orders_details
+      set quantity = $1
+      where "orderId" = $2
+      and "bookId" = $3
+      returning "orderId";
+    `,
+      [newQuantity, orderId, bookId]
+    );
+    const updatedOrderPrice = Number(orderPrice) + (Number(newQuantity) - Number(oldQuantity)) * bookPrice;
+    await client.query(
+      `
+      update users_orders
+      set "orderPrice" = $1
+      where id = $2;
+    `,
+      [updatedOrderPrice, orderId]
+    );
+    return updated;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
 module.exports = {
   postAddItemToCart,
   deleteItemFromCart,
+  editCartQuantity,
 };
