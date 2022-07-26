@@ -43,8 +43,24 @@ const getAllUsersOrders = async () => {
   }
 };
 
+const completeOrder = async (orderId, userId) => {
+  try {
+    const { rows } = await client.query(`
+      update users_orders
+      set "isComplete" = true
+      where id = $1
+      and "userId" = $2
+      returning id, "isComplete";
+    `, [orderId, userId]);
+    return rows;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
 module.exports = {
   createUserOrder,
   getAllUsersOrders,
   createOrderDetails,
+  completeOrder,
 };

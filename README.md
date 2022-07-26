@@ -6,7 +6,7 @@ Vivlío is the Greek word for ‘book’.
 
 ### Heroku Database
 
-- [Like to Heroku Database](https://sensationnel-maison-12931.herokuapp.com)
+- [Link to Heroku Database](https://sensationnel-maison-12931.herokuapp.com)
 - URL: https://sensationnel-maison-12931.herokuapp.com
 
 ### Generated Users
@@ -158,7 +158,7 @@ Returns an object containing the main order data, with another array containing 
   - title (string)
   - imageLinkS (string)
 
-### Orders
+### Cart
 
 #### POST /api/orders/cart
 
@@ -193,7 +193,7 @@ Returns an array with a single object containing book and order data.
 
 **Request Parameters**
 
-- Requires the current order price, the current quantity and the user's updated quantity.
+- Requires the current quantity and the user's updated quantity.
 
 ```
 method: "PATCH",
@@ -202,7 +202,6 @@ headers: {
 },
 body: JSON.stringify({
         orderId,
-        orderPrice,
         bookId,
         bookPrice,
         oldQuantity,
@@ -225,7 +224,7 @@ Deletes an item from the cart.
 - Requires the order id, book id, book price, quantity.
 
 ```
-method: “POST”,
+method: “DELETE”,
 headers: {
         “Content-Type”: “application/json”,
 },
@@ -242,3 +241,30 @@ body: JSON.stringify({
 Object:
 - name (string): States whether deletion was un/successful.
 - message (string): States whether deletion was un/successful.
+
+### Orders
+
+#### POST /api/orders/:orderId
+
+"Complete" the logged in user's order by setting "isComplete" to true in users_orders table. 
+
+**Request Parameters**
+
+Requires token and the orderId to be passed as a route parameter.
+
+```
+method: “POST”,
+headers: {
+        “Content-Type”: “application/json”,
+        Authorization: `Bearer ${token}`,
+}
+```
+
+**Return Parameters**
+
+Object:
+- name (string): States whether checkout was un/successful.
+- message (string): States whether checkout was un/successful.
+
+
+
