@@ -8,14 +8,7 @@ router.get("/:searchString", async (req, res, next) => {
   const { searchString } = req.params;
   try {
     const result = await searchBasic(searchString);
-    if (!result.length) {
-      next({
-        name: "No Results Error",
-        message: "Your search returned no results. Please try again.",
-      });
-    } else {
-      res.send(result);
-    }
+    res.send(result);
   } catch (err) {
     next(err);
   }

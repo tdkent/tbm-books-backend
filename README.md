@@ -189,6 +189,33 @@ body: JSON.stringify({
 
 Returns an array with a single object containing book and order data.
 
+#### PATCH /api/orders/cart
+
+**Request Parameters**
+
+- Requires the current order price, the current quantity and the user's updated quantity.
+
+```
+method: "PATCH",
+headers: {
+        “Content-Type”: “application/json”,
+},
+body: JSON.stringify({
+        orderId,
+        orderPrice,
+        bookId,
+        bookPrice,
+        oldQuantity,
+        newQuantity,
+})
+```
+
+**Return Parameters**
+
+Object:
+- name (string): States whether patch was un/successful.
+- message (string): States whether patch was un/successful.
+
 #### DELETE /api/orders/cart
 
 Deletes an item from the cart.
