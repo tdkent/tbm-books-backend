@@ -27,16 +27,16 @@ const postAddItemToCart = async (userId, bookPrice, bookId, quantity) => {
     `,
       [newOrder[0].id, bookId, bookPrice, quantity]
     );
-    const orderData = {
-      orderId: newOrder[0].id,
-      userId: newOrder[0].userId,
-      isComplete: newOrder[0].isComplete,
-      orderPrice: newOrder[0].orderPrice,
-      bookId: newOrderDetails[0].bookId,
-      bookPrice: newOrderDetails[0].bookPrice,
-      quantity: newOrderDetails[0].quantity,
-    };
-    return [orderData];
+    // const orderData = {
+    //   orderId: newOrder[0].id,
+    //   userId: newOrder[0].userId,
+    //   isComplete: newOrder[0].isComplete,
+    //   orderPrice: newOrder[0].orderPrice,
+    //   bookId: newOrderDetails[0].bookId,
+    //   bookPrice: newOrderDetails[0].bookPrice,
+    //   quantity: newOrderDetails[0].quantity,
+    // };
+    // return [orderData];
   } else {
     const updateOrderPrice =
       Number(openOrder[0].orderPrice) + Number(bookPrice) * Number(quantity);
@@ -66,16 +66,16 @@ const postAddItemToCart = async (userId, bookPrice, bookId, quantity) => {
       `,
         [openOrder[0].id, bookId, bookPrice, quantity]
       );
-      const orderData = {
-        orderId: openOrder[0].id,
-        userId: openOrder[0].userId,
-        isComplete: openOrder[0].isComplete,
-        orderPrice: updateOrder[0].orderPrice,
-        bookId: updateOrderDetails[0].bookId,
-        bookPrice: updateOrderDetails[0].bookPrice,
-        quantity: updateOrderDetails[0].quantity,
-      };
-      return [orderData];
+      // const orderData = {
+      //   orderId: openOrder[0].id,
+      //   userId: openOrder[0].userId,
+      //   isComplete: openOrder[0].isComplete,
+      //   orderPrice: updateOrder[0].orderPrice,
+      //   bookId: updateOrderDetails[0].bookId,
+      //   bookPrice: updateOrderDetails[0].bookPrice,
+      //   quantity: updateOrderDetails[0].quantity,
+      // };
+      // return [orderData];
     } else {
       const newQuantity = checkBook[0].quantity + Number(quantity);
       const { rows: updateBookQuantity } = await client.query(
@@ -88,16 +88,16 @@ const postAddItemToCart = async (userId, bookPrice, bookId, quantity) => {
       `,
         [newQuantity, openOrder[0].id, bookId]
       );
-      const orderData = {
-        orderId: openOrder[0].id,
-        userId: openOrder[0].userId,
-        isComplete: openOrder[0].isComplete,
-        orderPrice: updateOrder[0].orderPrice,
-        bookId: updateBookQuantity[0].bookId,
-        bookPrice: updateBookQuantity[0].bookPrice,
-        quantity: updateBookQuantity[0].quantity,
-      };
-      return [orderData];
+    //   const orderData = {
+    //     orderId: openOrder[0].id,
+    //     userId: openOrder[0].userId,
+    //     isComplete: openOrder[0].isComplete,
+    //     orderPrice: updateOrder[0].orderPrice,
+    //     bookId: updateBookQuantity[0].bookId,
+    //     bookPrice: updateBookQuantity[0].bookPrice,
+    //     quantity: updateBookQuantity[0].quantity,
+    //   };
+    //   return [orderData];
     }
   }
 };
