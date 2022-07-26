@@ -5,6 +5,7 @@ const {
   postAddItemToCart,
   deleteItemFromCart,
   editCartQuantity,
+  completeOrder,
 } = require("../db");
 
 // POST /api/orders/cart
@@ -12,7 +13,17 @@ router.post("/cart", async (req, res, next) => {
   const { userId, bookPrice, bookId, quantity } = req.body;
   try {
     const result = await postAddItemToCart(userId, bookPrice, bookId, quantity);
-    res.send(result);
+    if (result.length) {
+      res.send({
+        name: "Cart Updated",
+        message: "Item added to cart.",
+      });
+    } else {
+      next({
+        name: "Cart Not Updated",
+        message: "An unknown error occurred. Please try again.",
+      });
+    }
   } catch (err) {
     next(err);
   }
@@ -20,12 +31,11 @@ router.post("/cart", async (req, res, next) => {
 
 // PATCH /api/orders/cart
 router.patch("/cart", async (req, res, next) => {
-  const { orderId, orderPrice, bookId, bookPrice, oldQuantity, newQuantity } =
+  const { orderId, bookId, bookPrice, oldQuantity, newQuantity } =
     req.body;
   try {
     const result = await editCartQuantity(
       orderId,
-      orderPrice,
       bookId,
       bookPrice,
       oldQuantity,
@@ -37,7 +47,7 @@ router.patch("/cart", async (req, res, next) => {
         message: "Successfully changed number of items in your cart.",
       });
     } else {
-      res.send({
+      next({
         name: "Cart Not Updated",
         message: "An unknown error occurred. Please try again.",
       });
@@ -49,11 +59,10 @@ router.patch("/cart", async (req, res, next) => {
 
 // DELETE /api/orders/cart
 router.delete("/cart", async (req, res, next) => {
-  const { orderId, orderPrice, bookId, bookPrice, quantity } = req.body;
+  const { orderId, bookId, bookPrice, quantity } = req.body;
   try {
     const result = await deleteItemFromCart(
       orderId,
-      orderPrice,
       bookId,
       bookPrice,
       quantity
@@ -64,13 +73,43 @@ router.delete("/cart", async (req, res, next) => {
         message: "Item deleted successfully from your cart.",
       });
     } else {
-      res.send({
+      next({
         name: "Cart Not Updated",
         message: "An unknown error occurred. Please try again.",
       });
     }
   } catch (err) {
     next(err);
+  }
+});
+
+// POST /api/orders/:orderId
+router.post("/:orderId", async (req, res, next) => {
+  if (!req.user) {
+    res.status(401);
+    next({
+      name: "Authorization Error",
+      message: "You must be logged in to perform this action.",
+    });
+  } else {
+    const { orderId } = req.params;
+    const { id: userId } = req.user;
+    try {
+      const result = await completeOrder(orderId, userId);
+      if (result[0].isComplete) {
+        res.send({
+          name: "Order Complete",
+          message: "Your order is complete. Thanks for your business!",
+        });
+      } else {
+        next({
+          name: "Order Not Complete",
+          message: "An unknown error occurred. Please try again.",
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
   }
 });
 

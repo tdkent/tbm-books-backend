@@ -133,31 +133,32 @@ const getUserCartById = async (userId) => {
     `,
       [userId]
     );
-    //orderId = order[0].id
-    const { rows: details } = await client.query(
-      `
-      select 
-        orders_details."bookId",
-        orders_details."bookPrice",
-        orders_details.quantity,
-        books.title,
-        books."imageLinkS"
-      from orders_details
-      join books
-      on orders_details."bookId" = books.id
-      where "orderId" = $1;
-    `,
-      [order[0].orderId]
-    );
-    let arr = [];
-    for (const item of details) {
-      arr.push(item);
-    }
-    const usersCart = {
-      ...order[0],
-      orderDetails: arr,
-    };
-    return usersCart;
+    if (order.length) {
+      const { rows: details } = await client.query(
+        `
+        select 
+          orders_details."bookId",
+          orders_details."bookPrice",
+          orders_details.quantity,
+          books.title,
+          books."imageLinkS"
+        from orders_details
+        join books
+        on orders_details."bookId" = books.id
+        where "orderId" = $1;
+      `,
+        [order[0].orderId]
+      );
+      let arr = [];
+      for (const item of details) {
+        arr.push(item);
+      }
+      const usersCart = {
+        ...order[0],
+        orderDetails: arr,
+      };
+      return usersCart;
+    } else return order;
   } catch (err) {
     console.error("An error occurred:", err);
   }
