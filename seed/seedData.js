@@ -57,6 +57,7 @@ const createUsers = async () => {
     const usersData = [
       { userEmail: "fake1@fakemail", password: "password123" },
       { userEmail: "fake2@fakemail", password: "password123" },
+      {userEmail: "admin@fakemail", password: "admin123", isAdmin: true},
     ];
     const users = await Promise.all(usersData.map(createUser));
     console.log(users);

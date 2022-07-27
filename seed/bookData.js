@@ -1,724 +1,760 @@
 const booksData = [
   {
-    isbn: '1443434973',
-    title: '1984',
-    author: 'George Orwell',
-    year: '2014',
-    publisher: 'Harper Perennial',
-    imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/81sdaZn6jWL._AC_SX75_CR,0,0,75,75_.jpg',
-    imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/81ft08BIP3L._AC_SX75_CR,0,0,75,75_.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/81ft08BIP3L.jpg',
-    isFeatured:true
+    isbn: "9780857503916",
+    title: "The Terror: A Novel",
+    author: "Dan Simmons",
+    year: "2007",
+    publisher: "Little, Brown and Company",
+    imageLinkS: "https://m.media-amazon.com/images/I/51aRHQJYpRL.jpg",
+    imageLinkM: "https://m.media-amazon.com/images/I/51aRHQJYpRL.jpg",
+    imageLinkL: "https://m.media-amazon.com/images/I/51aRHQJYpRL.jpg",
+    isFeatured: true,
   },
   {
-    isbn: '0743474198',
-    title: 'To Kill a Mockingbird',
-    author: 'Harper Lee',
-    year: '2002',
-    publisher: 'Harper Perennial',
-    imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/61s0HVfmm0L.jpg',
-    imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/71pQENJZ27L.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/81aY1lxk+9L.jpg',
-    isFeatured:true
+    isbn: "1443434973",
+    title: "1984",
+    author: "George Orwell",
+    year: "2014",
+    publisher: "Harper Perennial",
+    imageLinkS:
+      "https://images-na.ssl-images-amazon.com/images/I/51kB3u9dwPL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    imageLinkM:
+      "https://images-na.ssl-images-amazon.com/images/I/51kB3u9dwPL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    imageLinkL:
+      "https://images-na.ssl-images-amazon.com/images/I/51kB3u9dwPL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
   },
   {
-    isbn: '0743457226',
-    title: 'The Shining',
-    author: 'Stephen King',
-    year: '2013',
-    publisher: 'Pocket',
-    imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/81k5sx8YOhL.jpg',
-    imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/81k5sx8YOhL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/81k5sx8YOhL.jpg',
-    isFeatured:true
+    isbn: "0743474198",
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    year: "2002",
+    publisher: "Harper Perennial",
+    imageLinkS:
+      "https://images-na.ssl-images-amazon.com/images/I/51IXWZzlgSL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    imageLinkM:
+      "https://images-na.ssl-images-amazon.com/images/I/51IXWZzlgSL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    imageLinkL:
+      "https://images-na.ssl-images-amazon.com/images/I/51IXWZzlgSL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    isFeatured: true,
   },
   {
-    isbn: '074349346X',
-    title: 'Angels &amp; Demons : A Novel',
-    author: 'Dan Brown',
-    year: '2008',
-    publisher: 'Washington Square Press',
-    imageLinkS: 'http://images.amazon.com/images/P/074349346X.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/074349346X.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/074349346X.01.LZZZZZZZ.jpg'
+    isbn: "0743457226",
+    title: "The Shining",
+    author: "Stephen King",
+    year: "2013",
+    publisher: "Pocket",
+    imageLinkS:
+      "https://images-na.ssl-images-amazon.com/images/I/41ksNxnzTIL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    imageLinkM:
+      "https://images-na.ssl-images-amazon.com/images/I/41ksNxnzTIL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    imageLinkL:
+      "https://images-na.ssl-images-amazon.com/images/I/41ksNxnzTIL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    isFeatured: true,
   },
   {
-    isbn: '1903436346',
-    title: "The Winter's Tale - Arden Shakespeare : Third Series - Hardback (Arden Shakespeare Third Series)",
-    author: 'John Pitcher',
-    year: '2006',
-    publisher: 'Arden',
-    imageLinkS: 'http://images.amazon.com/images/P/1903436346.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1903436346.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1903436346.01.LZZZZZZZ.jpg'
+    isbn: "074349346X",
+    title: "Angels &amp; Demons : A Novel",
+    author: "Dan Brown",
+    year: "2008",
+    publisher: "Washington Square Press",
+    imageLinkS: "http://images.amazon.com/images/P/074349346X.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/074349346X.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/074349346X.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0743456874',
+    isbn: "1903436346",
+    title:
+      "The Winter's Tale - Arden Shakespeare : Third Series - Hardback (Arden Shakespeare Third Series)",
+    author: "John Pitcher",
+    year: "2006",
+    publisher: "Arden",
+    imageLinkS: "http://images.amazon.com/images/P/1903436346.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1903436346.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1903436346.01.LZZZZZZZ.jpg",
+  },
+  {
+    isbn: "0743456874",
     title: "Nip 'n' Tuck : A Novel",
-    author: 'Kathy Lette',
-    year: '2006',
-    publisher: 'Washington Square Press',
-    imageLinkS: 'http://images.amazon.com/images/P/0743456874.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0743456874.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0743456874.01.LZZZZZZZ.jpg'
+    author: "Kathy Lette",
+    year: "2006",
+    publisher: "Washington Square Press",
+    imageLinkS: "http://images.amazon.com/images/P/0743456874.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0743456874.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0743456874.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0743448987',
-    title: 'Memoirs of an Unfit Mother',
-    author: 'Anne Robinson',
-    year: '2006',
-    publisher: 'Pocket Books',
-    imageLinkS: 'http://images.amazon.com/images/P/0743448987.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0743448987.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0743448987.01.LZZZZZZZ.jpg'
+    isbn: "0743448987",
+    title: "Memoirs of an Unfit Mother",
+    author: "Anne Robinson",
+    year: "2006",
+    publisher: "Pocket Books",
+    imageLinkS: "http://images.amazon.com/images/P/0743448987.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0743448987.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0743448987.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1881273156',
-    title: 'The Five Love Languages: Five Love Languages',
-    author: 'Gary Chapman',
-    year: '2005',
-    publisher: 'Moody publishers',
-    imageLinkS: 'http://images.amazon.com/images/P/1881273156.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1881273156.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1881273156.01.LZZZZZZZ.jpg'
+    isbn: "1881273156",
+    title: "The Five Love Languages: Five Love Languages",
+    author: "Gary Chapman",
+    year: "2005",
+    publisher: "Moody publishers",
+    imageLinkS: "http://images.amazon.com/images/P/1881273156.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1881273156.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1881273156.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1593100175',
-    title: 'Beauty Is Soul Deep',
-    author: 'Michelle Lee',
-    year: '2005',
-    publisher: 'Barbour Publishing',
-    imageLinkS: 'http://images.amazon.com/images/P/1593100175.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1593100175.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1593100175.01.LZZZZZZZ.jpg'
+    isbn: "1593100175",
+    title: "Beauty Is Soul Deep",
+    author: "Michelle Lee",
+    year: "2005",
+    publisher: "Barbour Publishing",
+    imageLinkS: "http://images.amazon.com/images/P/1593100175.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1593100175.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1593100175.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1582344574',
-    title: 'Ninth Life of Louis Drax, The -POSTPONED',
-    author: 'Liz Jensen',
-    year: '2005',
-    publisher: 'Bloomsbury USA',
-    imageLinkS: 'http://images.amazon.com/images/P/1582344574.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1582344574.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1582344574.01.LZZZZZZZ.jpg'
+    isbn: "1582344574",
+    title: "Ninth Life of Louis Drax, The",
+    author: "Liz Jensen",
+    year: "2005",
+    publisher: "Bloomsbury USA",
+    imageLinkS: "http://images.amazon.com/images/P/1582344574.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1582344574.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1582344574.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '9780451526342',
-    title: 'Animal Farm',
-    author: 'George Orwell',
-    year: '2004',
-    publisher: 'Signet; 50th Anniversary edition',
-    imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/31B7EUeHUHL.jpg',
-    imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/81kvJzpj9oL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/71wdbkiRokL.jpg',
-    isFeatured:true
+    isbn: "9780451526342",
+    title: "Animal Farm",
+    author: "George Orwell",
+    year: "2004",
+    publisher: "Signet; 50th Anniversary edition",
+    imageLinkS:
+      "https://images-na.ssl-images-amazon.com/images/I/41NzDuSdIfL._SX277_BO1,204,203,200_.jpg",
+    imageLinkM:
+      "https://images-na.ssl-images-amazon.com/images/I/41NzDuSdIfL._SX277_BO1,204,203,200_.jpg",
+    imageLinkL:
+      "https://images-na.ssl-images-amazon.com/images/I/41NzDuSdIfL._SX277_BO1,204,203,200_.jpg",
+    isFeatured: true,
   },
   {
-    isbn: '9781781165287',
-    title: 'The Shadow over Innsmouth',
-    author: 'H.P. Lovecraft',
-    year: '2013',
-    publisher: 'Titan Books; Illustrated edition',
-    imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/41JAYqqK+UL.jpg',
-    imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/41JAYqqK+UL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/91EiE+zQcmL.jpg',
-    isFeatured:true
+    isbn: "9780735219106",
+    title: "Where the Crawdads Sing",
+    author: "Delia Owens",
+    year: "2021",
+    publisher: "Penguin Publishing Group",
+    imageLinkS:
+      "https://images-na.ssl-images-amazon.com/images/I/51k-fjlkb8L._SX331_BO1,204,203,200_.jpg",
+    imageLinkM:
+      "https://images-na.ssl-images-amazon.com/images/I/51k-fjlkb8L._SX331_BO1,204,203,200_.jpg",
+    imageLinkL:
+      "https://images-na.ssl-images-amazon.com/images/I/51k-fjlkb8L._SX331_BO1,204,203,200_.jpg",
+    isFeatured: true,
   },
   {
-    isbn: '1552782662',
-    title: 'Roadside Picnic',
-    author: 'Arkady and Boris Strugatsky',
-    year: '2012',
-    publisher: 'Chicago Review Press; Reprint edition',
-    imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/31PoDBwn2mL.jpg',
-    imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/51T0G+cbkmL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/61LTNLuJuiL.jpg',
-    isFeatured:true
+    isbn: "1552782662",
+    title: "Roadside Picnic",
+    author: "Arkady and Boris Strugatsky",
+    year: "2012",
+    publisher: "Chicago Review Press; Reprint edition",
+    imageLinkS:
+      "https://images-na.ssl-images-amazon.com/images/I/51rkfANZYdL._SX322_BO1,204,203,200_.jpg",
+    imageLinkM:
+      "https://images-na.ssl-images-amazon.com/images/I/51rkfANZYdL._SX322_BO1,204,203,200_.jpg",
+    imageLinkL:
+      "https://images-na.ssl-images-amazon.com/images/I/51rkfANZYdL._SX322_BO1,204,203,200_.jpg",
+    isFeatured: true,
   },
   {
-    isbn: '1481845705',
-    title: 'Metro 2033: First U.S. English edition',
-    author: 'Dmitry Glukhovsky',
-    year: '2013',
-    publisher: 'CreateSpace Independent Publishing Platform ',
-    imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/31BU2+sSuNL.jpg',
-    imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/71O-48D-SwL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/41EfpJ4sZnL.jpg',
-    isFeatured:true
+    isbn: "1481845705",
+    title: "Metro 2033: First U.S. English edition",
+    author: "Dmitry Glukhovsky",
+    year: "2013",
+    publisher: "CreateSpace Independent Publishing Platform ",
+    imageLinkS:
+      "https://images-na.ssl-images-amazon.com/images/I/41EfpJ4sZnL.jpg",
+    imageLinkM:
+      "https://images-na.ssl-images-amazon.com/images/I/41EfpJ4sZnL.jpg",
+    imageLinkL:
+      "https://images-na.ssl-images-amazon.com/images/I/41EfpJ4sZnL.jpg",
   },
   {
-    isbn: '0316389706',
-    title: 'Sword of Destiny',
-    author: 'Andrzej Sapkowski',
-    year: '2005',
-    publisher: 'Countryman Press',
-    imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/31GMkYHQAaL.jpg',
-    imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/A1gDSFhLaiL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/71oh805MbkL.jpg',
-    isFeatured:true
+    isbn: "0316389706",
+    title: "Sword of Destiny",
+    author: "Andrzej Sapkowski",
+    year: "2005",
+    publisher: "Countryman Press",
+    imageLinkS:
+      "https://images-na.ssl-images-amazon.com/images/I/51+ZFFkl7gL._SY344_BO1,204,203,200_.jpg",
+    imageLinkM:
+      "https://images-na.ssl-images-amazon.com/images/I/51+ZFFkl7gL._SY344_BO1,204,203,200_.jpg",
+    imageLinkL:
+      "https://images-na.ssl-images-amazon.com/images/I/51+ZFFkl7gL._SY344_BO1,204,203,200_.jpg",
   },
   {
-    isbn: '1497643074',
-    title: 'I Have No Mouth & I Must Scream',
-    author: 'Harlan Ellison',
-    year: '2014',
-    publisher: 'Open Road Media',
-    imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/91h49rQQd-L.jpg',
-    imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/91h49rQQd-L.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/91h49rQQd-L.jpg',
-    isFeatured:true
+    isbn: "9780756413712",
+    title: "The Name of the Wind: 10th Anniversary Deluxe Edition",
+    author: "Patrick Rothfuss",
+    year: "2017",
+    publisher: "DAW",
+    imageLinkS:
+      "https://images-na.ssl-images-amazon.com/images/I/51em3xUxHOL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    imageLinkM:
+      "https://images-na.ssl-images-amazon.com/images/I/51em3xUxHOL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    imageLinkL:
+      "https://images-na.ssl-images-amazon.com/images/I/51em3xUxHOL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    isFeatured: true,
   },
   {
-    isbn: '0440414806',
-    title: 'Holes',
-    author: 'Louis Sachar',
-    year: '2000',
-    publisher: 'Yearling',
-    imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/814TCW6Y7hL.jpg',
-    imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/814TCW6Y7hL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/814TCW6Y7hL.jpg',
-    isFeatured:true
+    isbn: "0440414806",
+    title: "Holes",
+    author: "Louis Sachar",
+    year: "2000",
+    publisher: "Yearling",
+    imageLinkS:
+      "https://images-na.ssl-images-amazon.com/images/I/5103VpC5DOL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    imageLinkM:
+      "https://images-na.ssl-images-amazon.com/images/I/5103VpC5DOL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    imageLinkL:
+      "https://images-na.ssl-images-amazon.com/images/I/5103VpC5DOL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+    isFeatured: true,
   },
   {
-    isbn: '0802714277',
-    title: 'Dune',
-    author: 'Frank Herbert',
-    year: '2005',
-    publisher: 'Penguin Publishing Group; 0040-Anniversary edition',
-    imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/91OoNH1+MHL.jpg',
-    imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/91OoNH1+MHL.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/91OoNH1+MHL.jpg',
-    isFeatured:true
+    isbn: "0802714277",
+    title: "Dune",
+    author: "Frank Herbert",
+    year: "2005",
+    publisher: "Penguin Publishing Group; 0040-Anniversary edition",
+    imageLinkS:
+      "https://images-na.ssl-images-amazon.com/images/I/41rxoi1jMQL._SX331_BO1,204,203,200_.jpg",
+    imageLinkM:
+      "https://images-na.ssl-images-amazon.com/images/I/41rxoi1jMQL._SX331_BO1,204,203,200_.jpg",
+    imageLinkL:
+      "https://images-na.ssl-images-amazon.com/images/I/41rxoi1jMQL._SX331_BO1,204,203,200_.jpg",
+    isFeatured: true,
   },
   {
-    isbn: '0743474198',
-    title: 'To Kill a Mockingbird',
-    author: 'Harper Lee',
-    year: '2002',
-    publisher: 'Harper Perennial',
-    imageLinkS: 'https://images-na.ssl-images-amazon.com/images/I/61s0HVfmm0L.jpg',
-    imageLinkM: 'https://images-na.ssl-images-amazon.com/images/I/71pQENJZ27L.jpg',
-    imageLinkL: 'https://images-na.ssl-images-amazon.com/images/I/81aY1lxk+9L.jpg'
+    isbn: "0778320820",
+    title: "Me &amp; Emma",
+    author: "Elizabeth Flock",
+    year: "2005",
+    publisher: "Mira",
+    imageLinkS: "http://images.amazon.com/images/P/0778320820.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0778320820.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0778320820.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0778320820',
-    title: 'Me &amp; Emma',
-    author: 'Elizabeth Flock',
-    year: '2005',
-    publisher: 'Mira',
-    imageLinkS: 'http://images.amazon.com/images/P/0778320820.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0778320820.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0778320820.01.LZZZZZZZ.jpg'
+    isbn: "0763626392",
+    title: "The Gift (Croggon, Alison, Pellinor, 1st Bk.)",
+    author: "Alison Croggon",
+    year: "2005",
+    publisher: "Candlewick Pr",
+    imageLinkS: "http://images.amazon.com/images/P/0763626392.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0763626392.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0763626392.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0763626392',
-    title: 'The Gift (Croggon, Alison, Pellinor, 1st Bk.)',
-    author: 'Alison Croggon',
-    year: '2005',
-    publisher: 'Candlewick Pr',
-    imageLinkS: 'http://images.amazon.com/images/P/0763626392.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0763626392.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0763626392.01.LZZZZZZZ.jpg'
+    isbn: "0753820099",
+    title: "Snobs",
+    author: "Julian Fellowes",
+    year: "2005",
+    publisher: "Phoenix mass market p/bk",
+    imageLinkS: "http://images.amazon.com/images/P/0753820099.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0753820099.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0753820099.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0753820099',
-    title: 'Snobs',
-    author: 'Julian Fellowes',
-    year: '2005',
-    publisher: 'Phoenix mass market p/bk',
-    imageLinkS: 'http://images.amazon.com/images/P/0753820099.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0753820099.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0753820099.01.LZZZZZZZ.jpg'
+    isbn: "0752848291",
+    title: "A Village Dilemma",
+    author: "Rebecca Shaw",
+    year: "2005",
+    publisher: "Orion mass market paperback",
+    imageLinkS: "http://images.amazon.com/images/P/0752848291.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0752848291.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0752848291.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0752848291',
-    title: 'A Village Dilemma',
-    author: 'Rebecca Shaw',
-    year: '2005',
-    publisher: 'Orion mass market paperback',
-    imageLinkS: 'http://images.amazon.com/images/P/0752848291.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0752848291.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0752848291.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0749924659',
+    isbn: "0749924659",
     title: "Celebrity Style Secrets: An Insider's Guide to Looking a - List",
-    author: 'Jacqui Ripley',
-    year: '2005',
-    publisher: 'Piatkus Books',
-    imageLinkS: 'http://images.amazon.com/images/P/0749924659.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0749924659.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0749924659.01.LZZZZZZZ.jpg'
+    author: "Jacqui Ripley",
+    year: "2005",
+    publisher: "Piatkus Books",
+    imageLinkS: "http://images.amazon.com/images/P/0749924659.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0749924659.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0749924659.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0743492080',
-    title: 'The Awful Secret : A Crowner John Mystery (Crowner John Mystery)',
-    author: 'Bernard Knight',
-    year: '2005',
-    publisher: 'Simon &amp; Schuster UK',
-    imageLinkS: 'http://images.amazon.com/images/P/0743492080.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0743492080.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0743492080.01.LZZZZZZZ.jpg'
+    isbn: "0743492080",
+    title: "The Awful Secret : A Crowner John Mystery (Crowner John Mystery)",
+    author: "Bernard Knight",
+    year: "2005",
+    publisher: "Simon &amp; Schuster UK",
+    imageLinkS: "http://images.amazon.com/images/P/0743492080.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0743492080.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0743492080.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0743492072',
+    isbn: "0743492072",
     title: "Crowner'S Quest : A Crowner John Mystery (Crowner John Mystery)",
-    author: 'Bernard Knight',
-    year: '2005',
-    publisher: 'Simon &amp; Schuster UK',
-    imageLinkS: 'http://images.amazon.com/images/P/0743492072.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0743492072.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0743492072.01.LZZZZZZZ.jpg'
+    author: "Bernard Knight",
+    year: "2005",
+    publisher: "Simon &amp; Schuster UK",
+    imageLinkS: "http://images.amazon.com/images/P/0743492072.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0743492072.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0743492072.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0743492064',
-    title: 'The Poisoned Chalice : A Crowner John Mystery (Crowner John Mystery)',
-    author: 'Bernard Knight',
-    year: '2005',
-    publisher: 'Simon &amp; Schuster UK',
-    imageLinkS: 'http://images.amazon.com/images/P/0743492064.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0743492064.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0743492064.01.LZZZZZZZ.jpg'
+    isbn: "0743492064",
+    title:
+      "The Poisoned Chalice : A Crowner John Mystery (Crowner John Mystery)",
+    author: "Bernard Knight",
+    year: "2005",
+    publisher: "Simon &amp; Schuster UK",
+    imageLinkS: "http://images.amazon.com/images/P/0743492064.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0743492064.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0743492064.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0743492056',
-    title: 'The Sanctuary Seeker : A Crowner John Mystery',
-    author: 'Bernard Knight',
-    year: '2005',
-    publisher: 'Simon &amp; Schuster UK',
-    imageLinkS: 'http://images.amazon.com/images/P/0743492056.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0743492056.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0743492056.01.LZZZZZZZ.jpg'
+    isbn: "0743492056",
+    title: "The Sanctuary Seeker : A Crowner John Mystery",
+    author: "Bernard Knight",
+    year: "2005",
+    publisher: "Simon &amp; Schuster UK",
+    imageLinkS: "http://images.amazon.com/images/P/0743492056.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0743492056.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0743492056.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0743490258',
-    title: 'Best of Friends',
-    author: 'Cathy Kelly',
-    year: '2005',
-    publisher: 'Downtown Press',
-    imageLinkS: 'http://images.amazon.com/images/P/0743490258.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0743490258.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0743490258.01.LZZZZZZZ.jpg'
+    isbn: "0743490258",
+    title: "Best of Friends",
+    author: "Cathy Kelly",
+    year: "2005",
+    publisher: "Downtown Press",
+    imageLinkS: "http://images.amazon.com/images/P/0743490258.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0743490258.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0743490258.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0743484894',
+    isbn: "0743484894",
     title: "The Winter's Tale (Folger Shakespeare Library)",
-    author: 'William Shakespeare',
-    year: '2005',
-    publisher: 'Washington Square Press',
-    imageLinkS: 'http://images.amazon.com/images/P/0743484894.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0743484894.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0743484894.01.LZZZZZZZ.jpg'
+    author: "William Shakespeare",
+    year: "2005",
+    publisher: "Washington Square Press",
+    imageLinkS: "http://images.amazon.com/images/P/0743484894.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0743484894.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0743484894.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0743474783',
-    title: 'One Fine Day the Rabbi Bought a Cross',
-    author: 'Harry Kemelman',
-    year: '2005',
-    publisher: 'I Books',
-    imageLinkS: 'http://images.amazon.com/images/P/0743474783.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0743474783.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0743474783.01.LZZZZZZZ.jpg'
+    isbn: "0743474783",
+    title: "One Fine Day the Rabbi Bought a Cross",
+    author: "Harry Kemelman",
+    year: "2005",
+    publisher: "I Books",
+    imageLinkS: "http://images.amazon.com/images/P/0743474783.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0743474783.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0743474783.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '074324477X',
-    title: 'Rockville Pike : A Novel',
-    author: 'Susan Coll',
-    year: '2005',
-    publisher: 'Simon &amp; Schuster',
-    imageLinkS: 'http://images.amazon.com/images/P/074324477X.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/074324477X.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/074324477X.01.LZZZZZZZ.jpg'
+    isbn: "074324477X",
+    title: "Rockville Pike : A Novel",
+    author: "Susan Coll",
+    year: "2005",
+    publisher: "Simon &amp; Schuster",
+    imageLinkS: "http://images.amazon.com/images/P/074324477X.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/074324477X.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/074324477X.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0671878654',
-    title: 'An Oblique Approach',
-    author: 'Eric Flint',
-    year: '2005',
-    publisher: 'Baen',
-    imageLinkS: 'http://images.amazon.com/images/P/0671878654.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0671878654.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0671878654.01.LZZZZZZZ.jpg'
+    isbn: "0671878654",
+    title: "An Oblique Approach",
+    author: "Eric Flint",
+    year: "2005",
+    publisher: "Baen",
+    imageLinkS: "http://images.amazon.com/images/P/0671878654.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0671878654.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0671878654.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0618441433',
-    title: 'Josie and Jack : A Novel',
-    author: 'Kelly Braffet',
-    year: '2005',
-    publisher: 'Mariner Books',
-    imageLinkS: 'http://images.amazon.com/images/P/0618441433.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0618441433.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0618441433.01.LZZZZZZZ.jpg'
+    isbn: "0618441433",
+    title: "Josie and Jack : A Novel",
+    author: "Kelly Braffet",
+    year: "2005",
+    publisher: "Mariner Books",
+    imageLinkS: "http://images.amazon.com/images/P/0618441433.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0618441433.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0618441433.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0439448948',
-    title: 'Husky In A Hut (Animal Ark)',
-    author: 'Ben Baglio',
-    year: '2005',
-    publisher: 'Scholastic Paperbacks',
-    imageLinkS: 'http://images.amazon.com/images/P/0439448948.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0439448948.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0439448948.01.LZZZZZZZ.jpg'
+    isbn: "0439448948",
+    title: "Husky In A Hut (Animal Ark)",
+    author: "Ben Baglio",
+    year: "2005",
+    publisher: "Scholastic Paperbacks",
+    imageLinkS: "http://images.amazon.com/images/P/0439448948.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0439448948.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0439448948.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0385732376',
-    title: 'The Illustrated Mum',
-    author: 'JACQUELINE WILSON',
-    year: '2005',
-    publisher: 'Delacorte Books for Young Readers',
-    imageLinkS: 'http://images.amazon.com/images/P/0385732376.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0385732376.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0385732376.01.LZZZZZZZ.jpg'
+    isbn: "0385732376",
+    title: "The Illustrated Mum",
+    author: "JACQUELINE WILSON",
+    year: "2005",
+    publisher: "Delacorte Books for Young Readers",
+    imageLinkS: "http://images.amazon.com/images/P/0385732376.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0385732376.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0385732376.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0385338082',
-    title: 'Can You Keep a Secret?',
-    author: 'SOPHIE KINSELLA',
-    year: '2005',
-    publisher: 'Delta',
-    imageLinkS: 'http://images.amazon.com/images/P/0385338082.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0385338082.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0385338082.01.LZZZZZZZ.jpg'
+    isbn: "0385338082",
+    title: "Can You Keep a Secret?",
+    author: "SOPHIE KINSELLA",
+    year: "2005",
+    publisher: "Delta",
+    imageLinkS: "http://images.amazon.com/images/P/0385338082.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0385338082.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0385338082.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0375829849',
-    title: 'The Golden Goose',
-    author: 'Dick King-Smith',
-    year: '2005',
-    publisher: 'Knopf Books for Young Readers',
-    imageLinkS: 'http://images.amazon.com/images/P/0375829849.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0375829849.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0375829849.01.LZZZZZZZ.jpg'
+    isbn: "0375829849",
+    title: "The Golden Goose",
+    author: "Dick King-Smith",
+    year: "2005",
+    publisher: "Knopf Books for Young Readers",
+    imageLinkS: "http://images.amazon.com/images/P/0375829849.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0375829849.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0375829849.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0374103747',
+    isbn: "0374103747",
     title: "In My Brother's Shadow",
-    author: 'Uwe Timm',
-    year: '2005',
-    publisher: 'Farrar, Straus and Giroux',
-    imageLinkS: 'http://images.amazon.com/images/P/0374103747.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0374103747.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0374103747.01.LZZZZZZZ.jpg'
+    author: "Uwe Timm",
+    year: "2005",
+    publisher: "Farrar, Straus and Giroux",
+    imageLinkS: "http://images.amazon.com/images/P/0374103747.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0374103747.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0374103747.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0316156108',
-    title: 'The Ha-Ha : A Novel',
-    author: 'Dave King',
-    year: '2005',
-    publisher: 'Little, Brown',
-    imageLinkS: 'http://images.amazon.com/images/P/0316156108.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0316156108.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0316156108.01.LZZZZZZZ.jpg'
+    isbn: "0316156108",
+    title: "The Ha-Ha : A Novel",
+    author: "Dave King",
+    year: "2005",
+    publisher: "Little, Brown",
+    imageLinkS: "http://images.amazon.com/images/P/0316156108.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0316156108.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0316156108.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0141002999',
-    title: 'Thunderball (James Bond 007)',
-    author: 'Ian Fleming',
-    year: '2005',
-    publisher: 'Penguin Books Ltd',
-    imageLinkS: 'http://images.amazon.com/images/P/0141002999.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0141002999.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0141002999.01.LZZZZZZZ.jpg'
+    isbn: "0141002999",
+    title: "Thunderball (James Bond 007)",
+    author: "Ian Fleming",
+    year: "2005",
+    publisher: "Penguin Books Ltd",
+    imageLinkS: "http://images.amazon.com/images/P/0141002999.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0141002999.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0141002999.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0141002980',
-    title: 'Moonraker (James Bond 007)',
-    author: 'Ian Fleming',
-    year: '2005',
-    publisher: 'Penguin Books Ltd',
-    imageLinkS: 'http://images.amazon.com/images/P/0141002980.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0141002980.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0141002980.01.LZZZZZZZ.jpg'
+    isbn: "0141002980",
+    title: "Moonraker (James Bond 007)",
+    author: "Ian Fleming",
+    year: "2005",
+    publisher: "Penguin Books Ltd",
+    imageLinkS: "http://images.amazon.com/images/P/0141002980.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0141002980.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0141002980.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0140860363',
-    title: 'On the Road',
-    author: 'Jack Kerouac',
-    year: '2005',
-    publisher: 'Penguin Highbridge',
-    imageLinkS: 'http://images.amazon.com/images/P/0140860363.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0140860363.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0140860363.01.LZZZZZZZ.jpg'
+    isbn: "0140860363",
+    title: "On the Road",
+    author: "Jack Kerouac",
+    year: "2005",
+    publisher: "Penguin Highbridge",
+    imageLinkS: "http://images.amazon.com/images/P/0140860363.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0140860363.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0140860363.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0140622454',
-    title: 'A Woman of No Importance (Penguin Popular Classics)',
-    author: 'Oscar Wilde',
-    year: '2005',
-    publisher: 'Penguin Books Ltd',
-    imageLinkS: 'http://images.amazon.com/images/P/0140622454.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0140622454.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0140622454.01.LZZZZZZZ.jpg'
+    isbn: "0140622454",
+    title: "A Woman of No Importance (Penguin Popular Classics)",
+    author: "Oscar Wilde",
+    year: "2005",
+    publisher: "Penguin Books Ltd",
+    imageLinkS: "http://images.amazon.com/images/P/0140622454.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0140622454.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0140622454.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0140144463',
-    title: 'The Cornish Trilogy',
-    author: 'Robertson Davies',
-    year: '2005',
-    publisher: 'Penguin Books Ltd',
-    imageLinkS: 'http://images.amazon.com/images/P/0140144463.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0140144463.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0140144463.01.LZZZZZZZ.jpg'
+    isbn: "0140144463",
+    title: "The Cornish Trilogy",
+    author: "Robertson Davies",
+    year: "2005",
+    publisher: "Penguin Books Ltd",
+    imageLinkS: "http://images.amazon.com/images/P/0140144463.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0140144463.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0140144463.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0140124373',
-    title: 'Red Dwarf',
-    author: 'Grant Naylor',
-    year: '2005',
-    publisher: 'Penguin Books Ltd',
-    imageLinkS: 'http://images.amazon.com/images/P/0140124373.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0140124373.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0140124373.01.LZZZZZZZ.jpg'
+    isbn: "0140124373",
+    title: "Red Dwarf",
+    author: "Grant Naylor",
+    year: "2005",
+    publisher: "Penguin Books Ltd",
+    imageLinkS: "http://images.amazon.com/images/P/0140124373.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0140124373.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0140124373.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0062731327',
-    title: 'HOMEWORK WITHOUT TEARS',
-    author: 'Lee Canter',
-    year: '2005',
-    publisher: 'HarperResource',
-    imageLinkS: 'http://images.amazon.com/images/P/0062731327.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0062731327.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0062731327.01.LZZZZZZZ.jpg'
+    isbn: "0062731327",
+    title: "HOMEWORK WITHOUT TEARS",
+    author: "Lee Canter",
+    year: "2005",
+    publisher: "HarperResource",
+    imageLinkS: "http://images.amazon.com/images/P/0062731327.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0062731327.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0062731327.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '006272049X',
-    title: 'Thereby Hangs a Tale',
-    author: 'Charles E. Funk',
-    year: '2005',
-    publisher: 'HarperResource',
-    imageLinkS: 'http://images.amazon.com/images/P/006272049X.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/006272049X.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/006272049X.01.LZZZZZZZ.jpg'
+    isbn: "006272049X",
+    title: "Thereby Hangs a Tale",
+    author: "Charles E. Funk",
+    year: "2005",
+    publisher: "HarperResource",
+    imageLinkS: "http://images.amazon.com/images/P/006272049X.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/006272049X.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/006272049X.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '006272004X',
+    isbn: "006272004X",
     title: "The Astrologer's Handbook",
-    author: 'Frances Sakoian',
-    year: '2005',
-    publisher: 'HarperResource',
-    imageLinkS: 'http://images.amazon.com/images/P/006272004X.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/006272004X.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/006272004X.01.LZZZZZZZ.jpg'
+    author: "Frances Sakoian",
+    year: "2005",
+    publisher: "HarperResource",
+    imageLinkS: "http://images.amazon.com/images/P/006272004X.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/006272004X.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/006272004X.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0060738189',
-    title: 'Serpico',
-    author: 'Peter Maas',
-    year: '2005',
-    publisher: 'Perennial',
-    imageLinkS: 'http://images.amazon.com/images/P/0060738189.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0060738189.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0060738189.01.LZZZZZZZ.jpg'
+    isbn: "0060738189",
+    title: "Serpico",
+    author: "Peter Maas",
+    year: "2005",
+    publisher: "Perennial",
+    imageLinkS: "http://images.amazon.com/images/P/0060738189.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0060738189.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0060738189.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0060567341',
-    title: 'Chinese Cinderella and the Secret Dragon Society',
-    author: 'Adeline Yen Mah',
-    year: '2005',
-    publisher: 'HarperCollins',
-    imageLinkS: 'http://images.amazon.com/images/P/0060567341.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0060567341.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0060567341.01.LZZZZZZZ.jpg'
+    isbn: "0060567341",
+    title: "Chinese Cinderella and the Secret Dragon Society",
+    author: "Adeline Yen Mah",
+    year: "2005",
+    publisher: "HarperCollins",
+    imageLinkS: "http://images.amazon.com/images/P/0060567341.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0060567341.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0060567341.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '006055701X',
-    title: 'Dancing in Red Shoes Will Kill You',
-    author: 'Dorian Cirrone',
-    year: '2005',
-    publisher: 'HarperCollins',
-    imageLinkS: 'http://images.amazon.com/images/P/006055701X.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/006055701X.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/006055701X.01.LZZZZZZZ.jpg'
+    isbn: "006055701X",
+    title: "Dancing in Red Shoes Will Kill You",
+    author: "Dorian Cirrone",
+    year: "2005",
+    publisher: "HarperCollins",
+    imageLinkS: "http://images.amazon.com/images/P/006055701X.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/006055701X.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/006055701X.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '0060541490',
-    title: 'Sexy',
-    author: 'Joyce Carol Oates',
-    year: '2005',
-    publisher: 'HarperTempest',
-    imageLinkS: 'http://images.amazon.com/images/P/0060541490.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0060541490.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0060541490.01.LZZZZZZZ.jpg'
+    isbn: "0060541490",
+    title: "Sexy",
+    author: "Joyce Carol Oates",
+    year: "2005",
+    publisher: "HarperTempest",
+    imageLinkS: "http://images.amazon.com/images/P/0060541490.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/0060541490.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/0060541490.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1904153054',
-    title: 'Rats, Bats, Frogs and Bogs of London (Of London Series)',
-    author: 'Chris McLaren',
-    year: '2004',
-    publisher: 'Watling Street',
-    imageLinkS: 'http://images.amazon.com/images/P/1904153054.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1904153054.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1904153054.01.LZZZZZZZ.jpg'
+    isbn: "1904153054",
+    title: "Rats, Bats, Frogs and Bogs of London (Of London Series)",
+    author: "Chris McLaren",
+    year: "2004",
+    publisher: "Watling Street",
+    imageLinkS: "http://images.amazon.com/images/P/1904153054.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1904153054.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1904153054.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1904153046',
-    title: 'Crypts, Caves and Tunnels of London (Of London Series)',
-    author: 'Ian Marchant',
-    year: '2004',
-    publisher: 'Watling Street',
-    imageLinkS: 'http://images.amazon.com/images/P/1904153046.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1904153046.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1904153046.01.LZZZZZZZ.jpg'
+    isbn: "1904153046",
+    title: "Crypts, Caves and Tunnels of London (Of London Series)",
+    author: "Ian Marchant",
+    year: "2004",
+    publisher: "Watling Street",
+    imageLinkS: "http://images.amazon.com/images/P/1904153046.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1904153046.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1904153046.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1904153038',
-    title: 'Dungeons, Gallows and Severed Heads of London (Of London Series)',
-    author: 'Travis Elborough',
-    year: '2004',
-    publisher: 'Watling Street',
-    imageLinkS: 'http://images.amazon.com/images/P/1904153038.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1904153038.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1904153038.01.LZZZZZZZ.jpg'
+    isbn: "1904153038",
+    title: "Dungeons, Gallows and Severed Heads of London (Of London Series)",
+    author: "Travis Elborough",
+    year: "2004",
+    publisher: "Watling Street",
+    imageLinkS: "http://images.amazon.com/images/P/1904153038.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1904153038.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1904153038.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '190415302X',
-    title: 'Ghosts, Ghouls and Phantoms of London (Of London Series)',
-    author: 'Travis Elborough',
-    year: '2004',
-    publisher: 'Watling Street',
-    imageLinkS: 'http://images.amazon.com/images/P/190415302X.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/190415302X.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/190415302X.01.LZZZZZZZ.jpg'
+    isbn: "190415302X",
+    title: "Ghosts, Ghouls and Phantoms of London (Of London Series)",
+    author: "Travis Elborough",
+    year: "2004",
+    publisher: "Watling Street",
+    imageLinkS: "http://images.amazon.com/images/P/190415302X.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/190415302X.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/190415302X.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1904153011',
-    title: 'The Black Death and Other Putrid Plagues of London (Of London Series)',
-    author: 'Natasha Narayan',
-    year: '2004',
-    publisher: 'Watling Street',
-    imageLinkS: 'http://images.amazon.com/images/P/1904153011.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1904153011.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1904153011.01.LZZZZZZZ.jpg'
+    isbn: "1904153011",
+    title:
+      "The Black Death and Other Putrid Plagues of London (Of London Series)",
+    author: "Natasha Narayan",
+    year: "2004",
+    publisher: "Watling Street",
+    imageLinkS: "http://images.amazon.com/images/P/1904153011.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1904153011.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1904153011.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1904153003',
-    title: 'Grave-Robbers, Cut-Throats and Poisoners of London (Of London Series)',
-    author: 'Helen Smith',
-    year: '2004',
-    publisher: 'Watling Street',
-    imageLinkS: 'http://images.amazon.com/images/P/1904153003.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1904153003.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1904153003.01.LZZZZZZZ.jpg'
+    isbn: "1904153003",
+    title:
+      "Grave-Robbers, Cut-Throats and Poisoners of London (Of London Series)",
+    author: "Helen Smith",
+    year: "2004",
+    publisher: "Watling Street",
+    imageLinkS: "http://images.amazon.com/images/P/1904153003.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1904153003.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1904153003.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1902636481',
-    title: 'Birth And Breastfeeding: Rediscovering The Needs Of Women During Pregnancy And Childbirth',
-    author: 'Michel Odent',
-    year: '2004',
-    publisher: 'Clairview Books',
-    imageLinkS: 'http://images.amazon.com/images/P/1902636481.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1902636481.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1902636481.01.LZZZZZZZ.jpg'
+    isbn: "1902636481",
+    title:
+      "Birth And Breastfeeding: Rediscovering The Needs Of Women During Pregnancy And Childbirth",
+    author: "Michel Odent",
+    year: "2004",
+    publisher: "Clairview Books",
+    imageLinkS: "http://images.amazon.com/images/P/1902636481.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1902636481.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1902636481.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1894663616',
-    title: 'Meet Me in the Parking Lot',
-    author: 'Alexandra Leggat',
-    year: '2004',
-    publisher: 'Insomniac Press',
-    imageLinkS: 'http://images.amazon.com/images/P/1894663616.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1894663616.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1894663616.01.LZZZZZZZ.jpg'
+    isbn: "1894663616",
+    title: "Meet Me in the Parking Lot",
+    author: "Alexandra Leggat",
+    year: "2004",
+    publisher: "Insomniac Press",
+    imageLinkS: "http://images.amazon.com/images/P/1894663616.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1894663616.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1894663616.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1894222776',
+    isbn: "1894222776",
     title: "You Can't Fall for Your Stepsister (Step-Chain)",
-    author: 'Ann Bryant',
-    year: '2004',
-    publisher: 'Lobster Press',
-    imageLinkS: 'http://images.amazon.com/images/P/1894222776.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1894222776.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1894222776.01.LZZZZZZZ.jpg'
+    author: "Ann Bryant",
+    year: "2004",
+    publisher: "Lobster Press",
+    imageLinkS: "http://images.amazon.com/images/P/1894222776.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1894222776.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1894222776.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1893224872',
-    title: 'PUPPETMASTER: THE SECRET LIFE OF J. EDGAR HOOVER',
-    author: 'Richard Hack',
-    year: '2004',
-    publisher: 'New Millennium',
-    imageLinkS: 'http://images.amazon.com/images/P/1893224872.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1893224872.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1893224872.01.LZZZZZZZ.jpg'
+    isbn: "1893224872",
+    title: "PUPPETMASTER: THE SECRET LIFE OF J. EDGAR HOOVER",
+    author: "Richard Hack",
+    year: "2004",
+    publisher: "New Millennium",
+    imageLinkS: "http://images.amazon.com/images/P/1893224872.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1893224872.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1893224872.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1889186511',
-    title: 'Letters from Hades',
-    author: 'Jeffrey Thomas',
-    year: '2004',
-    publisher: 'Necro Pubns',
-    imageLinkS: 'http://images.amazon.com/images/P/1889186511.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1889186511.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1889186511.01.LZZZZZZZ.jpg'
+    isbn: "1889186511",
+    title: "Letters from Hades",
+    author: "Jeffrey Thomas",
+    year: "2004",
+    publisher: "Necro Pubns",
+    imageLinkS: "http://images.amazon.com/images/P/1889186511.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1889186511.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1889186511.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1858818257',
+    isbn: "1858818257",
     title: "Horrid Henry's Revenge",
-    author: 'Francesca Simon',
-    year: '2004',
+    author: "Francesca Simon",
+    year: "2004",
     publisher: "Orion Children's",
-    imageLinkS: 'http://images.amazon.com/images/P/1858818257.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1858818257.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1858818257.01.LZZZZZZZ.jpg'
+    imageLinkS: "http://images.amazon.com/images/P/1858818257.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1858818257.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1858818257.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1857989619',
-    title: 'Only an Alligator: Book One of the Accomplice Series (Accomplice)',
-    author: 'Steve Aylett',
-    year: '2004',
-    publisher: 'Gollancz',
-    imageLinkS: 'http://images.amazon.com/images/P/1857989619.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1857989619.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1857989619.01.LZZZZZZZ.jpg'
+    isbn: "1857989619",
+    title: "Only an Alligator: Book One of the Accomplice Series (Accomplice)",
+    author: "Steve Aylett",
+    year: "2004",
+    publisher: "Gollancz",
+    imageLinkS: "http://images.amazon.com/images/P/1857989619.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1857989619.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1857989619.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1853437182',
-    title: 'The Caesarean',
-    author: 'Michel Odent',
-    year: '2004',
-    publisher: 'Intl Specialized Book Service Inc',
-    imageLinkS: 'http://images.amazon.com/images/P/1853437182.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1853437182.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1853437182.01.LZZZZZZZ.jpg'
+    isbn: "1853437182",
+    title: "The Caesarean",
+    author: "Michel Odent",
+    year: "2004",
+    publisher: "Intl Specialized Book Service Inc",
+    imageLinkS: "http://images.amazon.com/images/P/1853437182.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1853437182.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1853437182.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1852428619',
-    title: 'The Pornographer Diaries',
-    author: 'Danny King',
-    year: '2004',
-    publisher: 'Consortium',
-    imageLinkS: 'http://images.amazon.com/images/P/1852428619.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1852428619.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1852428619.01.LZZZZZZZ.jpg'
+    isbn: "1852428619",
+    title: "The Pornographer Diaries",
+    author: "Danny King",
+    year: "2004",
+    publisher: "Consortium",
+    imageLinkS: "http://images.amazon.com/images/P/1852428619.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1852428619.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1852428619.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1845170423',
-    title: 'Cocktail Classics',
-    author: 'David Biggs',
-    year: '2004',
-    publisher: 'Connaught',
-    imageLinkS: 'http://images.amazon.com/images/P/1845170423.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1845170423.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1845170423.01.LZZZZZZZ.jpg'
+    isbn: "1845170423",
+    title: "Cocktail Classics",
+    author: "David Biggs",
+    year: "2004",
+    publisher: "Connaught",
+    imageLinkS: "http://images.amazon.com/images/P/1845170423.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1845170423.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1845170423.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1842820575',
-    title: 'The Golden Menagerie',
-    author: 'Allan Cameron',
-    year: '2004',
-    publisher: 'Luath Press',
-    imageLinkS: 'http://images.amazon.com/images/P/1842820575.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1842820575.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1842820575.01.LZZZZZZZ.jpg'
+    isbn: "1842820575",
+    title: "The Golden Menagerie",
+    author: "Allan Cameron",
+    year: "2004",
+    publisher: "Luath Press",
+    imageLinkS: "http://images.amazon.com/images/P/1842820575.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1842820575.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1842820575.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: '1842552678',
-    title: 'The Book of Dead Days (Book of Dead Days S.)',
-    author: 'Marcus Sedgwick',
-    year: '2004',
+    isbn: "1842552678",
+    title: "The Book of Dead Days (Book of Dead Days S.)",
+    author: "Marcus Sedgwick",
+    year: "2004",
     publisher: "Orion Children's",
-    imageLinkS: 'http://images.amazon.com/images/P/1842552678.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1842552678.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1842552678.01.LZZZZZZZ.jpg'
+    imageLinkS: "http://images.amazon.com/images/P/1842552678.01.THUMBZZZ.jpg",
+    imageLinkM: "http://images.amazon.com/images/P/1842552678.01.MZZZZZZZ.jpg",
+    imageLinkL: "http://images.amazon.com/images/P/1842552678.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0195153448",
@@ -728,7 +764,7 @@ const booksData = [
     publisher: "Oxford University Press",
     imageLinkS: "http://images.amazon.com/images/P/0195153448.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0195153448.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0002005018",
@@ -738,7 +774,7 @@ const booksData = [
     publisher: "HarperFlamingo Canada",
     imageLinkS: "http://images.amazon.com/images/P/0002005018.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0002005018.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0060973129",
@@ -748,17 +784,18 @@ const booksData = [
     publisher: "HarperPerennial",
     imageLinkS: "http://images.amazon.com/images/P/0060973129.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060973129.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060973129.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0060973129.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0374157065",
-    title: "Flu: The Story of the Great Influenza Pandemic of 1918 and the Search for the Virus That Caused It",
+    title:
+      "Flu: The Story of the Great Influenza Pandemic of 1918 and the Search for the Virus That Caused It",
     author: "Gina Bari Kolata",
     year: 1999,
     publisher: "Farrar Straus Giroux",
     imageLinkS: "http://images.amazon.com/images/P/0374157065.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0374157065.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0374157065.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0374157065.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0393045218",
@@ -768,7 +805,7 @@ const booksData = [
     publisher: "W. W. Norton &amp; Company",
     imageLinkS: "http://images.amazon.com/images/P/0393045218.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0393045218.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0393045218.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0393045218.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0399135782",
@@ -778,17 +815,18 @@ const booksData = [
     publisher: "Putnam Pub Group",
     imageLinkS: "http://images.amazon.com/images/P/0399135782.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0399135782.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0399135782.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0399135782.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0425176428",
-    title: "What If?: The World's Foremost Military Historians Imagine What Might Have Been",
+    title:
+      "What If?: The World's Foremost Military Historians Imagine What Might Have Been",
     author: "Robert Cowley",
     year: 2000,
     publisher: "Berkley Publishing Group",
     imageLinkS: "http://images.amazon.com/images/P/0425176428.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0425176428.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0425176428.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0425176428.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671870432",
@@ -798,17 +836,18 @@ const booksData = [
     publisher: "Audioworks",
     imageLinkS: "http://images.amazon.com/images/P/0671870432.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671870432.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671870432.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671870432.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0679425608",
-    title: "Under the Black Flag: The Romance and the Reality of Life Among the Pirates",
+    title:
+      "Under the Black Flag: The Romance and the Reality of Life Among the Pirates",
     author: "David Cordingly",
     year: 1996,
     publisher: "Random House",
     imageLinkS: "http://images.amazon.com/images/P/0679425608.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0679425608.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0679425608.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0679425608.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "074322678X",
@@ -818,7 +857,7 @@ const booksData = [
     publisher: "Scribner",
     imageLinkS: "http://images.amazon.com/images/P/074322678X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/074322678X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/074322678X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/074322678X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0771074670",
@@ -828,17 +867,18 @@ const booksData = [
     publisher: "Emblem Editions",
     imageLinkS: "http://images.amazon.com/images/P/0771074670.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0771074670.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0771074670.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0771074670.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "080652121X",
-    title: "Hitler's Secret Bankers: The Myth of Swiss Neutrality During the Holocaust",
+    title:
+      "Hitler's Secret Bankers: The Myth of Swiss Neutrality During the Holocaust",
     author: "Adam Lebor",
     year: 2000,
     publisher: "Citadel Press",
     imageLinkS: "http://images.amazon.com/images/P/080652121X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/080652121X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/080652121X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/080652121X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0887841740",
@@ -848,7 +888,7 @@ const booksData = [
     publisher: "House of Anansi Press",
     imageLinkS: "http://images.amazon.com/images/P/0887841740.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0887841740.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0887841740.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0887841740.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1552041778,
@@ -858,17 +898,18 @@ const booksData = [
     publisher: "Mira Books",
     imageLinkS: "http://images.amazon.com/images/P/1552041778.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1552041778.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1552041778.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1552041778.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1558746218,
-    title: "A Second Chicken Soup for the Woman's Soul (Chicken Soup for the Soul Series)",
+    title:
+      "A Second Chicken Soup for the Woman's Soul (Chicken Soup for the Soul Series)",
     author: "Jack Canfield",
     year: 1998,
     publisher: "Health Communications",
     imageLinkS: "http://images.amazon.com/images/P/1558746218.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1558746218.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1558746218.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1558746218.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1567407781,
@@ -878,7 +919,7 @@ const booksData = [
     publisher: "Brilliance Audio - Trade",
     imageLinkS: "http://images.amazon.com/images/P/1567407781.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1567407781.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1567407781.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1567407781.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1575663937,
@@ -888,7 +929,7 @@ const booksData = [
     publisher: "Kensington Publishing Corp.",
     imageLinkS: "http://images.amazon.com/images/P/1575663937.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1575663937.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1575663937.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1575663937.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1881320189,
@@ -898,7 +939,7 @@ const booksData = [
     publisher: "River City Pub",
     imageLinkS: "http://images.amazon.com/images/P/1881320189.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1881320189.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1881320189.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1881320189.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0440234743",
@@ -908,7 +949,7 @@ const booksData = [
     publisher: "Dell",
     imageLinkS: "http://images.amazon.com/images/P/0440234743.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0440234743.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0440234743.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0440234743.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0452264464",
@@ -918,17 +959,18 @@ const booksData = [
     publisher: "Plume",
     imageLinkS: "http://images.amazon.com/images/P/0452264464.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0452264464.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0452264464.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0452264464.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0609804618",
-    title: "Our Dumb Century: The Onion Presents 100 Years of Headlines from America's Finest News Source",
+    title:
+      "Our Dumb Century: The Onion Presents 100 Years of Headlines from America's Finest News Source",
     author: "The Onion",
     year: 1999,
     publisher: "Three Rivers Press",
     imageLinkS: "http://images.amazon.com/images/P/0609804618.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0609804618.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0609804618.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0609804618.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1841721522,
@@ -938,27 +980,29 @@ const booksData = [
     publisher: "Ryland Peters &amp; Small Ltd",
     imageLinkS: "http://images.amazon.com/images/P/1841721522.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1841721522.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1841721522.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1841721522.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1879384493,
-    title: "If I'd Known Then What I Know Now: Why Not Learn from the Mistakes of Others? : You Can't Afford to Make Them All Yourself",
+    title:
+      "If I'd Known Then What I Know Now: Why Not Learn from the Mistakes of Others? : You Can't Afford to Make Them All Yourself",
     author: "J. R. Parrish",
     year: 2003,
     publisher: "Cypress House",
     imageLinkS: "http://images.amazon.com/images/P/1879384493.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1879384493.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1879384493.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1879384493.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0061076031",
-    title: "Mary-Kate &amp; Ashley Switching Goals (Mary-Kate and Ashley Starring in)",
+    title:
+      "Mary-Kate &amp; Ashley Switching Goals (Mary-Kate and Ashley Starring in)",
     author: "Mary-Kate &amp; Ashley Olsen",
     year: 2000,
     publisher: "HarperEntertainment",
     imageLinkS: "http://images.amazon.com/images/P/0061076031.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0061076031.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0061076031.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0061076031.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0439095026",
@@ -968,7 +1012,7 @@ const booksData = [
     publisher: "Scholastic",
     imageLinkS: "http://images.amazon.com/images/P/0439095026.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0439095026.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0439095026.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0439095026.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0689821166",
@@ -978,7 +1022,7 @@ const booksData = [
     publisher: "Aladdin",
     imageLinkS: "http://images.amazon.com/images/P/0689821166.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0689821166.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0689821166.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0689821166.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0971880107",
@@ -988,7 +1032,7 @@ const booksData = [
     publisher: "Too Far",
     imageLinkS: "http://images.amazon.com/images/P/0971880107.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0971880107.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0971880107.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0971880107.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0345402871",
@@ -998,7 +1042,7 @@ const booksData = [
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0345402871.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0345402871.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0345402871.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0345402871.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0345417623",
@@ -1008,7 +1052,7 @@ const booksData = [
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0345417623.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0345417623.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0345417623.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0345417623.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0684823802",
@@ -1018,7 +1062,7 @@ const booksData = [
     publisher: "Scribner",
     imageLinkS: "http://images.amazon.com/images/P/0684823802.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0684823802.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0684823802.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0684823802.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0375759778",
@@ -1028,7 +1072,7 @@ const booksData = [
     publisher: "Random House Trade Paperbacks",
     imageLinkS: "http://images.amazon.com/images/P/0375759778.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0375759778.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0375759778.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0375759778.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0425163091",
@@ -1038,7 +1082,7 @@ const booksData = [
     publisher: "Berkley Publishing Group",
     imageLinkS: "http://images.amazon.com/images/P/0425163091.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0425163091.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0425163091.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0425163091.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3404921038,
@@ -1048,7 +1092,7 @@ const booksData = [
     publisher: "L?¼bbe",
     imageLinkS: "http://images.amazon.com/images/P/3404921038.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3404921038.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3404921038.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3404921038.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3442353866,
@@ -1058,7 +1102,7 @@ const booksData = [
     publisher: "Goldmann",
     imageLinkS: "http://images.amazon.com/images/P/3442353866.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3442353866.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3442353866.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3442353866.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3442410665,
@@ -1068,7 +1112,7 @@ const booksData = [
     publisher: "Goldmann",
     imageLinkS: "http://images.amazon.com/images/P/3442410665.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3442410665.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3442410665.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3442410665.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3442446937,
@@ -1078,7 +1122,7 @@ const booksData = [
     publisher: "Goldmann",
     imageLinkS: "http://images.amazon.com/images/P/3442446937.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3442446937.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3442446937.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3442446937.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0375406328",
@@ -1088,7 +1132,7 @@ const booksData = [
     publisher: "Alfred A. Knopf",
     imageLinkS: "http://images.amazon.com/images/P/0375406328.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0375406328.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0375406328.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0375406328.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0446310786",
@@ -1098,7 +1142,7 @@ const booksData = [
     publisher: "Little Brown &amp; Company",
     imageLinkS: "http://images.amazon.com/images/P/0446310786.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0446310786.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0446310786.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0446310786.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0449005615",
@@ -1108,7 +1152,7 @@ const booksData = [
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0449005615.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0449005615.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0449005615.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0449005615.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0060168013",
@@ -1118,7 +1162,7 @@ const booksData = [
     publisher: "Harpercollins",
     imageLinkS: "http://images.amazon.com/images/P/0060168013.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060168013.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060168013.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0060168013.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "038078243X",
@@ -1128,7 +1172,7 @@ const booksData = [
     publisher: "Avon",
     imageLinkS: "http://images.amazon.com/images/P/038078243X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/038078243X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/038078243X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/038078243X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "055321215X",
@@ -1138,7 +1182,7 @@ const booksData = [
     publisher: "Bantam",
     imageLinkS: "http://images.amazon.com/images/P/055321215X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/055321215X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/055321215X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/055321215X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "067176537X",
@@ -1148,7 +1192,7 @@ const booksData = [
     publisher: "Fireside",
     imageLinkS: "http://images.amazon.com/images/P/067176537X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/067176537X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/067176537X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/067176537X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0061099686",
@@ -1158,7 +1202,7 @@ const booksData = [
     publisher: "HarperTorch",
     imageLinkS: "http://images.amazon.com/images/P/0061099686.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0061099686.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0061099686.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0061099686.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0553582909",
@@ -1168,7 +1212,7 @@ const booksData = [
     publisher: "Bantam Books",
     imageLinkS: "http://images.amazon.com/images/P/0553582909.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0553582909.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0553582909.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0553582909.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671888587",
@@ -1178,7 +1222,7 @@ const booksData = [
     publisher: "Pocket",
     imageLinkS: "http://images.amazon.com/images/P/0671888587.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671888587.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671888587.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671888587.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0553582747",
@@ -1188,7 +1232,7 @@ const booksData = [
     publisher: "Bantam Books",
     imageLinkS: "http://images.amazon.com/images/P/0553582747.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0553582747.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0553582747.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0553582747.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0425182908",
@@ -1198,7 +1242,7 @@ const booksData = [
     publisher: "Berkley Publishing Group",
     imageLinkS: "http://images.amazon.com/images/P/0425182908.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0425182908.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0425182908.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0425182908.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "042518630X",
@@ -1208,7 +1252,7 @@ const booksData = [
     publisher: "Berkley Publishing Group",
     imageLinkS: "http://images.amazon.com/images/P/042518630X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/042518630X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/042518630X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/042518630X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0440223571",
@@ -1218,7 +1262,7 @@ const booksData = [
     publisher: "Dell",
     imageLinkS: "http://images.amazon.com/images/P/0440223571.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0440223571.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0440223571.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0440223571.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0812523873",
@@ -1228,7 +1272,7 @@ const booksData = [
     publisher: "Tor Books",
     imageLinkS: "http://images.amazon.com/images/P/0812523873.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0812523873.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0812523873.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0812523873.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0842342702",
@@ -1238,7 +1282,7 @@ const booksData = [
     publisher: "Tyndale House Publishers",
     imageLinkS: "http://images.amazon.com/images/P/0842342702.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0842342702.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0842342702.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0842342702.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0440225701",
@@ -1248,7 +1292,7 @@ const booksData = [
     publisher: "Dell",
     imageLinkS: "http://images.amazon.com/images/P/0440225701.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0440225701.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0440225701.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0440225701.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0060914068",
@@ -1258,7 +1302,7 @@ const booksData = [
     publisher: "HarperCollins Publishers",
     imageLinkS: "http://images.amazon.com/images/P/0060914068.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060914068.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060914068.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0060914068.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0156047624",
@@ -1268,7 +1312,7 @@ const booksData = [
     publisher: "Harvest Books",
     imageLinkS: "http://images.amazon.com/images/P/0156047624.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0156047624.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0156047624.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0156047624.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0245542957",
@@ -1278,7 +1322,7 @@ const booksData = [
     publisher: "Chambers Harrap Publishers Ltd",
     imageLinkS: "http://images.amazon.com/images/P/0245542957.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0245542957.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0245542957.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0245542957.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0380715899",
@@ -1288,7 +1332,7 @@ const booksData = [
     publisher: "Avon Books",
     imageLinkS: "http://images.amazon.com/images/P/0380715899.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0380715899.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0380715899.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0380715899.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0553280333",
@@ -1298,7 +1342,7 @@ const booksData = [
     publisher: "Bantam",
     imageLinkS: "http://images.amazon.com/images/P/0553280333.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0553280333.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0553280333.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0553280333.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0961769947",
@@ -1308,7 +1352,7 @@ const booksData = [
     publisher: "Speed Graphics",
     imageLinkS: "http://images.amazon.com/images/P/0961769947.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0961769947.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0961769947.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0961769947.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0964778319",
@@ -1318,7 +1362,7 @@ const booksData = [
     publisher: "Sunflower Press",
     imageLinkS: "http://images.amazon.com/images/P/0964778319.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0964778319.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0964778319.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0964778319.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671623249",
@@ -1328,7 +1372,7 @@ const booksData = [
     publisher: "Pocket",
     imageLinkS: "http://images.amazon.com/images/P/0671623249.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671623249.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671623249.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671623249.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0679810307",
@@ -1338,7 +1382,7 @@ const booksData = [
     publisher: "Laurel Leaf",
     imageLinkS: "http://images.amazon.com/images/P/0679810307.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0679810307.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0679810307.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0679810307.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0679865691",
@@ -1348,7 +1392,7 @@ const booksData = [
     publisher: "Laurel Leaf",
     imageLinkS: "http://images.amazon.com/images/P/0679865691.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0679865691.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0679865691.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0679865691.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 2070423204,
@@ -1358,17 +1402,18 @@ const booksData = [
     publisher: "Gallimard",
     imageLinkS: "http://images.amazon.com/images/P/2070423204.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/2070423204.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/2070423204.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/2070423204.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0345260317",
-    title: "The Dragons of Eden: Speculations on the Evolution of Human Intelligence",
+    title:
+      "The Dragons of Eden: Speculations on the Evolution of Human Intelligence",
     author: "Carl Sagan",
     year: 1978,
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0345260317.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0345260317.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0345260317.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0345260317.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0394743741",
@@ -1378,7 +1423,7 @@ const booksData = [
     publisher: "Random House",
     imageLinkS: "http://images.amazon.com/images/P/0394743741.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0394743741.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0394743741.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0394743741.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "042511774X",
@@ -1388,7 +1433,7 @@ const booksData = [
     publisher: "Berkley Publishing Group",
     imageLinkS: "http://images.amazon.com/images/P/042511774X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/042511774X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/042511774X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/042511774X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0804106304",
@@ -1398,7 +1443,7 @@ const booksData = [
     publisher: "Prentice Hall (K-12)",
     imageLinkS: "http://images.amazon.com/images/P/0804106304.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0804106304.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0804106304.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0804106304.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1853262404,
@@ -1408,7 +1453,7 @@ const booksData = [
     publisher: "NTC/Contemporary Publishing Company",
     imageLinkS: "http://images.amazon.com/images/P/1853262404.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1853262404.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1853262404.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1853262404.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0312970242",
@@ -1418,7 +1463,7 @@ const booksData = [
     publisher: "St. Martin's Press",
     imageLinkS: "http://images.amazon.com/images/P/0312970242.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0312970242.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0312970242.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0312970242.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1853260053,
@@ -1428,7 +1473,7 @@ const booksData = [
     publisher: "NTC/Contemporary Publishing Company",
     imageLinkS: "http://images.amazon.com/images/P/1853260053.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1853260053.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1853260053.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1853260053.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1414035004,
@@ -1438,7 +1483,7 @@ const booksData = [
     publisher: "1stBooks Library",
     imageLinkS: "http://images.amazon.com/images/P/1414035004.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1414035004.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1414035004.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1414035004.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0060938412",
@@ -1448,7 +1493,7 @@ const booksData = [
     publisher: "Avon Trade",
     imageLinkS: "http://images.amazon.com/images/P/0060938412.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060938412.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060938412.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0060938412.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0140067477",
@@ -1458,7 +1503,7 @@ const booksData = [
     publisher: "Penguin Books",
     imageLinkS: "http://images.amazon.com/images/P/0140067477.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0140067477.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0140067477.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0140067477.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0345465083",
@@ -1468,7 +1513,7 @@ const booksData = [
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0345465083.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0345465083.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0345465083.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0345465083.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0451625889",
@@ -1478,17 +1523,18 @@ const booksData = [
     publisher: "Signet Book",
     imageLinkS: "http://images.amazon.com/images/P/0451625889.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0451625889.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0451625889.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0451625889.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1558531025,
-    title: "Life's Little Instruction Book (Life's Little Instruction Books (Paperback))",
+    title:
+      "Life's Little Instruction Book (Life's Little Instruction Books (Paperback))",
     author: "H. Jackson Brown",
     year: 1991,
     publisher: "Thomas Nelson",
     imageLinkS: "http://images.amazon.com/images/P/1558531025.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1558531025.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1558531025.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1558531025.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0441783589",
@@ -1498,7 +1544,7 @@ const booksData = [
     publisher: "Ace Books",
     imageLinkS: "http://images.amazon.com/images/P/0441783589.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0441783589.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0441783589.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0441783589.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0394895894",
@@ -1508,7 +1554,7 @@ const booksData = [
     publisher: "Laurel Leaf",
     imageLinkS: "http://images.amazon.com/images/P/0394895894.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0394895894.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0394895894.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0394895894.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1569871213,
@@ -1518,7 +1564,7 @@ const booksData = [
     publisher: "Landoll",
     imageLinkS: "http://images.amazon.com/images/P/1569871213.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1569871213.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1569871213.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1569871213.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0375410538",
@@ -1528,7 +1574,7 @@ const booksData = [
     publisher: "Knopf",
     imageLinkS: "http://images.amazon.com/images/P/0375410538.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0375410538.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0375410538.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0375410538.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0553802488",
@@ -1538,7 +1584,7 @@ const booksData = [
     publisher: "Bantam",
     imageLinkS: "http://images.amazon.com/images/P/0553802488.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0553802488.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0553802488.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0553802488.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0966986105",
@@ -1548,7 +1594,7 @@ const booksData = [
     publisher: "Andrew Scott Publishers",
     imageLinkS: "http://images.amazon.com/images/P/0966986105.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0966986105.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0966986105.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0966986105.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "087113375X",
@@ -1558,7 +1604,7 @@ const booksData = [
     publisher: "Atlantic Monthly Press",
     imageLinkS: "http://images.amazon.com/images/P/087113375X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/087113375X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/087113375X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/087113375X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0340767936",
@@ -1568,7 +1614,7 @@ const booksData = [
     publisher: "Hodder &amp; Stoughton General Division",
     imageLinkS: "http://images.amazon.com/images/P/0340767936.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0340767936.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0340767936.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0340767936.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0743403843",
@@ -1578,17 +1624,18 @@ const booksData = [
     publisher: "Simon &amp; Schuster (Trade Division)",
     imageLinkS: "http://images.amazon.com/images/P/0743403843.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0743403843.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0743403843.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0743403843.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0060930365",
-    title: "My First Cousin Once Removed: Money, Madness, and the Family of Robert Lowell",
+    title:
+      "My First Cousin Once Removed: Money, Madness, and the Family of Robert Lowell",
     author: "Sarah Payne Stuart",
     year: 1999,
     publisher: "Perennial",
     imageLinkS: "http://images.amazon.com/images/P/0060930365.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060930365.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060930365.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0060930365.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0553062042",
@@ -1598,7 +1645,7 @@ const booksData = [
     publisher: "Bantam Doubleday Dell",
     imageLinkS: "http://images.amazon.com/images/P/0553062042.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0553062042.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0553062042.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0553062042.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0316769487",
@@ -1608,37 +1655,40 @@ const booksData = [
     publisher: "Little, Brown",
     imageLinkS: "http://images.amazon.com/images/P/0316769487.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0316769487.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0316769487.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0316769487.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 8445071408,
-    title: "El Senor De Los Anillos: LA Comunidad Del Anillo (Lord of the Rings (Spanish))",
+    title:
+      "El Senor De Los Anillos: LA Comunidad Del Anillo (Lord of the Rings (Spanish))",
     author: "J. R. R. Tolkien",
     year: 2001,
     publisher: "Minotauro",
     imageLinkS: "http://images.amazon.com/images/P/8445071408.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/8445071408.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/8445071408.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/8445071408.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 8445071769,
-    title: "El Senor De Los Anillos: Las DOS Torres (Lord of the Rings (Paperback))",
+    title:
+      "El Senor De Los Anillos: Las DOS Torres (Lord of the Rings (Paperback))",
     author: "J. R. R. Tolkien",
     year: 2001,
     publisher: "Minotauro",
     imageLinkS: "http://images.amazon.com/images/P/8445071769.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/8445071769.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/8445071769.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/8445071769.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 8445071777,
-    title: "El Senor De Los Anillos: El Retorno Del Rey (Tolkien, J. R. R. Lord of the Rings. 3.)",
+    title:
+      "El Senor De Los Anillos: El Retorno Del Rey (Tolkien, J. R. R. Lord of the Rings. 3.)",
     author: "J. R. R. Tolkien",
     year: 2001,
     publisher: "Distribooks",
     imageLinkS: "http://images.amazon.com/images/P/8445071777.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/8445071777.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/8445071777.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/8445071777.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0679429220",
@@ -1648,7 +1698,7 @@ const booksData = [
     publisher: "Random House",
     imageLinkS: "http://images.amazon.com/images/P/0679429220.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0679429220.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0679429220.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0679429220.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671867156",
@@ -1658,7 +1708,7 @@ const booksData = [
     publisher: "Pocket",
     imageLinkS: "http://images.amazon.com/images/P/0671867156.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671867156.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671867156.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671867156.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0312252617",
@@ -1668,7 +1718,7 @@ const booksData = [
     publisher: "St. Martin's Press",
     imageLinkS: "http://images.amazon.com/images/P/0312252617.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0312252617.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0312252617.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0312252617.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0312261594",
@@ -1678,7 +1728,7 @@ const booksData = [
     publisher: "St. Martin's Press",
     imageLinkS: "http://images.amazon.com/images/P/0312261594.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0312261594.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0312261594.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0312261594.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0316748641",
@@ -1688,7 +1738,7 @@ const booksData = [
     publisher: "Back Bay Books",
     imageLinkS: "http://images.amazon.com/images/P/0316748641.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0316748641.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0316748641.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0316748641.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0316973742",
@@ -1698,7 +1748,7 @@ const booksData = [
     publisher: "Back Bay Books",
     imageLinkS: "http://images.amazon.com/images/P/0316973742.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0316973742.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0316973742.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0316973742.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0385235941",
@@ -1708,17 +1758,18 @@ const booksData = [
     publisher: "Doubleday Books",
     imageLinkS: "http://images.amazon.com/images/P/0385235941.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0385235941.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0385235941.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0385235941.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0446677450",
-    title: "Rich Dad, Poor Dad: What the Rich Teach Their Kids About Money--That the Poor and Middle Class Do Not!",
+    title:
+      "Rich Dad, Poor Dad: What the Rich Teach Their Kids About Money--That the Poor and Middle Class Do Not!",
     author: "Robert T. Kiyosaki",
     year: 2000,
     publisher: "Warner Books",
     imageLinkS: "http://images.amazon.com/images/P/0446677450.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0446677450.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0446677450.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0446677450.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0451166892",
@@ -1728,7 +1779,7 @@ const booksData = [
     publisher: "Signet Book",
     imageLinkS: "http://images.amazon.com/images/P/0451166892.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0451166892.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0451166892.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0451166892.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0553347594",
@@ -1738,17 +1789,18 @@ const booksData = [
     publisher: "Bantam",
     imageLinkS: "http://images.amazon.com/images/P/0553347594.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0553347594.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0553347594.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0553347594.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671621009",
-    title: "Creating Wealth : Retire in Ten Years Using Allen's Seven Principles of Wealth!",
+    title:
+      "Creating Wealth : Retire in Ten Years Using Allen's Seven Principles of Wealth!",
     author: "Robert G. Allen",
     year: 1986,
     publisher: "Fireside",
     imageLinkS: "http://images.amazon.com/images/P/0671621009.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671621009.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671621009.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671621009.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "067976397X",
@@ -1758,17 +1810,18 @@ const booksData = [
     publisher: "Vintage",
     imageLinkS: "http://images.amazon.com/images/P/067976397X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/067976397X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/067976397X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/067976397X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0684822733",
-    title: "Love, Miracles, and Animal Healing : A heartwarming look at the spiritual bond between animals and humans",
+    title:
+      "Love, Miracles, and Animal Healing : A heartwarming look at the spiritual bond between animals and humans",
     author: "Pam Proctor",
     year: 1996,
     publisher: "Fireside",
     imageLinkS: "http://images.amazon.com/images/P/0684822733.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0684822733.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0684822733.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0684822733.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0786868716",
@@ -1778,7 +1831,7 @@ const booksData = [
     publisher: "Hyperion",
     imageLinkS: "http://images.amazon.com/images/P/0786868716.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0786868716.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0786868716.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0786868716.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 8472238822,
@@ -1788,7 +1841,7 @@ const booksData = [
     publisher: "Tusquets",
     imageLinkS: "http://images.amazon.com/images/P/8472238822.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/8472238822.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/8472238822.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/8472238822.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671864769",
@@ -1798,7 +1851,7 @@ const booksData = [
     publisher: "Star Trek",
     imageLinkS: "http://images.amazon.com/images/P/0671864769.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671864769.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671864769.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671864769.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671521519",
@@ -1808,17 +1861,18 @@ const booksData = [
     publisher: "Pocket",
     imageLinkS: "http://images.amazon.com/images/P/0671521519.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671521519.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671521519.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671521519.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0440222303",
-    title: "The Touch of Your Shadow, the Whisper of Your Name (Babylon 5, Book 5)",
+    title:
+      "The Touch of Your Shadow, the Whisper of Your Name (Babylon 5, Book 5)",
     author: "Neal Barrett Jr.",
     year: 1996,
     publisher: "Dell",
     imageLinkS: "http://images.amazon.com/images/P/0440222303.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0440222303.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0440222303.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0440222303.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0312953453",
@@ -1828,7 +1882,7 @@ const booksData = [
     publisher: "St. Martin's Press",
     imageLinkS: "http://images.amazon.com/images/P/0312953453.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0312953453.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0312953453.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0312953453.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0446608653",
@@ -1838,7 +1892,7 @@ const booksData = [
     publisher: "Warner Books",
     imageLinkS: "http://images.amazon.com/images/P/0446608653.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0446608653.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0446608653.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0446608653.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0446612545",
@@ -1848,7 +1902,7 @@ const booksData = [
     publisher: "Warner Books",
     imageLinkS: "http://images.amazon.com/images/P/0446612545.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0446612545.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0446612545.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0446612545.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0446612618",
@@ -1858,7 +1912,7 @@ const booksData = [
     publisher: "Warner Books",
     imageLinkS: "http://images.amazon.com/images/P/0446612618.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0446612618.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0446612618.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0446612618.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0451208080",
@@ -1868,7 +1922,7 @@ const booksData = [
     publisher: "Signet Book",
     imageLinkS: "http://images.amazon.com/images/P/0451208080.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0451208080.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0451208080.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0451208080.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0553584383",
@@ -1878,7 +1932,7 @@ const booksData = [
     publisher: "Bantam Books",
     imageLinkS: "http://images.amazon.com/images/P/0553584383.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0553584383.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0553584383.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0553584383.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671027360",
@@ -1888,7 +1942,7 @@ const booksData = [
     publisher: "Pocket Star",
     imageLinkS: "http://images.amazon.com/images/P/0671027360.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671027360.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671027360.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671027360.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0812575954",
@@ -1898,7 +1952,7 @@ const booksData = [
     publisher: "Tor Books (Mm)",
     imageLinkS: "http://images.amazon.com/images/P/0812575954.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0812575954.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0812575954.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0812575954.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0316735736",
@@ -1908,27 +1962,29 @@ const booksData = [
     publisher: "Back Bay Books",
     imageLinkS: "http://images.amazon.com/images/P/0316735736.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0316735736.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0316735736.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0316735736.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0743439740",
-    title: "Every Breath You Take : A True Story of Obsession, Revenge, and Murder",
+    title:
+      "Every Breath You Take : A True Story of Obsession, Revenge, and Murder",
     author: "Ann Rule",
     year: 2002,
     publisher: "Pocket",
     imageLinkS: "http://images.amazon.com/images/P/0743439740.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0743439740.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0743439740.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0743439740.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0345372700",
-    title: "If I Ever Get Back to Georgia, I'm Gonna Nail My Feet to the Ground",
+    title:
+      "If I Ever Get Back to Georgia, I'm Gonna Nail My Feet to the Ground",
     author: "LEWIS GRIZZARD",
     year: 1991,
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0345372700.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0345372700.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0345372700.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0345372700.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0380619458",
@@ -1938,7 +1994,7 @@ const booksData = [
     publisher: "Harper Mass Market Paperbacks (Mm)",
     imageLinkS: "http://images.amazon.com/images/P/0380619458.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0380619458.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0380619458.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0380619458.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0446325805",
@@ -1948,17 +2004,18 @@ const booksData = [
     publisher: "Warner Books (Mm)",
     imageLinkS: "http://images.amazon.com/images/P/0446325805.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0446325805.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0446325805.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0446325805.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0451406923",
-    title: "Goodbye, My Little Ones: The True Story of a Murderous Mother and Five Innocent Victims",
+    title:
+      "Goodbye, My Little Ones: The True Story of a Murderous Mother and Five Innocent Victims",
     author: "Charles Hickey",
     year: 1996,
     publisher: "Onyx Books",
     imageLinkS: "http://images.amazon.com/images/P/0451406923.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0451406923.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0451406923.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0451406923.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671042858",
@@ -1968,17 +2025,18 @@ const booksData = [
     publisher: "Pocket",
     imageLinkS: "http://images.amazon.com/images/P/0671042858.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671042858.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671042858.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671042858.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0743249992",
-    title: "Bringing Down the House: The Inside Story of Six M.I.T. Students Who Took Vegas for Millions",
+    title:
+      "Bringing Down the House: The Inside Story of Six M.I.T. Students Who Took Vegas for Millions",
     author: "Ben Mezrich",
     year: 2003,
     publisher: "Free Press",
     imageLinkS: "http://images.amazon.com/images/P/0743249992.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0743249992.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0743249992.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0743249992.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0840734530",
@@ -1988,7 +2046,7 @@ const booksData = [
     publisher: "Thomas Nelson Inc",
     imageLinkS: "http://images.amazon.com/images/P/0840734530.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0840734530.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0840734530.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0840734530.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0425184226",
@@ -1998,17 +2056,18 @@ const booksData = [
     publisher: "Berkley Publishing Group",
     imageLinkS: "http://images.amazon.com/images/P/0425184226.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0425184226.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0425184226.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0425184226.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0375500766",
-    title: "Care Packages : Letters to Christopher Reeve from Strangers and Other Friends",
+    title:
+      "Care Packages : Letters to Christopher Reeve from Strangers and Other Friends",
     author: "DANA REEVE",
     year: 1999,
     publisher: "Random House",
     imageLinkS: "http://images.amazon.com/images/P/0375500766.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0375500766.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0375500766.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0375500766.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 9724119378,
@@ -2018,7 +2077,7 @@ const booksData = [
     publisher: "Edicoes Asa",
     imageLinkS: "http://images.amazon.com/images/P/9724119378.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/9724119378.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/9724119378.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/9724119378.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0451205197",
@@ -2028,7 +2087,7 @@ const booksData = [
     publisher: "Signet Book",
     imageLinkS: "http://images.amazon.com/images/P/0451205197.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0451205197.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0451205197.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0451205197.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0060929790",
@@ -2038,7 +2097,7 @@ const booksData = [
     publisher: "Perennial",
     imageLinkS: "http://images.amazon.com/images/P/0060929790.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060929790.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060929790.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0060929790.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0060976845",
@@ -2048,7 +2107,7 @@ const booksData = [
     publisher: "Perennial",
     imageLinkS: "http://images.amazon.com/images/P/0060976845.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060976845.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060976845.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0060976845.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0061099325",
@@ -2058,7 +2117,7 @@ const booksData = [
     publisher: "HarperTorch",
     imageLinkS: "http://images.amazon.com/images/P/0061099325.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0061099325.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0061099325.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0061099325.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671004573",
@@ -2068,7 +2127,7 @@ const booksData = [
     publisher: "Pocket",
     imageLinkS: "http://images.amazon.com/images/P/0671004573.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671004573.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671004573.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671004573.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0446601640",
@@ -2078,17 +2137,18 @@ const booksData = [
     publisher: "Warner Books",
     imageLinkS: "http://images.amazon.com/images/P/0446601640.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0446601640.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0446601640.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0446601640.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0330484516",
-    title: "Twenty Minute Retreats: Revive Your Spirits in Just Minutes a Day (A Pan Self-discovery Title)",
+    title:
+      "Twenty Minute Retreats: Revive Your Spirits in Just Minutes a Day (A Pan Self-discovery Title)",
     author: "Rachel Harris",
     year: 2001,
     publisher: "Pan Macmillan",
     imageLinkS: "http://images.amazon.com/images/P/0330484516.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0330484516.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0330484516.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0330484516.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "038572179X",
@@ -2098,7 +2158,7 @@ const booksData = [
     publisher: "Anchor",
     imageLinkS: "http://images.amazon.com/images/P/038572179X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/038572179X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/038572179X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/038572179X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0393020371",
@@ -2108,7 +2168,7 @@ const booksData = [
     publisher: "W.W. Norton &amp; Company",
     imageLinkS: "http://images.amazon.com/images/P/0393020371.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0393020371.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0393020371.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0393020371.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1900850303,
@@ -2118,7 +2178,7 @@ const booksData = [
     publisher: "Arcadia Books",
     imageLinkS: "http://images.amazon.com/images/P/1900850303.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1900850303.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1900850303.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1900850303.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1903019699,
@@ -2128,7 +2188,7 @@ const booksData = [
     publisher: "John Hunt Publishing, Ltd.",
     imageLinkS: "http://images.amazon.com/images/P/1903019699.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1903019699.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1903019699.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1903019699.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0345425294",
@@ -2138,7 +2198,7 @@ const booksData = [
     publisher: "Fawcett Books",
     imageLinkS: "http://images.amazon.com/images/P/0345425294.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0345425294.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0345425294.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0345425294.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0451410319",
@@ -2148,7 +2208,7 @@ const booksData = [
     publisher: "Onyx Books",
     imageLinkS: "http://images.amazon.com/images/P/0451410319.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0451410319.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0451410319.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0451410319.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0553583468",
@@ -2158,7 +2218,7 @@ const booksData = [
     publisher: "Bantam Books",
     imageLinkS: "http://images.amazon.com/images/P/0553583468.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0553583468.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0553583468.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0553583468.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 8420639133,
@@ -2168,7 +2228,7 @@ const booksData = [
     publisher: "Alianza",
     imageLinkS: "http://images.amazon.com/images/P/8420639133.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/8420639133.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/8420639133.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/8420639133.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 8476409419,
@@ -2178,7 +2238,7 @@ const booksData = [
     publisher: "Downtown Book Center",
     imageLinkS: "http://images.amazon.com/images/P/8476409419.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/8476409419.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/8476409419.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/8476409419.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0380778556",
@@ -2188,7 +2248,7 @@ const booksData = [
     publisher: "Avon",
     imageLinkS: "http://images.amazon.com/images/P/0380778556.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0380778556.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0380778556.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0380778556.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0451525221",
@@ -2198,7 +2258,7 @@ const booksData = [
     publisher: "Signet Book",
     imageLinkS: "http://images.amazon.com/images/P/0451525221.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0451525221.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0451525221.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0451525221.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0002740230",
@@ -2208,7 +2268,7 @@ const booksData = [
     publisher: "Trafalgar Square",
     imageLinkS: "http://images.amazon.com/images/P/0002740230.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0002740230.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0002740230.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0002740230.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0385336772",
@@ -2218,7 +2278,7 @@ const booksData = [
     publisher: "Delta",
     imageLinkS: "http://images.amazon.com/images/P/0385336772.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0385336772.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0385336772.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0385336772.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0440949424",
@@ -2228,7 +2288,7 @@ const booksData = [
     publisher: "Laure Leaf",
     imageLinkS: "http://images.amazon.com/images/P/0440949424.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0440949424.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0440949424.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0440949424.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0505524996",
@@ -2238,7 +2298,7 @@ const booksData = [
     publisher: "Love Spell",
     imageLinkS: "http://images.amazon.com/images/P/0505524996.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0505524996.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0505524996.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0505524996.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0140252800",
@@ -2248,7 +2308,7 @@ const booksData = [
     publisher: "Penguin Books Ltd",
     imageLinkS: "http://images.amazon.com/images/P/0140252800.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0140252800.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0140252800.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0140252800.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0451452755",
@@ -2258,7 +2318,7 @@ const booksData = [
     publisher: "Roc",
     imageLinkS: "http://images.amazon.com/images/P/0451452755.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0451452755.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0451452755.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0451452755.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0812575482",
@@ -2268,7 +2328,7 @@ const booksData = [
     publisher: "Tor Fantasy",
     imageLinkS: "http://images.amazon.com/images/P/0812575482.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0812575482.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0812575482.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0812575482.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "044651747X",
@@ -2278,7 +2338,7 @@ const booksData = [
     publisher: "Warner Books",
     imageLinkS: "http://images.amazon.com/images/P/044651747X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/044651747X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/044651747X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/044651747X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0060801263",
@@ -2288,17 +2348,18 @@ const booksData = [
     publisher: "Harpercollins Publisher",
     imageLinkS: "http://images.amazon.com/images/P/0060801263.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060801263.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060801263.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0060801263.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0061030147",
-    title: "Cybill Disobedience: How I Survived Beauty Pageants, Elvis, Sex, Bruce Willis, Lies, Marriage, Motherhood, Hollywood, and the Irrepressible Urge to Say What I Think",
+    title:
+      "Cybill Disobedience: How I Survived Beauty Pageants, Elvis, Sex, Bruce Willis, Lies, Marriage, Motherhood, Hollywood, and the Irrepressible Urge to Say What I Think",
     author: "Cybill Shepherd",
     year: 2001,
     publisher: "Avon Books",
     imageLinkS: "http://images.amazon.com/images/P/0061030147.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0061030147.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0061030147.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0061030147.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0140250964",
@@ -2308,7 +2369,7 @@ const booksData = [
     publisher: "Penguin Books",
     imageLinkS: "http://images.amazon.com/images/P/0140250964.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0140250964.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0140250964.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0140250964.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0446527165",
@@ -2318,7 +2379,7 @@ const booksData = [
     publisher: "Warner Books",
     imageLinkS: "http://images.amazon.com/images/P/0446527165.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0446527165.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0446527165.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0446527165.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671461494",
@@ -2328,7 +2389,7 @@ const booksData = [
     publisher: "Pocket",
     imageLinkS: "http://images.amazon.com/images/P/0671461494.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671461494.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671461494.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671461494.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0385337639",
@@ -2338,7 +2399,7 @@ const booksData = [
     publisher: "Delta",
     imageLinkS: "http://images.amazon.com/images/P/0385337639.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0385337639.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0385337639.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0385337639.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "039575514X",
@@ -2348,7 +2409,7 @@ const booksData = [
     publisher: "Mariner Books",
     imageLinkS: "http://images.amazon.com/images/P/039575514X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/039575514X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/039575514X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/039575514X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0451206673",
@@ -2358,7 +2419,7 @@ const booksData = [
     publisher: "Signet Book",
     imageLinkS: "http://images.amazon.com/images/P/0451206673.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0451206673.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0451206673.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0451206673.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0330332775",
@@ -2368,7 +2429,7 @@ const booksData = [
     publisher: "Picador (UK)",
     imageLinkS: "http://images.amazon.com/images/P/0330332775.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0330332775.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0330332775.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0330332775.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0486284735",
@@ -2378,7 +2439,8 @@ const booksData = [
     publisher: "Dover Publications",
     imageLinkS: "http://images.amazon.com/images/P/0486284735.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0486284735.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0486284735.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0486284735.01.LZZZZZZZ.jpg",
+    isFeatured: true,
   },
   {
     isbn: "0671021745",
@@ -2388,7 +2450,7 @@ const booksData = [
     publisher: "Aladdin",
     imageLinkS: "http://images.amazon.com/images/P/0671021745.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671021745.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671021745.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671021745.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671047612",
@@ -2398,17 +2460,18 @@ const booksData = [
     publisher: "Aladdin",
     imageLinkS: "http://images.amazon.com/images/P/0671047612.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671047612.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671047612.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671047612.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671504282",
-    title: "LAW OF THE JUNGLE (HARDY BOYS CASE FILE 105) : LAW OF THE JUNGLE (Hardy Boys, The)",
+    title:
+      "LAW OF THE JUNGLE (HARDY BOYS CASE FILE 105) : LAW OF THE JUNGLE (Hardy Boys, The)",
     author: "Franklin W. Dixon",
     year: 1995,
     publisher: "Simon Pulse",
     imageLinkS: "http://images.amazon.com/images/P/0671504282.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671504282.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671504282.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671504282.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0399138684",
@@ -2418,7 +2481,7 @@ const booksData = [
     publisher: "Putnam Pub Group",
     imageLinkS: "http://images.amazon.com/images/P/0399138684.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0399138684.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0399138684.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0399138684.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0785263292",
@@ -2428,17 +2491,18 @@ const booksData = [
     publisher: "Nelson Books",
     imageLinkS: "http://images.amazon.com/images/P/0785263292.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0785263292.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0785263292.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0785263292.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0830714014",
-    title: "Always Daddy's Girl: Understanding Your Father's Impact on Who You Are",
+    title:
+      "Always Daddy's Girl: Understanding Your Father's Impact on Who You Are",
     author: "H. Norman Wright",
     year: 1989,
     publisher: "Regal Books",
     imageLinkS: "http://images.amazon.com/images/P/0830714014.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0830714014.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0830714014.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0830714014.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0345354931",
@@ -2448,7 +2512,7 @@ const booksData = [
     publisher: "Del Rey Books",
     imageLinkS: "http://images.amazon.com/images/P/0345354931.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0345354931.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0345354931.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0345354931.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0553278223",
@@ -2458,7 +2522,7 @@ const booksData = [
     publisher: "Spectra",
     imageLinkS: "http://images.amazon.com/images/P/0553278223.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0553278223.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0553278223.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0553278223.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3150000335,
@@ -2468,7 +2532,7 @@ const booksData = [
     publisher: "Philipp Reclam, Jun Verlag GmbH",
     imageLinkS: "http://images.amazon.com/images/P/3150000335.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3150000335.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3150000335.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3150000335.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3257203659,
@@ -2478,7 +2542,7 @@ const booksData = [
     publisher: "Diogenes",
     imageLinkS: "http://images.amazon.com/images/P/3257203659.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3257203659.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3257203659.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3257203659.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3257207522,
@@ -2488,7 +2552,7 @@ const booksData = [
     publisher: "Diogenes Verlag",
     imageLinkS: "http://images.amazon.com/images/P/3257207522.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3257207522.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3257207522.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3257207522.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3257208626,
@@ -2498,7 +2562,7 @@ const booksData = [
     publisher: "Distribooks Inc",
     imageLinkS: "http://images.amazon.com/images/P/3257208626.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3257208626.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3257208626.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3257208626.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3257208634,
@@ -2508,7 +2572,7 @@ const booksData = [
     publisher: "Diogenes Verlag",
     imageLinkS: "http://images.amazon.com/images/P/3257208634.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3257208634.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3257208634.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3257208634.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3257208669,
@@ -2518,7 +2582,7 @@ const booksData = [
     publisher: "Diogenes",
     imageLinkS: "http://images.amazon.com/images/P/3257208669.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3257208669.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3257208669.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3257208669.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3257210450,
@@ -2528,7 +2592,7 @@ const booksData = [
     publisher: "Diogenes Verlag",
     imageLinkS: "http://images.amazon.com/images/P/3257210450.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3257210450.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3257210450.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3257210450.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3257212054,
@@ -2538,7 +2602,7 @@ const booksData = [
     publisher: "Diogenes Verlag",
     imageLinkS: "http://images.amazon.com/images/P/3257212054.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3257212054.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3257212054.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3257212054.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3257212429,
@@ -2548,7 +2612,7 @@ const booksData = [
     publisher: "Diogenes Verlag",
     imageLinkS: "http://images.amazon.com/images/P/3257212429.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3257212429.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3257212429.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3257212429.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3257214154,
@@ -2558,7 +2622,7 @@ const booksData = [
     publisher: "Diogenes Verlag",
     imageLinkS: "http://images.amazon.com/images/P/3257214154.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3257214154.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3257214154.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3257214154.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3257216416,
@@ -2568,7 +2632,7 @@ const booksData = [
     publisher: "Diogenes Verlag",
     imageLinkS: "http://images.amazon.com/images/P/3257216416.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3257216416.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3257216416.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3257216416.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3257233051,
@@ -2578,7 +2642,7 @@ const booksData = [
     publisher: "Distribooks",
     imageLinkS: "http://images.amazon.com/images/P/3257233051.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3257233051.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3257233051.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3257233051.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "342311360X",
@@ -2588,7 +2652,7 @@ const booksData = [
     publisher: "Deutscher Taschenbuch Verlag (DTV)",
     imageLinkS: "http://images.amazon.com/images/P/342311360X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/342311360X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/342311360X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/342311360X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3423116714,
@@ -2598,17 +2662,18 @@ const booksData = [
     publisher: "Dtv",
     imageLinkS: "http://images.amazon.com/images/P/3423116714.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3423116714.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3423116714.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3423116714.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3423241489,
-    title: "Ist mein Hintern wirklich so dick? Tagebuch einer empfindsamen Frau.",
+    title:
+      "Ist mein Hintern wirklich so dick? Tagebuch einer empfindsamen Frau.",
     author: "Arabella Weir",
     year: 1998,
     publisher: "Dtv",
     imageLinkS: "http://images.amazon.com/images/P/3423241489.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3423241489.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3423241489.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3423241489.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3426605686,
@@ -2618,7 +2683,7 @@ const booksData = [
     publisher: "Droemersche Verlagsanstalt Th. Knaur Nachf., GmbH &amp; Co.",
     imageLinkS: "http://images.amazon.com/images/P/3426605686.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3426605686.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3426605686.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3426605686.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3453212150,
@@ -2628,7 +2693,7 @@ const booksData = [
     publisher: "Heyne",
     imageLinkS: "http://images.amazon.com/images/P/3453212150.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3453212150.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3453212150.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3453212150.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3462021095,
@@ -2638,7 +2703,7 @@ const booksData = [
     publisher: "Kiepenheuer &amp; Witsch",
     imageLinkS: "http://images.amazon.com/images/P/3462021095.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3462021095.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3462021095.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3462021095.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3492045642,
@@ -2648,7 +2713,7 @@ const booksData = [
     publisher: "Piper",
     imageLinkS: "http://images.amazon.com/images/P/3492045642.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3492045642.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3492045642.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3492045642.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3498020862,
@@ -2658,7 +2723,7 @@ const booksData = [
     publisher: "Rowohlt, Reinbek",
     imageLinkS: "http://images.amazon.com/images/P/3498020862.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3498020862.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3498020862.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3498020862.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3499110695,
@@ -2668,7 +2733,7 @@ const booksData = [
     publisher: "Rowohlt Tb.",
     imageLinkS: "http://images.amazon.com/images/P/3499110695.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3499110695.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3499110695.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3499110695.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3499151502,
@@ -2678,7 +2743,7 @@ const booksData = [
     publisher: "Rowohlt Tb.",
     imageLinkS: "http://images.amazon.com/images/P/3499151502.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3499151502.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3499151502.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3499151502.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3518111000,
@@ -2688,7 +2753,7 @@ const booksData = [
     publisher: "Suhrkamp",
     imageLinkS: "http://images.amazon.com/images/P/3518111000.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3518111000.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3518111000.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3518111000.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3548254268,
@@ -2698,7 +2763,7 @@ const booksData = [
     publisher: "Ullstein Tb",
     imageLinkS: "http://images.amazon.com/images/P/3548254268.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3548254268.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3548254268.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3548254268.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3570300099,
@@ -2708,7 +2773,7 @@ const booksData = [
     publisher: "Bertelsmann, M?¼nchen",
     imageLinkS: "http://images.amazon.com/images/P/3570300099.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3570300099.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3570300099.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3570300099.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 3596292646,
@@ -2718,7 +2783,7 @@ const booksData = [
     publisher: "Fischer (Tb.), Frankfurt",
     imageLinkS: "http://images.amazon.com/images/P/3596292646.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/3596292646.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/3596292646.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/3596292646.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0060977493",
@@ -2728,7 +2793,7 @@ const booksData = [
     publisher: "Perennial",
     imageLinkS: "http://images.amazon.com/images/P/0060977493.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060977493.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060977493.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0060977493.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0312872682",
@@ -2738,7 +2803,7 @@ const booksData = [
     publisher: "St Martins Pr",
     imageLinkS: "http://images.amazon.com/images/P/0312872682.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0312872682.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0312872682.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0312872682.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0316602906",
@@ -2748,7 +2813,7 @@ const booksData = [
     publisher: "Little, Brown",
     imageLinkS: "http://images.amazon.com/images/P/0316602906.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0316602906.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0316602906.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0316602906.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0316693006",
@@ -2758,7 +2823,7 @@ const booksData = [
     publisher: "Little, Brown",
     imageLinkS: "http://images.amazon.com/images/P/0316693006.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0316693006.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0316693006.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0316693006.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0345311396",
@@ -2768,7 +2833,7 @@ const booksData = [
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0345311396.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0345311396.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0345311396.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0345311396.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0345378490",
@@ -2778,7 +2843,7 @@ const booksData = [
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0345378490.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0345378490.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0345378490.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0345378490.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0345404793",
@@ -2788,7 +2853,7 @@ const booksData = [
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0345404793.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0345404793.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0345404793.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0345404793.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0345433173",
@@ -2798,7 +2863,7 @@ const booksData = [
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0345433173.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0345433173.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0345433173.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0345433173.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0375400117",
@@ -2808,7 +2873,7 @@ const booksData = [
     publisher: "Alfred A. Knopf",
     imageLinkS: "http://images.amazon.com/images/P/0375400117.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0375400117.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0375400117.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0375400117.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0375705856",
@@ -2818,7 +2883,7 @@ const booksData = [
     publisher: "Vintage",
     imageLinkS: "http://images.amazon.com/images/P/0375705856.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0375705856.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0375705856.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0375705856.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0380717018",
@@ -2828,7 +2893,7 @@ const booksData = [
     publisher: "Avon",
     imageLinkS: "http://images.amazon.com/images/P/0380717018.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0380717018.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0380717018.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0380717018.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0380718332",
@@ -2838,7 +2903,7 @@ const booksData = [
     publisher: "Avon",
     imageLinkS: "http://images.amazon.com/images/P/0380718332.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0380718332.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0380718332.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0380718332.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0380754509",
@@ -2848,7 +2913,7 @@ const booksData = [
     publisher: "Avon Books",
     imageLinkS: "http://images.amazon.com/images/P/0380754509.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0380754509.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0380754509.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0380754509.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "038076654X",
@@ -2858,7 +2923,7 @@ const booksData = [
     publisher: "Avon Trade",
     imageLinkS: "http://images.amazon.com/images/P/038076654X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/038076654X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/038076654X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/038076654X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0380807866",
@@ -2868,7 +2933,7 @@ const booksData = [
     publisher: "Avon",
     imageLinkS: "http://images.amazon.com/images/P/0380807866.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0380807866.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0380807866.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0380807866.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0385316895",
@@ -2878,7 +2943,7 @@ const booksData = [
     publisher: "Bantam Dell Pub Group",
     imageLinkS: "http://images.amazon.com/images/P/0385316895.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0385316895.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0385316895.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0385316895.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0385497466",
@@ -2888,7 +2953,7 @@ const booksData = [
     publisher: "Doubleday",
     imageLinkS: "http://images.amazon.com/images/P/0385497466.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0385497466.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0385497466.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0385497466.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0385508042",
@@ -2898,7 +2963,7 @@ const booksData = [
     publisher: "Doubleday Books",
     imageLinkS: "http://images.amazon.com/images/P/0385508042.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0385508042.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0385508042.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0385508042.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0385509456",
@@ -2908,7 +2973,7 @@ const booksData = [
     publisher: "Doubleday",
     imageLinkS: "http://images.amazon.com/images/P/0385509456.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0385509456.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0385509456.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0385509456.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0385511612",
@@ -2918,7 +2983,7 @@ const booksData = [
     publisher: "Doubleday",
     imageLinkS: "http://images.amazon.com/images/P/0385511612.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0385511612.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0385511612.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0385511612.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0385730586",
@@ -2928,7 +2993,7 @@ const booksData = [
     publisher: "Delacorte Books for Young Readers",
     imageLinkS: "http://images.amazon.com/images/P/0385730586.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0385730586.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0385730586.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0385730586.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0425164403",
@@ -2938,7 +3003,7 @@ const booksData = [
     publisher: "Berkley Publishing Group",
     imageLinkS: "http://images.amazon.com/images/P/0425164403.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0425164403.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0425164403.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0425164403.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0440234964",
@@ -2948,7 +3013,7 @@ const booksData = [
     publisher: "Island",
     imageLinkS: "http://images.amazon.com/images/P/0440234964.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0440234964.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0440234964.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0440234964.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0446605484",
@@ -2958,7 +3023,7 @@ const booksData = [
     publisher: "Warner Vision",
     imageLinkS: "http://images.amazon.com/images/P/0446605484.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0446605484.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0446605484.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0446605484.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0446610399",
@@ -2968,7 +3033,7 @@ const booksData = [
     publisher: "Warner Books",
     imageLinkS: "http://images.amazon.com/images/P/0446610399.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0446610399.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0446610399.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0446610399.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0449006522",
@@ -2978,7 +3043,7 @@ const booksData = [
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0449006522.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0449006522.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0449006522.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0449006522.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0449911004",
@@ -2988,7 +3053,7 @@ const booksData = [
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0449911004.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0449911004.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0449911004.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0449911004.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0451162072",
@@ -2998,7 +3063,7 @@ const booksData = [
     publisher: "Signet Book",
     imageLinkS: "http://images.amazon.com/images/P/0451162072.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0451162072.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0451162072.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0451162072.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0451186648",
@@ -3008,7 +3073,7 @@ const booksData = [
     publisher: "Signet Book",
     imageLinkS: "http://images.amazon.com/images/P/0451186648.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0451186648.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0451186648.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0451186648.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0452282152",
@@ -3018,7 +3083,7 @@ const booksData = [
     publisher: "Plume Books",
     imageLinkS: "http://images.amazon.com/images/P/0452282152.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0452282152.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0452282152.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0452282152.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "051513290X",
@@ -3028,7 +3093,7 @@ const booksData = [
     publisher: "Jove Books",
     imageLinkS: "http://images.amazon.com/images/P/051513290X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/051513290X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/051513290X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/051513290X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0553580388",
@@ -3038,7 +3103,7 @@ const booksData = [
     publisher: "Bantam Books",
     imageLinkS: "http://images.amazon.com/images/P/0553580388.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0553580388.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0553580388.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0553580388.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0590598848",
@@ -3048,7 +3113,7 @@ const booksData = [
     publisher: "Scholastic",
     imageLinkS: "http://images.amazon.com/images/P/0590598848.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0590598848.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0590598848.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0590598848.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0590629719",
@@ -3058,7 +3123,7 @@ const booksData = [
     publisher: "Scholastic",
     imageLinkS: "http://images.amazon.com/images/P/0590629719.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0590629719.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0590629719.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0590629719.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671023616",
@@ -3068,7 +3133,7 @@ const booksData = [
     publisher: "Pocket",
     imageLinkS: "http://images.amazon.com/images/P/0671023616.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671023616.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671023616.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671023616.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671027387",
@@ -3078,7 +3143,7 @@ const booksData = [
     publisher: "Pocket",
     imageLinkS: "http://images.amazon.com/images/P/0671027387.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671027387.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671027387.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671027387.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0684848783",
@@ -3088,7 +3153,7 @@ const booksData = [
     publisher: "Scribner",
     imageLinkS: "http://images.amazon.com/images/P/0684848783.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0684848783.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0684848783.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0684848783.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0743486226",
@@ -3098,7 +3163,7 @@ const booksData = [
     publisher: "Atria",
     imageLinkS: "http://images.amazon.com/images/P/0743486226.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0743486226.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0743486226.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0743486226.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0786863986",
@@ -3108,7 +3173,7 @@ const booksData = [
     publisher: "Hyperion",
     imageLinkS: "http://images.amazon.com/images/P/0786863986.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0786863986.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0786863986.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0786863986.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0803251718",
@@ -3118,7 +3183,7 @@ const booksData = [
     publisher: "University of Nebraska Press",
     imageLinkS: "http://images.amazon.com/images/P/0803251718.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0803251718.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0803251718.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0803251718.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0804117934",
@@ -3128,17 +3193,18 @@ const booksData = [
     publisher: "Ivy Books",
     imageLinkS: "http://images.amazon.com/images/P/0804117934.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0804117934.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0804117934.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0804117934.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "140003180X",
-    title: "The Kalahari Typing School for Men (No. 1 Ladies' Detective Agency)",
+    title:
+      "The Kalahari Typing School for Men (No. 1 Ladies' Detective Agency)",
     author: "ALEXANDER MCCALL SMITH",
     year: 2004,
     publisher: "Anchor",
     imageLinkS: "http://images.amazon.com/images/P/140003180X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/140003180X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/140003180X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/140003180X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "155874262X",
@@ -3148,7 +3214,7 @@ const booksData = [
     publisher: "Health Communications",
     imageLinkS: "http://images.amazon.com/images/P/155874262X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/155874262X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/155874262X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/155874262X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0060987103",
@@ -3158,7 +3224,7 @@ const booksData = [
     publisher: "Regan Books",
     imageLinkS: "http://images.amazon.com/images/P/0060987103.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060987103.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060987103.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0060987103.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0151008116",
@@ -3168,7 +3234,7 @@ const booksData = [
     publisher: "Harcourt",
     imageLinkS: "http://images.amazon.com/images/P/0151008116.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0151008116.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0151008116.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0151008116.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0375704965",
@@ -3178,17 +3244,18 @@ const booksData = [
     publisher: "Vintage Books USA",
     imageLinkS: "http://images.amazon.com/images/P/0375704965.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0375704965.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0375704965.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0375704965.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0525947647",
-    title: "Lies and the Lying Liars Who Tell Them: A Fair and Balanced Look at the Right",
+    title:
+      "Lies and the Lying Liars Who Tell Them: A Fair and Balanced Look at the Right",
     author: "Al Franken",
     year: 2003,
     publisher: "Dutton Books",
     imageLinkS: "http://images.amazon.com/images/P/0525947647.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0525947647.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0525947647.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0525947647.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0804111359",
@@ -3198,17 +3265,18 @@ const booksData = [
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0804111359.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0804111359.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0804111359.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0804111359.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1558744150,
-    title: "Chicken Soup for the Woman's Soul (Chicken Soup for the Soul Series (Paper))",
+    title:
+      "Chicken Soup for the Woman's Soul (Chicken Soup for the Soul Series (Paper))",
     author: "Jack Canfield",
     year: 1996,
     publisher: "Health Communications",
     imageLinkS: "http://images.amazon.com/images/P/1558744150.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1558744150.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1558744150.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1558744150.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0435272683",
@@ -3218,7 +3286,7 @@ const booksData = [
     publisher: "Delta Systems",
     imageLinkS: "http://images.amazon.com/images/P/0435272683.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0435272683.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0435272683.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0435272683.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0316782505",
@@ -3228,7 +3296,7 @@ const booksData = [
     publisher: "Little, Brown",
     imageLinkS: "http://images.amazon.com/images/P/0316782505.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0316782505.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0316782505.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0316782505.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "006102063X",
@@ -3238,7 +3306,7 @@ const booksData = [
     publisher: "HarperTorch",
     imageLinkS: "http://images.amazon.com/images/P/006102063X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/006102063X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/006102063X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/006102063X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0060013117",
@@ -3248,7 +3316,7 @@ const booksData = [
     publisher: "HarperCollins",
     imageLinkS: "http://images.amazon.com/images/P/0060013117.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060013117.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060013117.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0060013117.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0060199563",
@@ -3258,7 +3326,7 @@ const booksData = [
     publisher: "HarperCollins Publishers",
     imageLinkS: "http://images.amazon.com/images/P/0060199563.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060199563.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060199563.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0060199563.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "006052779X",
@@ -3268,7 +3336,7 @@ const booksData = [
     publisher: "HarperFestival",
     imageLinkS: "http://images.amazon.com/images/P/006052779X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/006052779X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/006052779X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/006052779X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0060563079",
@@ -3278,7 +3346,7 @@ const booksData = [
     publisher: "HarperFestival",
     imageLinkS: "http://images.amazon.com/images/P/0060563079.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060563079.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060563079.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0060563079.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0060809027",
@@ -3288,7 +3356,7 @@ const booksData = [
     publisher: "Perennial",
     imageLinkS: "http://images.amazon.com/images/P/0060809027.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060809027.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060809027.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0060809027.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0061040967",
@@ -3298,7 +3366,7 @@ const booksData = [
     publisher: "HarperCollins",
     imageLinkS: "http://images.amazon.com/images/P/0061040967.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0061040967.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0061040967.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0061040967.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0061050474",
@@ -3308,17 +3376,18 @@ const booksData = [
     publisher: "HarperPrism",
     imageLinkS: "http://images.amazon.com/images/P/0061050474.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0061050474.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0061050474.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0061050474.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0061052515",
-    title: "Maskerade: A Novel of Discworld (Pratchett, Terry. Discworld Series (New York, N.Y.).)",
+    title:
+      "Maskerade: A Novel of Discworld (Pratchett, Terry. Discworld Series (New York, N.Y.).)",
     author: "Terry Pratchett",
     year: 1997,
     publisher: "HarperPrism",
     imageLinkS: "http://images.amazon.com/images/P/0061052515.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0061052515.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0061052515.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0061052515.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0061052523",
@@ -3328,17 +3397,18 @@ const booksData = [
     publisher: "Harpercollins",
     imageLinkS: "http://images.amazon.com/images/P/0061052523.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0061052523.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0061052523.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0061052523.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0064472264",
-    title: "On the Bright Side, I'm Now the Girlfriend of a Sex God: Further Confessions of Georgia Nicolson",
+    title:
+      "On the Bright Side, I'm Now the Girlfriend of a Sex God: Further Confessions of Georgia Nicolson",
     author: "Louise Rennison",
     year: 2002,
     publisher: "HarperTempest",
     imageLinkS: "http://images.amazon.com/images/P/0064472264.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0064472264.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0064472264.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0064472264.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0140620664",
@@ -3348,7 +3418,7 @@ const booksData = [
     publisher: "Penguin Books Ltd",
     imageLinkS: "http://images.amazon.com/images/P/0140620664.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0140620664.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0140620664.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0140620664.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0312148267",
@@ -3358,7 +3428,7 @@ const booksData = [
     publisher: "St. Martin's Press",
     imageLinkS: "http://images.amazon.com/images/P/0312148267.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0312148267.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0312148267.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0312148267.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0312156960",
@@ -3368,7 +3438,7 @@ const booksData = [
     publisher: "St. Martin's Griffin",
     imageLinkS: "http://images.amazon.com/images/P/0312156960.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0312156960.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0312156960.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0312156960.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0312890044",
@@ -3378,7 +3448,7 @@ const booksData = [
     publisher: "Orb Books",
     imageLinkS: "http://images.amazon.com/images/P/0312890044.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0312890044.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0312890044.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0312890044.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "034543191X",
@@ -3388,7 +3458,7 @@ const booksData = [
     publisher: "Del Rey Books",
     imageLinkS: "http://images.amazon.com/images/P/034543191X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/034543191X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/034543191X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/034543191X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0373836023",
@@ -3398,7 +3468,7 @@ const booksData = [
     publisher: "Harlequin",
     imageLinkS: "http://images.amazon.com/images/P/0373836023.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0373836023.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0373836023.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0373836023.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0385721420",
@@ -3408,7 +3478,7 @@ const booksData = [
     publisher: "Anchor",
     imageLinkS: "http://images.amazon.com/images/P/0385721420.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0385721420.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0385721420.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0385721420.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0375751513",
@@ -3418,7 +3488,7 @@ const booksData = [
     publisher: "Modern Library",
     imageLinkS: "http://images.amazon.com/images/P/0375751513.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0375751513.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0375751513.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0375751513.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0375801677",
@@ -3428,7 +3498,7 @@ const booksData = [
     publisher: "Knopf Books for Young Readers",
     imageLinkS: "http://images.amazon.com/images/P/0375801677.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0375801677.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0375801677.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0375801677.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0375814248",
@@ -3438,7 +3508,7 @@ const booksData = [
     publisher: "Knopf Books for Young Readers",
     imageLinkS: "http://images.amazon.com/images/P/0375814248.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0375814248.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0375814248.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0375814248.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0375823352",
@@ -3448,7 +3518,7 @@ const booksData = [
     publisher: "Knopf Books for Young Readers",
     imageLinkS: "http://images.amazon.com/images/P/0375823352.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0375823352.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0375823352.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0375823352.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "037582345X",
@@ -3458,7 +3528,7 @@ const booksData = [
     publisher: "Knopf Books for Young Readers",
     imageLinkS: "http://images.amazon.com/images/P/037582345X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/037582345X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/037582345X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/037582345X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0375823468",
@@ -3468,17 +3538,18 @@ const booksData = [
     publisher: "Knopf Books for Young Readers",
     imageLinkS: "http://images.amazon.com/images/P/0375823468.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0375823468.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0375823468.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0375823468.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0380730448",
-    title: "The Adrian Mole Diaries : The Secret Diary of Adrian Mole, Aged 13 3/4 : The Growing Pains of Adrian Mole",
+    title:
+      "The Adrian Mole Diaries : The Secret Diary of Adrian Mole, Aged 13 3/4 : The Growing Pains of Adrian Mole",
     author: "Sue Townsend",
     year: 1997,
     publisher: "Perennial",
     imageLinkS: "http://images.amazon.com/images/P/0380730448.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0380730448.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0380730448.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0380730448.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0380973839",
@@ -3488,7 +3559,7 @@ const booksData = [
     publisher: "William Morrow",
     imageLinkS: "http://images.amazon.com/images/P/0380973839.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0380973839.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0380973839.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0380973839.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0385327773",
@@ -3498,7 +3569,7 @@ const booksData = [
     publisher: "Wendy Lamb Books",
     imageLinkS: "http://images.amazon.com/images/P/0385327773.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0385327773.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0385327773.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0385327773.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0394586239",
@@ -3508,7 +3579,7 @@ const booksData = [
     publisher: "Random House Inc",
     imageLinkS: "http://images.amazon.com/images/P/0394586239.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0394586239.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0394586239.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0394586239.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0439510112",
@@ -3518,7 +3589,7 @@ const booksData = [
     publisher: "Push",
     imageLinkS: "http://images.amazon.com/images/P/0439510112.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0439510112.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0439510112.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0439510112.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0440241413",
@@ -3528,7 +3599,7 @@ const booksData = [
     publisher: "Dell",
     imageLinkS: "http://images.amazon.com/images/P/0440241413.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0440241413.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0440241413.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0440241413.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0451409256",
@@ -3538,7 +3609,7 @@ const booksData = [
     publisher: "Onyx Books",
     imageLinkS: "http://images.amazon.com/images/P/0451409256.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0451409256.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0451409256.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0451409256.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0451523415",
@@ -3548,7 +3619,7 @@ const booksData = [
     publisher: "Signet Classics",
     imageLinkS: "http://images.amazon.com/images/P/0451523415.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0451523415.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0451523415.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0451523415.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0451526279",
@@ -3558,7 +3629,7 @@ const booksData = [
     publisher: "Signet Classics",
     imageLinkS: "http://images.amazon.com/images/P/0451526279.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0451526279.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0451526279.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0451526279.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0451526341",
@@ -3568,7 +3639,7 @@ const booksData = [
     publisher: "Signet",
     imageLinkS: "http://images.amazon.com/images/P/0451526341.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0451526341.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0451526341.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0451526341.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0486415864",
@@ -3578,7 +3649,7 @@ const booksData = [
     publisher: "Dover Publications",
     imageLinkS: "http://images.amazon.com/images/P/0486415864.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0486415864.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0486415864.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0486415864.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0553280589",
@@ -3588,7 +3659,7 @@ const booksData = [
     publisher: "Bantam Books",
     imageLinkS: "http://images.amazon.com/images/P/0553280589.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0553280589.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0553280589.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0553280589.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0571197639",
@@ -3598,7 +3669,7 @@ const booksData = [
     publisher: "Faber Faber Inc",
     imageLinkS: "http://images.amazon.com/images/P/0571197639.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0571197639.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0571197639.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0571197639.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0670035262",
@@ -3608,7 +3679,7 @@ const booksData = [
     publisher: "Viking Juvenile",
     imageLinkS: "http://images.amazon.com/images/P/0670035262.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0670035262.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0670035262.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0670035262.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0679423079",
@@ -3618,7 +3689,7 @@ const booksData = [
     publisher: "Alfred A. Knopf",
     imageLinkS: "http://images.amazon.com/images/P/0679423079.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0679423079.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0679423079.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0679423079.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0679751343",
@@ -3628,7 +3699,7 @@ const booksData = [
     publisher: "Vintage",
     imageLinkS: "http://images.amazon.com/images/P/0679751343.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0679751343.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0679751343.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0679751343.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0684833395",
@@ -3638,7 +3709,7 @@ const booksData = [
     publisher: "Simon &amp; Schuster",
     imageLinkS: "http://images.amazon.com/images/P/0684833395.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0684833395.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0684833395.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0684833395.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0743245024",
@@ -3648,7 +3719,7 @@ const booksData = [
     publisher: "Touchstone",
     imageLinkS: "http://images.amazon.com/images/P/0743245024.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0743245024.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0743245024.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0743245024.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0749748001",
@@ -3658,7 +3729,7 @@ const booksData = [
     publisher: "Egmont Childrens Books",
     imageLinkS: "http://images.amazon.com/images/P/0749748001.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0749748001.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0749748001.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0749748001.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0749748028",
@@ -3668,7 +3739,7 @@ const booksData = [
     publisher: "Egmont Childrens Books",
     imageLinkS: "http://images.amazon.com/images/P/0749748028.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0749748028.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0749748028.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0749748028.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0963094424",
@@ -3678,7 +3749,7 @@ const booksData = [
     publisher: "Dreamhaven Books",
     imageLinkS: "http://images.amazon.com/images/P/0963094424.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0963094424.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0963094424.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0963094424.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1401201172,
@@ -3688,7 +3759,7 @@ const booksData = [
     publisher: "DC Comics",
     imageLinkS: "http://images.amazon.com/images/P/1401201172.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1401201172.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1401201172.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1401201172.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1563892278,
@@ -3698,7 +3769,7 @@ const booksData = [
     publisher: "DC Comics",
     imageLinkS: "http://images.amazon.com/images/P/1563892278.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1563892278.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1563892278.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1563892278.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1563898586,
@@ -3708,7 +3779,7 @@ const booksData = [
     publisher: "DC Comics",
     imageLinkS: "http://images.amazon.com/images/P/1563898586.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1563898586.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1563898586.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1563898586.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "156971620X",
@@ -3718,17 +3789,18 @@ const booksData = [
     publisher: "Dark Horse Comics",
     imageLinkS: "http://images.amazon.com/images/P/156971620X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/156971620X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/156971620X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/156971620X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1592571301,
-    title: "Alpha Teach Yourself American Sign Language in 24 Hours (Alpha Teach Yourself in 24 Hours)",
+    title:
+      "Alpha Teach Yourself American Sign Language in 24 Hours (Alpha Teach Yourself in 24 Hours)",
     author: "Trudy Suggs",
     year: 2003,
     publisher: "Alpha Books",
     imageLinkS: "http://images.amazon.com/images/P/1592571301.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1592571301.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1592571301.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1592571301.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0374270325",
@@ -3738,7 +3810,7 @@ const booksData = [
     publisher: "Farrar Straus &amp; Giroux",
     imageLinkS: "http://images.amazon.com/images/P/0374270325.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0374270325.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0374270325.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0374270325.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0375719180",
@@ -3748,7 +3820,7 @@ const booksData = [
     publisher: "Vintage Books USA",
     imageLinkS: "http://images.amazon.com/images/P/0375719180.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0375719180.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0375719180.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0375719180.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0440235502",
@@ -3758,7 +3830,7 @@ const booksData = [
     publisher: "Dell",
     imageLinkS: "http://images.amazon.com/images/P/0440235502.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0440235502.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0440235502.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0440235502.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "044023722X",
@@ -3768,7 +3840,7 @@ const booksData = [
     publisher: "Dell Publishing Company",
     imageLinkS: "http://images.amazon.com/images/P/044023722X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/044023722X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/044023722X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/044023722X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1573225487,
@@ -3778,7 +3850,7 @@ const booksData = [
     publisher: "Riverhead Books",
     imageLinkS: "http://images.amazon.com/images/P/1573225487.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1573225487.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1573225487.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1573225487.01.LZZZZZZZ.jpg",
   },
   {
     isbn: 1853260673,
@@ -3788,7 +3860,7 @@ const booksData = [
     publisher: "NTC/Contemporary Publishing Company",
     imageLinkS: "http://images.amazon.com/images/P/1853260673.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/1853260673.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1853260673.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/1853260673.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0060977477",
@@ -3798,7 +3870,7 @@ const booksData = [
     publisher: "Perennial",
     imageLinkS: "http://images.amazon.com/images/P/0060977477.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0060977477.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0060977477.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0060977477.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0345391691",
@@ -3808,7 +3880,7 @@ const booksData = [
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0345391691.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0345391691.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0345391691.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0345391691.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0520011171",
@@ -3818,7 +3890,7 @@ const booksData = [
     publisher: "University of California Press",
     imageLinkS: "http://images.amazon.com/images/P/0520011171.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0520011171.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0520011171.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0520011171.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0553278746",
@@ -3828,7 +3900,7 @@ const booksData = [
     publisher: "Spectra Books",
     imageLinkS: "http://images.amazon.com/images/P/0553278746.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0553278746.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0553278746.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0553278746.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0670856045",
@@ -3838,7 +3910,7 @@ const booksData = [
     publisher: "Viking Books",
     imageLinkS: "http://images.amazon.com/images/P/0670856045.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0670856045.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0670856045.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0670856045.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0872200760",
@@ -3848,17 +3920,18 @@ const booksData = [
     publisher: "Hackett Pub Co Inc",
     imageLinkS: "http://images.amazon.com/images/P/0872200760.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0872200760.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0872200760.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0872200760.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0937858994",
-    title: "The What's Happening to My Body? Book for Boys: A Growing Up Guide for Parents and Sons",
+    title:
+      "The What's Happening to My Body? Book for Boys: A Growing Up Guide for Parents and Sons",
     author: "Lynda Madaras",
     year: 1987,
     publisher: "W W Norton &amp; Co",
     imageLinkS: "http://images.amazon.com/images/P/0937858994.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0937858994.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0937858994.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0937858994.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0671649949",
@@ -3868,7 +3941,7 @@ const booksData = [
     publisher: "Washington Square Press",
     imageLinkS: "http://images.amazon.com/images/P/0671649949.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0671649949.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0671649949.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0671649949.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0590431110",
@@ -3878,7 +3951,7 @@ const booksData = [
     publisher: "Scholastic Paperbacks (Mm)",
     imageLinkS: "http://images.amazon.com/images/P/0590431110.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0590431110.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0590431110.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0590431110.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0064470113",
@@ -3888,7 +3961,7 @@ const booksData = [
     publisher: "Harpercollins Juvenile Books",
     imageLinkS: "http://images.amazon.com/images/P/0064470113.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0064470113.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0064470113.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0064470113.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0553571486",
@@ -3898,7 +3971,7 @@ const booksData = [
     publisher: "Starfire",
     imageLinkS: "http://images.amazon.com/images/P/0553571486.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0553571486.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0553571486.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0553571486.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0972044205",
@@ -3908,7 +3981,7 @@ const booksData = [
     publisher: "Last Knight Pub Co",
     imageLinkS: "http://images.amazon.com/images/P/0972044205.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0972044205.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0972044205.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0972044205.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0312963009",
@@ -3918,7 +3991,7 @@ const booksData = [
     publisher: "St. Martin's Press",
     imageLinkS: "http://images.amazon.com/images/P/0312963009.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0312963009.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0312963009.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0312963009.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0345430476",
@@ -3928,7 +4001,7 @@ const booksData = [
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0345430476.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0345430476.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0345430476.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0345430476.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0345435869",
@@ -3938,7 +4011,7 @@ const booksData = [
     publisher: "Del Rey",
     imageLinkS: "http://images.amazon.com/images/P/0345435869.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0345435869.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0345435869.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0345435869.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0380728729",
@@ -3948,7 +4021,7 @@ const booksData = [
     publisher: "Avon",
     imageLinkS: "http://images.amazon.com/images/P/0380728729.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0380728729.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0380728729.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0380728729.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "038081840X",
@@ -3958,7 +4031,7 @@ const booksData = [
     publisher: "Eos",
     imageLinkS: "http://images.amazon.com/images/P/038081840X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/038081840X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/038081840X.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/038081840X.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "0449912302",
@@ -3968,7 +4041,7 @@ const booksData = [
     publisher: "Ballantine Books",
     imageLinkS: "http://images.amazon.com/images/P/0449912302.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/0449912302.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/0449912302.01.LZZZZZZZ.jpg"
+    imageLinkL: "http://images.amazon.com/images/P/0449912302.01.LZZZZZZZ.jpg",
   },
   {
     isbn: "055329198X",
@@ -3978,8 +4051,8 @@ const booksData = [
     publisher: "Bantam",
     imageLinkS: "http://images.amazon.com/images/P/055329198X.01.THUMBZZZ.jpg",
     imageLinkM: "http://images.amazon.com/images/P/055329198X.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/055329198X.01.LZZZZZZZ.jpg"
-  }
+    imageLinkL: "http://images.amazon.com/images/P/055329198X.01.LZZZZZZZ.jpg",
+  },
 ];
 
 module.exports = { booksData };
