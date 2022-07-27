@@ -55,4 +55,8 @@ router.use("/search", searchRouter);
 const ordersRouter = require("./orders");
 router.use("/orders", ordersRouter);
 
+// ADMIN: /api/admin
+const adminRouter = require('./admin');
+router.use("/admin", adminRouter);
+
 module.exports = router;

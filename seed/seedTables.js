@@ -40,7 +40,8 @@ const createTables = async () => {
       create table users(
         id serial primary key,
         "userEmail" varchar(255) unique not null,
-        password varchar(255) not null
+        password varchar(255) not null,
+        "isAdmin" boolean default false
       );
       create table users_orders(
         id serial primary key,
