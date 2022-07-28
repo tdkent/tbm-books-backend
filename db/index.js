@@ -5,4 +5,5 @@ module.exports = {
   ...require('./orders'),
   ...require('./search'),
   ...require('./cart'),
+  ...require('./admin'),
 }

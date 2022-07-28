@@ -9,7 +9,7 @@ const createUser = async ({ userEmail, password, isAdmin = false }) => {
       `
       insert into users("userEmail", password, "isAdmin")
       values($1, $2, $3)
-      returning id, "userEmail";
+      returning id, "userEmail", "isAdmin", "isActive";
     `,
       [userEmail, hash, isAdmin]
     );
@@ -55,7 +55,7 @@ const getUserById = async (userId) => {
   try {
     const { rows } = await client.query(
       `
-      select id, "userEmail" from users
+      select id, "userEmail", "isAdmin" from users
       where id = $1;
     `,
       [userId]
