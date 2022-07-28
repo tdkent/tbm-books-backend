@@ -24,17 +24,17 @@ const booksData = [
       "https://images-na.ssl-images-amazon.com/images/I/51kB3u9dwPL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
   },
   {
-    isbn: "0743474198",
-    title: "To Kill a Mockingbird",
-    author: "Harper Lee",
-    year: "2002",
-    publisher: "Harper Perennial",
+    isbn: "881706050X",
+    title: "Matterhorn: A Novel of the Vietnam War",
+    author: "Karl Marlantes",
+    year: "2011",
+    publisher: "Grove Press",
     imageLinkS:
-      "https://images-na.ssl-images-amazon.com/images/I/51IXWZzlgSL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "https://images-na.ssl-images-amazon.com/images/I/41H5GQacmoL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
     imageLinkM:
-      "https://images-na.ssl-images-amazon.com/images/I/51IXWZzlgSL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "https://images-na.ssl-images-amazon.com/images/I/41H5GQacmoL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
     imageLinkL:
-      "https://images-na.ssl-images-amazon.com/images/I/51IXWZzlgSL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
+      "https://images-na.ssl-images-amazon.com/images/I/41H5GQacmoL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
     isFeatured: true,
   },
   {
