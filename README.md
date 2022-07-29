@@ -7,6 +7,7 @@ Vivlío is the Greek word for ‘book’.
 ### Heroku Database
 
 - [Link to Heroku Database](https://sensationnel-maison-12931.herokuapp.com)
+
 - URL: https://sensationnel-maison-12931.herokuapp.com
 
 ### Generated Users
@@ -131,7 +132,8 @@ Requires a token to be sent in the Headers:
   - orderDetails(array) - contains an object for each book that was purchased
     - bookId (number) - id of book purchased
     - bookPrice (string) - price of each copy of the book
-    - quantity (number) - number of copies in the order
+    - bookId (number): id of book purchased
+    - quantity (number)
     - title (string)
     - imageLinkS (string)
 
