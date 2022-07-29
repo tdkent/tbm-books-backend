@@ -32,17 +32,6 @@ const createOrderDetails = async ({ orderId, bookId, bookPrice, quantity }) => {
   }
 };
 
-const getAllUsersOrders = async () => {
-  try {
-    const { rows } = await client.query(`
-      select * from users_orders;
-    `);
-    return rows;
-  } catch (err) {
-    console.error("An error occurred:", err);
-  }
-};
-
 const completeOrder = async (orderId, userId) => {
   try {
     const { rows } = await client.query(`
@@ -60,7 +49,6 @@ const completeOrder = async (orderId, userId) => {
 
 module.exports = {
   createUserOrder,
-  getAllUsersOrders,
   createOrderDetails,
   completeOrder,
 };

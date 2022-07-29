@@ -4,7 +4,7 @@ const {
   createUser,
   createUserOrder,
   createOrderDetails,
-  getAllUsersOrders,
+  getAllOrders,
   getAllFeatured,
 } = require("../db");
 
@@ -95,7 +95,7 @@ const createOrders = async () => {
     ];
     const newOrders = await Promise.all(data.map(createUserOrder));
     console.log("New orders added to users_orders: ", newOrders);
-    const [userOrder1, userOrder2, userOrder3] = await getAllUsersOrders();
+    const [userOrder1, userOrder2, userOrder3] = await getAllOrders();
     const detailsData = [
       {
         orderId: userOrder1.id,
