@@ -3,7 +3,13 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET = "fullstack" } = process.env;
 
-const { getUserByEmail, createUser, checkUser, getUserProfileById } = require("../db");
+const {
+  getUserByEmail,
+  createUser,
+  checkUser,
+  getUserProfileById,
+  getUserCartById,
+} = require("../db");
 
 // POST /api/users/register
 router.post("/register", async (req, res, next) => {
@@ -59,7 +65,7 @@ router.post("/login", async (req, res, next) => {
         });
       } else {
         const token = jwt.sign(
-          { id: user[0].id, userEmail: user[0].userEmail },
+          { id: user[0].id, userEmail: user[0].userEmail, isAdmin: user[0].isAdmin },
           JWT_SECRET
         );
         res.send({
@@ -68,6 +74,7 @@ router.post("/login", async (req, res, next) => {
           user: {
             id: user[0].id,
             userEmail: user[0].userEmail,
+            isAdmin: user[0].isAdmin,
           },
         });
       }
@@ -90,6 +97,25 @@ router.get("/me", async (req, res, next) => {
     try {
       const user = await getUserProfileById(userId);
       res.send(user);
+    } catch (err) {
+      next(err);
+    }
+  }
+});
+
+// GET /api/users/me/cart
+router.get("/me/cart", async (req, res, next) => {
+  if (!req.user) {
+    res.status(401);
+    next({
+      name: "Authorization Error",
+      message: "You must be logged in to perform this action.",
+    });
+  } else {
+    const { id: userId } = req.user;
+    try {
+      const result = await getUserCartById(userId);
+      res.send(result);
     } catch (err) {
       next(err);
     }

@@ -1,15 +1,115 @@
 const express = require("express");
 const router = express.Router();
 
-const { postAddToCart } = require("../db");
+const {
+  postAddItemToCart,
+  deleteItemFromCart,
+  editCartQuantity,
+  completeOrder,
+} = require("../db");
+
 // POST /api/orders/cart
 router.post("/cart", async (req, res, next) => {
-  const { userId, price, bookId} = req.body;
+  const { userId, bookPrice, bookId, quantity } = req.body;
   try {
-    const result = await postAddToCart(userId, price, bookId);
-    res.send(result);
+    const result = await postAddItemToCart(userId, bookPrice, bookId, quantity);
+    if (result.length) {
+      res.send({
+        name: "Cart Updated",
+        message: "Item added to cart.",
+      });
+    } else {
+      next({
+        name: "Cart Not Updated",
+        message: "An unknown error occurred. Please try again.",
+      });
+    }
   } catch (err) {
     next(err);
+  }
+});
+
+// PATCH /api/orders/cart
+router.patch("/cart", async (req, res, next) => {
+  const { orderId, bookId, bookPrice, oldQuantity, newQuantity } =
+    req.body;
+  try {
+    const result = await editCartQuantity(
+      orderId,
+      bookId,
+      bookPrice,
+      oldQuantity,
+      newQuantity
+    );
+    if (result.length) {
+      res.send({
+        name: "Cart Updated",
+        message: "Successfully changed number of items in your cart.",
+      });
+    } else {
+      next({
+        name: "Cart Not Updated",
+        message: "An unknown error occurred. Please try again.",
+      });
+    }
+  } catch (err) {
+    next(err);
+  }
+});
+
+// DELETE /api/orders/cart
+router.delete("/cart", async (req, res, next) => {
+  const { orderId, bookId, bookPrice, quantity } = req.body;
+  try {
+    const result = await deleteItemFromCart(
+      orderId,
+      bookId,
+      bookPrice,
+      quantity
+    );
+    if (result.length) {
+      res.send({
+        name: "Cart Updated",
+        message: "Item deleted successfully from your cart.",
+      });
+    } else {
+      next({
+        name: "Cart Not Updated",
+        message: "An unknown error occurred. Please try again.",
+      });
+    }
+  } catch (err) {
+    next(err);
+  }
+});
+
+// POST /api/orders/:orderId
+router.post("/:orderId", async (req, res, next) => {
+  if (!req.user) {
+    res.status(401);
+    next({
+      name: "Authorization Error",
+      message: "You must be logged in to perform this action.",
+    });
+  } else {
+    const { orderId } = req.params;
+    const { id: userId } = req.user;
+    try {
+      const result = await completeOrder(orderId, userId);
+      if (result[0].isComplete) {
+        res.send({
+          name: "Order Complete",
+          message: "Your order is complete. Thanks for your business!",
+        });
+      } else {
+        next({
+          name: "Order Not Complete",
+          message: "An unknown error occurred. Please try again.",
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
   }
 });
 

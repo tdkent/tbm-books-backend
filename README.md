@@ -1,10 +1,13 @@
-# Book Store API Docs
+# Vivlío API Docs
 
 ## General Info
 
+Vivlío is the Greek word for ‘book’.
+
 ### Heroku Database
 
-- [Like to Heroku Database](https://sensationnel-maison-12931.herokuapp.com)
+- [Link to Heroku Database](https://sensationnel-maison-12931.herokuapp.com)
+
 - URL: https://sensationnel-maison-12931.herokuapp.com
 
 ### Generated Users
@@ -78,7 +81,7 @@ Returns an array containing 10 book objects representing our personally chosen t
 
 ### Users
 
-#### POST /users/register
+#### POST /api/users/register
 
 **Request parameters**
 
@@ -93,7 +96,7 @@ Returns an array containing 10 book objects representing our personally chosen t
   - id (number)
   - userEmail (string)
  
-#### POST /users/login
+#### POST /api/users/login
 
 **Request parameters**
 
@@ -108,7 +111,7 @@ Returns an array containing 10 book objects representing our personally chosen t
   - id (number)
   - userEmail (string)
 
-#### GET /users/me
+#### GET /api/users/me
 
 Use to fetch the users basic id info and orders history.
 
@@ -125,8 +128,145 @@ Requires a token to be sent in the Headers:
 - orders (array)
   - orderId (number) - id of order
   - isComplete (boolean) - false indicates items are still in the user's cart
-  - price (number) - total cost of the order
+  - orderPrice (number) - total cost of the order
   - orderDetails(array) - contains an object for each book that was purchased
+    - bookId (number) - id of book purchased
+    - bookPrice (string) - price of each copy of the book
     - bookId (number): id of book purchased
     - quantity (number)
     - title (string)
+    - imageLinkS (string)
+
+#### GET /api/users/me/cart
+
+Use to fetch the user’s current open cart
+
+**Request parameters**
+
+Requires a token to be sent in the Headers:
+
+`"Authentication": "Bearer" ${token}`
+
+**Return parameters**
+
+Returns an object containing the main order data, with another array containing each book object.
+
+- orderId (number) - id of order
+- orderPrice (number) - total cost of the order
+- orderDetails (array) - contains an object for each book that was purchased 
+  - bookId (number) - id of book purchased
+  - bookPrice (string) - price of each copy of the book
+  - quantity (number) - number of copies in the order
+  - title (string)
+  - imageLinkS (string)
+
+### Cart
+
+#### POST /api/orders/cart
+
+- Creates a new order if the user’s cart is empty.
+- Adds to the existing order if the user’s has an open cart already.
+- Tracks total order price
+- Tracks order details (books added, quantity, price of each book)
+
+**Request Parameters**
+
+- Does not require a token to be sent, however the user must be logged in for the order to be added to the database.
+- Requires user’s id, book price, book id, quantity.
+
+```
+method: “POST”,
+headers: {
+        “Content-Type”: “application/json”,
+},
+body: JSON.stringify({
+        userId,
+        bookPrice,
+        bookId,
+        quantity,
+})
+```
+
+**Return parameters**
+
+Returns an array with a single object containing book and order data.
+
+#### PATCH /api/orders/cart
+
+**Request Parameters**
+
+- Requires the current quantity and the user's updated quantity.
+
+```
+method: "PATCH",
+headers: {
+        “Content-Type”: “application/json”,
+},
+body: JSON.stringify({
+        orderId,
+        bookId,
+        bookPrice,
+        oldQuantity,
+        newQuantity,
+})
+```
+
+**Return Parameters**
+
+Object:
+- name (string): States whether patch was un/successful.
+- message (string): States whether patch was un/successful.
+
+#### DELETE /api/orders/cart
+
+Deletes an item from the cart.
+
+**Request Parameters**
+
+- Requires the order id, book id, book price, quantity.
+
+```
+method: “DELETE”,
+headers: {
+        “Content-Type”: “application/json”,
+},
+body: JSON.stringify({
+        orderId,
+        bookId,
+        bookPrice,
+        quantity,
+})
+```
+
+**Return Parameters**
+
+Object:
+- name (string): States whether deletion was un/successful.
+- message (string): States whether deletion was un/successful.
+
+### Orders
+
+#### POST /api/orders/:orderId
+
+"Complete" the logged in user's order by setting "isComplete" to true in users_orders table. 
+
+**Request Parameters**
+
+Requires token and the orderId to be passed as a route parameter.
+
+```
+method: “POST”,
+headers: {
+        “Content-Type”: “application/json”,
+        Authorization: `Bearer ${token}`,
+}
+```
+
+**Return Parameters**
+
+Object:
+- name (string): States whether checkout was un/successful.
+- message (string): States whether checkout was un/successful.
+
+
+

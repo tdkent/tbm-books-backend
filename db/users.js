@@ -2,16 +2,16 @@ const client = require("../client");
 const bcrpyt = require("bcrypt");
 const saltRounds = 10;
 
-const createUser = async ({ userEmail, password }) => {
+const createUser = async ({ userEmail, password, isAdmin = false }) => {
   try {
     const hash = await bcrpyt.hash(password, saltRounds);
     const { rows } = await client.query(
       `
-      insert into users("userEmail", password)
-      values($1, $2)
-      returning id, "userEmail";
+      insert into users("userEmail", password, "isAdmin")
+      values($1, $2, $3)
+      returning id, "userEmail", "isAdmin", "isActive";
     `,
-      [userEmail, hash]
+      [userEmail, hash, isAdmin]
     );
     return rows[0];
   } catch (err) {
@@ -23,7 +23,7 @@ const checkUser = async (userEmail, password) => {
   try {
     const { rows } = await client.query(
       `
-      select id, "userEmail", password
+      select id, "userEmail", password, "isAdmin"
       from users
       where "userEmail" = $1;
     `,
@@ -36,12 +36,31 @@ const checkUser = async (userEmail, password) => {
   }
 };
 
-const getAllUsers = async () => {
+const getUserByEmail = async (userEmail) => {
   try {
-    const { rows } = await client.query(`
-      select * from users;
-    `);
+    const { rows } = await client.query(
+      `
+      select * from users
+      where "userEmail"=$1;
+    `,
+      [userEmail]
+    );
     return rows;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const getUserById = async (userId) => {
+  try {
+    const { rows } = await client.query(
+      `
+      select id, "userEmail", "isAdmin" from users
+      where id = $1;
+    `,
+      [userId]
+    );
+    return rows[0];
   } catch (err) {
     console.error("An error occurred:", err);
   }
@@ -67,14 +86,19 @@ const getUserProfileById = async (userId) => {
     for (const order of usersOrders) {
       const { rows: userOrder } = await client.query(
         `
-      select id as "orderId", "isComplete", price from users_orders
+      select id as "orderId", "isComplete", "orderPrice" from users_orders
       where id = $1;
     `,
         [order.id]
       );
       const { rows: orderDetails } = await client.query(
         `
-    select orders_details."bookId", orders_details.quantity, books.title
+    select
+      orders_details."bookId",
+      orders_details."bookPrice",
+      orders_details.quantity,
+      books.title,
+      books."imageLinkS"
     from orders_details
     join books
     on orders_details."bookId" = books.id
@@ -99,31 +123,42 @@ const getUserProfileById = async (userId) => {
   }
 };
 
-const getUserByEmail = async (userEmail) => {
+const getUserCartById = async (userId) => {
   try {
-    const { rows } = await client.query(
+    const { rows: order } = await client.query(
       `
-      select * from users
-      where "userEmail"=$1;
-    `,
-      [userEmail]
-    );
-    return rows;
-  } catch (err) {
-    console.error("An error occurred:", err);
-  }
-};
-
-const getUserById = async (userId) => {
-  try {
-    const { rows } = await client.query(
-      `
-      select id, "userEmail" from users
-      where id = $1;
+      select id as "orderId", "orderPrice" from users_orders
+      where "userId" = $1
+      and "isComplete" = false;
     `,
       [userId]
     );
-    return rows[0];
+    if (order.length) {
+      const { rows: details } = await client.query(
+        `
+        select 
+          orders_details."bookId",
+          orders_details."bookPrice",
+          orders_details.quantity,
+          books.title,
+          books."imageLinkS"
+        from orders_details
+        join books
+        on orders_details."bookId" = books.id
+        where "orderId" = $1;
+      `,
+        [order[0].orderId]
+      );
+      let arr = [];
+      for (const item of details) {
+        arr.push(item);
+      }
+      const usersCart = {
+        ...order[0],
+        orderDetails: arr,
+      };
+      return usersCart;
+    } else return order;
   } catch (err) {
     console.error("An error occurred:", err);
   }
@@ -131,9 +166,9 @@ const getUserById = async (userId) => {
 
 module.exports = {
   createUser,
-  getAllUsers,
   getUserByEmail,
   checkUser,
   getUserProfileById,
+  getUserCartById,
   getUserById,
 };

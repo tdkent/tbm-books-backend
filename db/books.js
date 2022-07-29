@@ -9,18 +9,20 @@ const createBook = async ({
   imageLinkS,
   imageLinkM,
   imageLinkL,
+  isFeatured = false,
   genre,
   description,
   rating,
   globalRatings,
   price,
   inventory,
+  isActive = true,
 }) => {
   try {
     const { rows } = await client.query(
       `
-      insert into books(isbn, title, author, year, publisher, "imageLinkS", "imageLinkM", "imageLinkL", genre, description, rating, "globalRatings", price, inventory)
-      values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
+      insert into books(isbn, title, author, year, publisher, "imageLinkS", "imageLinkM", "imageLinkL","isFeatured", genre, description, rating, "globalRatings", price, inventory, "isActive")
+      values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16)
       returning *;
     `,
       [
@@ -32,29 +34,19 @@ const createBook = async ({
         imageLinkS,
         imageLinkM,
         imageLinkL,
+        isFeatured,
         genre,
         description,
         rating,
         globalRatings,
         price,
         inventory,
+        isActive,
       ]
     );
     return rows;
   } catch (err) {
     console.error("An error occurred in createBook: ", err);
-  }
-};
-
-const getAllBooks = async () => {
-  try {
-    const { rows } = await client.query(`
-      select * from books;
-      
-    `);
-    return rows;
-  } catch (err) {
-    console.error("An error occurred:", err);
   }
 };
 
@@ -116,11 +108,11 @@ const getBooksCuratedRatings = async () => {
 
 const getAllFeatured = async () => {
   try {
-    const { rows: id } = await client.query(`
+    const { rows } = await client.query(`
       select * from books
-      where id <11
+      where "isFeatured" = true;
     `);
-    return [id];
+    return rows;
   } catch (err) {
     console.error("An error occurred:", err);
   }
@@ -128,7 +120,6 @@ const getAllFeatured = async () => {
 
 module.exports = {
   createBook,
-  getAllBooks,
   getBookById,
   getAllBooksByGenre,
   getBooksCuratedRankings,
