@@ -70,7 +70,8 @@ const getAllBooksByGenre = async (genre) => {
     const { rows } = await client.query(
       `
       select * from books
-      where genre = $1;
+      where genre = $1
+      and "isActive" = true;
     `,
       [genre]
     );
@@ -84,6 +85,7 @@ const getBooksCuratedRankings = async () => {
   try {
     const { rows } = await client.query(`
       select * from books
+      where "isActive" = true
       order by "globalRatings" desc
       limit 10;
     `);
@@ -97,6 +99,7 @@ const getBooksCuratedRatings = async () => {
   try {
     const { rows } = await client.query(`
     select * from books
+    where "isActive" = true
     order by rating desc
     limit 10;
   `);
@@ -110,7 +113,8 @@ const getAllFeatured = async () => {
   try {
     const { rows } = await client.query(`
       select * from books
-      where "isFeatured" = true;
+      where "isFeatured" = true
+      and "isActive" = true;
     `);
     return rows;
   } catch (err) {

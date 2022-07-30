@@ -2,19 +2,34 @@ const express = require("express");
 const router = express.Router();
 
 const {
-  getAllUsers,
-  getAllOrders,
+  getUsersPaginated,
+  getTotalUsersCount,
   deactivateUser,
   promoteUser,
+  getTotalOrdersCount,
+  getOrdersPaginated,
+  getOrdersClosed,
   getBooksPaginated,
   createNewBook,
   deactivateBook,
   editBook,
+  getTotalProductsCount,
+  getOrdersOpen,
 } = require("../db");
 
 // USERS
-// GET /api/admin/users/all-users
-router.get("/users/all-users", async (req, res, next) => {
+// GET /api/admin/users
+router.get("/users", async (req, res, next) => {
+  try {
+    const result = await getTotalUsersCount();
+    res.send(result);
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+});
+
+// GET /api/admin/users/:currentPage
+router.get("/users/:currentPage", async (req, res, next) => {
   const { isAdmin } = req.user;
   if (!isAdmin) {
     res.status(403);
@@ -23,8 +38,9 @@ router.get("/users/all-users", async (req, res, next) => {
       message: "You are not authorized to view this content.",
     });
   } else {
+    const { currentPage } = req.params;
     try {
-      const result = await getAllUsers();
+      const result = await getUsersPaginated(currentPage);
       res.send(result);
     } catch (err) {
       next(err);
@@ -94,8 +110,18 @@ router.patch("/users/promote", async (req, res, next) => {
 });
 
 // ORDERS
-// GET /api/admin/orders/all
-router.get("/orders/all", async (req, res, next) => {
+// GET /api/admin/orders
+router.get("/orders", async (req, res, next) => {
+  try {
+    const result = await getTotalOrdersCount();
+    res.send(result);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// GET /api/admin/orders/:currentPage
+router.get("/orders/:currentPage", async (req, res, next) => {
   const { isAdmin } = req.user;
   if (!isAdmin) {
     res.status(403);
@@ -104,14 +130,55 @@ router.get("/orders/all", async (req, res, next) => {
       message: "You are not authorized to view this content.",
     });
   } else {
+    const { currentPage } = req.params;
     try {
-      const result = await getAllOrders();
+      const result = await getOrdersPaginated(currentPage);
       res.send(result);
     } catch (err) {
       next(err);
     }
   }
-});
+})
+
+// GET /api/admin/orders/closed/:currentPage
+router.get("/orders/closed/:currentPage", async(req, res, next) => {
+  const { isAdmin } = req.user;
+  if (!isAdmin) {
+    res.status(403);
+    next({
+      name: "Access Forbidden",
+      message: "You are not authorized to view this content.",
+    });
+  } else {
+    const { currentPage } = req.params;
+    try {
+      const result = await getOrdersClosed(currentPage);
+      res.send(result);
+    } catch (err) {
+      next(err);
+    }
+  }
+})
+
+// GET /api/admin/orders/open/:currentPage
+router.get("/orders/open/:currentPage", async(req, res, next) => {
+  const { isAdmin } = req.user;
+  if (!isAdmin) {
+    res.status(403);
+    next({
+      name: "Access Forbidden",
+      message: "You are not authorized to view this content.",
+    });
+  } else {
+    const { currentPage } = req.params;
+    try {
+      const result = await getOrdersOpen(currentPage);
+      res.send(result);
+    } catch (err) {
+      next(err);
+    }
+  }
+})
 
 // PRODUCTS
 // GET /api/admin/books/:currentPage
@@ -131,6 +198,16 @@ router.get("/books/:currentPage", async (req, res, next) => {
     } catch (err) {
       next(err);
     }
+  }
+});
+
+//GET /api/admin/books
+router.get("/books", async (req, res, next) => {
+  try {
+    const result = await getTotalProductsCount();
+    res.send(result);
+  } catch (err) {
+    next(err);
   }
 });
 
@@ -213,12 +290,12 @@ router.patch("/books/:bookId", async (req, res, next) => {
         price,
         inventory,
       };
-      console.log("data:", data);
       const result = await editBook(data);
       if (result.length) {
         res.send({
           name: "Update Successful",
           message: `Book ID# ${bookId} has been updated.`,
+          book: result,
         });
       } else {
         next({
