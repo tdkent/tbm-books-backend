@@ -2,11 +2,29 @@ const client = require("../client");
 
 // Users Admin Functions
 
-const getAllUsers = async () => {
+const getTotalUsersCount = async () => {
   try {
     const { rows } = await client.query(`
-      select id, "userEmail", "isAdmin", "isActive" from users;
+      select count(*) from users;
     `);
+    return rows[0].count;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const getUsersPaginated = async (currentPage) => {
+  try {
+    const startIdx = currentPage * 100 - 99;
+    const endIdx = startIdx + 99;
+    const { rows } = await client.query(
+      `
+      select * from users
+      where id between $1 and $2
+      order by id asc;
+    `,
+      [startIdx, endIdx]
+    );
     return rows;
   } catch (err) {
     console.error("An error occurred:", err);
@@ -70,17 +88,72 @@ const promoteUser = async (userId) => {
 
 // Orders Admin Functions
 
-const getAllOrders = async () => {
+const getTotalOrdersCount = async () => {
   try {
     const { rows } = await client.query(`
-      select users_orders.*, users."userEmail" from users_orders
-      join users on users_orders."userId" = users.id;
+      select count(*) from users_orders;
     `);
+    return rows[0].count;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const getOrdersPaginated = async (currentPage) => {
+  try {
+    const startIdx = currentPage * 100 - 99;
+    const endIdx = startIdx + 99;
+    const { rows } = await client.query(
+      `
+      select * from users_orders
+      where id between $1 and $2
+      order by id asc;
+    `,
+      [startIdx, endIdx]
+    );
     return rows;
   } catch (err) {
     console.error("An error occurred:", err);
   }
 };
+
+const getOrdersClosed = async (currentPage) => {
+  try {
+    const startIdx = currentPage * 100 - 99;
+    const endIdx = startIdx + 99;
+    const { rows } = await client.query(
+      `
+      select * from users_orders
+      where id between $1 and $2
+      and "isComplete" = true
+      order by id asc;
+    `,
+      [startIdx, endIdx]
+    );
+    return rows;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const getOrdersOpen = async (currentPage) => {
+  try {
+    const startIdx = currentPage * 100 - 99;
+    const endIdx = startIdx + 99;
+    const { rows } = await client.query(
+      `
+      select * from users_orders
+      where id between $1 and $2
+      and "isComplete" = false
+      order by id asc;
+    `,
+      [startIdx, endIdx]
+    );
+    return rows;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+}
 
 // Books Admin Functions
 
@@ -97,6 +170,17 @@ const getBooksPaginated = async (currentPage) => {
       [startIdx, endIdx]
     );
     return rows;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const getTotalProductsCount = async () => {
+  try {
+    const { rows } = await client.query(`
+      select count(*) from books;
+    `);
+    return rows[0].count;
   } catch (err) {
     console.error("An error occurred:", err);
   }
@@ -170,6 +254,18 @@ const editBook = async ({ bookId, ...fields }) => {
         price = coalesce($9, price),
         inventory = coalesce($10, inventory)
       where id = $11
+      and ($1 is distinct from isbn or
+           $2 is distinct from title or
+           $3 is distinct from author or
+           $4 is distinct from year or
+           $5 is distinct from publisher or
+           $6 is distinct from "imageLinkS" or
+           $6 is distinct from "imageLinkM" or
+           $6 is distinct from "imageLinkL" or
+           $7 is distinct from genre or
+           $8 is distinct from description or
+           $9 is distinct from price or
+           $10 is distinct from inventory)
       returning *;
     `,
       [
@@ -210,12 +306,17 @@ const deactivateBook = async (bookId) => {
 };
 
 module.exports = {
-  getAllUsers,
+  getUsersPaginated,
+  getTotalUsersCount,
   deactivateUser,
   promoteUser,
-  getAllOrders,
   getBooksPaginated,
   createNewBook,
   deactivateBook,
   editBook,
+  getTotalProductsCount,
+  getOrdersPaginated,
+  getTotalOrdersCount,
+  getOrdersClosed,
+  getOrdersOpen,
 };
