@@ -65,15 +65,31 @@ const getBookById = async (id) => {
   }
 };
 
-const getAllBooksByGenre = async (genre) => {
+const getCountByGenre = async (genre) => {
   try {
     const { rows } = await client.query(
       `
-      select * from books
-      where genre = $1
-      and "isActive" = true;
+      select count(*) from books
+      where genre = $1;
     `,
       [genre]
+    );
+    return rows[0].count;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const getBooksByGenrePaginated = async (genre, currentPage) => {
+  try {
+    const offset = (currentPage - 1) * 20;
+    const { rows } = await client.query(
+      `
+      select * from books
+      where genre = $1 and "isActive" = true
+      limit 20 offset $2;
+    `,
+      [genre, offset]
     );
     return rows;
   } catch (err) {
@@ -125,8 +141,9 @@ const getAllFeatured = async () => {
 module.exports = {
   createBook,
   getBookById,
-  getAllBooksByGenre,
+  getBooksByGenrePaginated,
   getBooksCuratedRankings,
   getBooksCuratedRatings,
   getAllFeatured,
+  getCountByGenre,
 };
