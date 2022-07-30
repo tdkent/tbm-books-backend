@@ -105,9 +105,11 @@ const getOrdersPaginated = async (currentPage) => {
     const endIdx = startIdx + 99;
     const { rows } = await client.query(
       `
-      select * from users_orders
-      where id between $1 and $2
-      order by id asc;
+      select users_orders.*, users."userEmail"
+      from users_orders
+      join users on users.id = users_orders."userId"
+      where users_orders.id between $1 and $2
+      order by users_orders.id asc;
     `,
       [startIdx, endIdx]
     );
@@ -123,10 +125,11 @@ const getOrdersClosed = async (currentPage) => {
     const endIdx = startIdx + 99;
     const { rows } = await client.query(
       `
-      select * from users_orders
-      where id between $1 and $2
-      and "isComplete" = true
-      order by id asc;
+      select users_orders.*, users."userEmail" from users_orders
+      join users on users.id = users_orders."userId"
+      where users_orders.id between $1 and $2
+      and users_orders."isComplete" = true
+      order by users_orders.id asc;
     `,
       [startIdx, endIdx]
     );
@@ -142,10 +145,11 @@ const getOrdersOpen = async (currentPage) => {
     const endIdx = startIdx + 99;
     const { rows } = await client.query(
       `
-      select * from users_orders
-      where id between $1 and $2
-      and "isComplete" = false
-      order by id asc;
+      select users_orders.*, users."userEmail" from users_orders
+      join users on users.id = users_orders."userId"
+      where users_orders.id between $1 and $2
+      and users_orders."isComplete" = false
+      order by users_orders.id asc;
     `,
       [startIdx, endIdx]
     );
