@@ -56,6 +56,12 @@ router.post("/login", async (req, res, next) => {
         name: "Authorization Error",
         message: `No accounts exist for user ${userEmail}. Please try again, or create an account.`,
       });
+    } else if (!check[0].isActive) {
+      res.status(403);
+      next({
+        name: "Account Forbidden",
+        message: "This account has been deactivated.",
+      });
     } else {
       const user = await checkUser(userEmail, password);
       if (!user) {
@@ -65,7 +71,11 @@ router.post("/login", async (req, res, next) => {
         });
       } else {
         const token = jwt.sign(
-          { id: user[0].id, userEmail: user[0].userEmail, isAdmin: user[0].isAdmin },
+          {
+            id: user[0].id,
+            userEmail: user[0].userEmail,
+            isAdmin: user[0].isAdmin,
+          },
           JWT_SECRET
         );
         res.send({
