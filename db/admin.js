@@ -101,17 +101,17 @@ const getTotalOrdersCount = async () => {
 
 const getOrdersPaginated = async (currentPage) => {
   try {
-    const startIdx = currentPage * 100 - 99;
-    const endIdx = startIdx + 99;
+    // const startIdx = currentPage * 100 - 99;
+    // const endIdx = startIdx + 99;
+    const offset = (currentPage - 1) * 100;
     const { rows } = await client.query(
       `
       select users_orders.*, users."userEmail"
       from users_orders
       join users on users.id = users_orders."userId"
-      where users_orders.id between $1 and $2
-      order by users_orders.id asc;
+      limit 100 offset $1;
     `,
-      [startIdx, endIdx]
+      [offset]
     );
     return rows;
   } catch (err) {
@@ -121,17 +121,17 @@ const getOrdersPaginated = async (currentPage) => {
 
 const getOrdersClosed = async (currentPage) => {
   try {
-    const startIdx = currentPage * 100 - 99;
-    const endIdx = startIdx + 99;
+    // const startIdx = currentPage * 100 - 99;
+    // const endIdx = startIdx + 99;
+    const offset = (currentPage - 1) * 100;
     const { rows } = await client.query(
       `
       select users_orders.*, users."userEmail" from users_orders
       join users on users.id = users_orders."userId"
-      where users_orders.id between $1 and $2
-      and users_orders."isComplete" = true
-      order by users_orders.id asc;
+      where users_orders."isComplete" = true
+      limit 100 offset $1;
     `,
-      [startIdx, endIdx]
+      [offset]
     );
     return rows;
   } catch (err) {
@@ -141,23 +141,23 @@ const getOrdersClosed = async (currentPage) => {
 
 const getOrdersOpen = async (currentPage) => {
   try {
-    const startIdx = currentPage * 100 - 99;
-    const endIdx = startIdx + 99;
+    // const startIdx = currentPage * 100 - 99;
+    // const endIdx = startIdx + 99;
+    const offset = (currentPage - 1) * 100;
     const { rows } = await client.query(
       `
       select users_orders.*, users."userEmail" from users_orders
       join users on users.id = users_orders."userId"
-      where users_orders.id between $1 and $2
-      and users_orders."isComplete" = false
-      order by users_orders.id asc;
+      where users_orders."isComplete" = false
+      limit 100 offset $1;
     `,
-      [startIdx, endIdx]
+      [offset]
     );
     return rows;
   } catch (err) {
     console.error("An error occurred:", err);
   }
-}
+};
 
 // Books Admin Functions
 
