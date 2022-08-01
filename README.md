@@ -1,19 +1,19 @@
-# Vivlío API Docs
+# TBM Books API Docs
 
 ## General Info
 
-Vivlío is the Greek word for ‘book’.
-
 ### Heroku Database
 
-- [Link to Heroku Database](https://sensationnel-maison-12931.herokuapp.com)
-
-- URL: https://sensationnel-maison-12931.herokuapp.com
+- Database URL is stored locally in .env file.
+- Access using process.env.DATABASE_URL
 
 ### Generated Users
 
-1. userEmail: fake1@fakemail | password: password123 (Has orders attached to account)
-2. userEmail: fake2@fakemail | password: password123 (No orders)
+The database is currently seeded with 200 dummy user accounts. Here are three to use for testing:
+
+1. userEmail: fake1@fakemail | password: password123 | isAdmin: false
+2. userEmail: fake2@fakemail | password: password123 | isAdmin: false
+3. userEmail: admin@fakemail | password: admin123 | isAdmin:true
 
 ### Errors
 
@@ -32,6 +32,8 @@ Sent as objects containing:
 Sends an array of objects containing every book with a partial match or better to the search query (currently searches against Title, Author, Publisher). Partial words will return results. Bad spelling / capitalization will return no results.
 
 ### Books
+
+- There are currently 400 book objects in the database.
 
 **General Return Schema**
 
@@ -54,6 +56,8 @@ Return Parameters
 - globalRatings (string): represents number of ratings (randomly generated between 0-5000).
 - price (string): randomly generated between 8.99 and 29.99 (all prices end with .99).
 - inventory (number): randomly generated number between 10-100.
+- isFeatured (boolean): Indicates if book is part of featured book curated list.
+- isActive (boolean): activation status of book. If false, the book is deactivated and removed from the front end.  
 
 #### GET /api/books
 
@@ -63,9 +67,13 @@ Sends all books in the database in a single array of objects. Note that some boo
 
 Returns an array containing a single book object. The :id parameter in the URL corresponds to the id of the book.
 
-#### GET /api/books/genre/:genre
+#### GET /api/books/count/:genre
 
-Returns an array of book objects matching the requested genre parameter. The :genre parameter in the URL must be capitalized (i.e. Horror, Science-Fiction).
+Returns the number of books in the database matching the genre parameter. Used for pagination.
+
+#### GET /api/books/genre/:genre/:currentPage
+
+Returns an array of 20 books matching the genre parameter, offset by the currentPage number. Used for pagination.
 
 #### GET /api/books/lists/curated-rankings
 
@@ -78,6 +86,12 @@ Returns an array containing 10 book objects corresponding to the top ten "highes
 #### GET /api/books/lists/featured
 
 Returns an array containing 10 book objects representing our personally chosen top books.
+
+### Authors
+
+#### GET /api/authors/:authorName
+
+Returns an array of book objects matching the authorName parameter.
 
 ### Users
 
@@ -95,6 +109,7 @@ Returns an array containing 10 book objects representing our personally chosen t
 - user(object)
   - id (number)
   - userEmail (string)
+  - isAdmin (boolean)
  
 #### POST /api/users/login
 
@@ -110,6 +125,7 @@ Returns an array containing 10 book objects representing our personally chosen t
 - user(object)
   - id (number)
   - userEmail (string)
+  - isAdmin (boolean)
 
 #### GET /api/users/me
 
@@ -267,6 +283,108 @@ headers: {
 Object:
 - name (string): States whether checkout was un/successful.
 - message (string): States whether checkout was un/successful.
+
+### Stripe Checkout
+
+Endpoint to create a temporary Stripe checkout session in test mode. The form accepts dummy data, and does not transmit it anywhere. Refer to [this list](https://stripe.com/docs/testing#cards) when entering credit card numbers.
+
+Note that this endpoint does NOT use /api prefix
+
+### POST /create-checkout-session
+
+**Request Parameters**
+
+Requires the userId and orderPrice.
+
+```
+method: "POST",
+headers: {
+        "Content-Type": "application/json",
+},
+body: JSON.stringify({
+        userId,
+        orderPrice,
+        }),
+})
+```
+
+**Return Parameters**
+
+When the checkout session is complete or cancelled (cancellation occurs if the user clicks the back button in the checkout window), a redirect route is created, returned to the front end, and placed into the user's window.location.href.
+
+Success URL: "http://localhost:3000/${userId}/cart?success=true"
+Cancel URL: "http://localhost:3000/${userId}/cart?canceled=true"
+
+**Note: above routes will need to be updated to final front end URL.**
+
+The redirect route reloads the user's cart, and closes the order on either success or cancel **(this needs to be fixed)**.
+
+### Admin
+
+Endpoints used by the front end Admin Portal.
+
+**Request Parameters**
+
+With the exception of endpoints returning counts, all admin requests require a token with an isAdmin = true value attached.
+
+#### Admin - Users
+
+#### GET /api/admin/users
+
+Returns a number representing the total number of users in the database. Used for pagination.
+
+#### GET /api/admin/users/:currentPage
+
+Returns an array of 100 user objects, offset by the currentPage param.
+
+#### PATCH /api/admin/users/deactivate
+
+Deactivates the selected user's account, permanently barring them from access from the front end site.
+
+#### PATCH /api/admin/users/promote
+
+Promotes the selected user's account to an admin role, allowing them access to the Admin Portal.
+
+#### Admin - Orders
+
+#### GET /api/admin/orders
+
+Returns a number representing the total number of orders in the database.
+
+#### GET /api/admin/orders/:currentPage
+
+Returns an array of 100 orders objects, offset by the currentPage param.
+
+#### GET /api/admin/orders/closed/:currentPage
+
+Returns an array of 100 orders objects where isComplete = true, offset by the currentPage param.
+
+#### GET /api/admin/orders/open/:currentPage
+
+Returns an array of 100 orders objects where isComplete = false, offset by the currentPage param.
+
+#### Admin - Products
+
+#### GET /api/admin/books
+
+Returns a number representing the total number of books in the database.
+
+#### GET /api/admin/books/:currentPage
+
+Returns an array of 100 book objects, ordered by id, offset by the currentPage param.
+
+#### POST /api/admin/books/add
+
+Adds a new book to the database using the provided Add New Book form in the Admin Portal.
+
+#### PATCH /api/admin/books/:bookId
+
+Edits a book in the database using the provided Edit Book form in the Admin Portal.
+
+#### DELETE /api/admin/books/:bookId
+
+Deactivates a book in the database. The book will no longer appear in front end requests.
+
 
 
 

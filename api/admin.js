@@ -253,7 +253,7 @@ router.post("/books/add", async (req, res, next) => {
   }
 });
 
-// EDIT /api/admin/books/:bookId
+// PATCH /api/admin/books/:bookId
 router.patch("/books/:bookId", async (req, res, next) => {
   const { isAdmin } = req.user;
   if (!isAdmin) {

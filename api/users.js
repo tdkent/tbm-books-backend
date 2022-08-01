@@ -29,7 +29,7 @@ router.post("/register", async (req, res, next) => {
     } else {
       const newUser = createUser({ userEmail, password });
       const token = jwt.sign(
-        { id: newUser.id, email: newUser.email },
+        { id: newUser.id, userEmail: newUser.userEmail, isAdmin: newUser.isAdmin, },
         JWT_SECRET
       );
       res.send({
@@ -38,6 +38,7 @@ router.post("/register", async (req, res, next) => {
         user: {
           id: newUser.id,
           userEmail: newUser.userEmail,
+          isAdmin: newUser.isAdmin
         },
       });
     }
