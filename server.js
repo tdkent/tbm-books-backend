@@ -11,3 +11,5 @@ server.listen(PORT, () => {
 })
 
 client.connect();
+
+// Hello CORS
