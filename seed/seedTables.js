@@ -49,7 +49,12 @@ const createTables = async () => {
         id serial primary key,
         "userId" smallint references users(id) not null,
         "isComplete" boolean default false,
-        "orderPrice" numeric(6, 2) not null
+        "orderPrice" numeric(6, 2) not null,
+        "nickName" varchar(255) default null,
+        "firstName" varchar(255) default null,
+        "lastName" varchar(255) default null,
+        location varchar(255) default null,
+        payment varchar(255) default null
       );
       create table orders_details(
         id serial primary key,
