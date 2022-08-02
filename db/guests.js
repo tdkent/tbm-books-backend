@@ -51,15 +51,15 @@ const guestCheckout = async (guestEmail, guestCart) => {
         [userOrder[0].id, book.id, book.price, book.bookQuantity]
       );
     }
-    return { status: "checkout", orderId: userOrder[0].id, userId, orderPrice };
+    return { status: "checkout", orderId: userOrder[0].id, orderPrice, userId };
   } catch (err) {
     console.error("An error occurred:", err);
   }
 };
 
-const guestCompleteOrder = async (orderId) => {
+const guestCompleteOrder = async (orderId, guestCart) => {
   try {
-    const { rows } = await client.query(
+    const { rows: complete } = await client.query(
       `
       update users_orders
       set "isComplete" = true
@@ -68,7 +68,30 @@ const guestCompleteOrder = async (orderId) => {
      `,
       [orderId]
     );
-    return rows;
+    let arr = [];
+    for (const book of guestCart) {
+      const { rows: inv } = await client.query(
+        `
+        update books
+        set inventory = (inventory - $1)
+        where id = $2
+        returning id, inventory;
+      `,
+        [book.bookQuantity, book.id]
+      );
+      arr.push({
+        bookId: book.id,
+        oldInv: book.inventory,
+        quantity: book.bookQuantity,
+        newInv: inv[0].inventory,
+      });
+    }
+    const data = {
+      orderId,
+      isComplete: complete[0].isComplete,
+      updatedBooks: arr,
+    };
+    return [data];
   } catch (err) {
     console.error("An error occurred:", err);
   }

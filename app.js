@@ -13,8 +13,17 @@ app.use(express.static("public"));
 
 // Stripe Route
 app.post("/create-checkout-session", async (req, res) => {
-  const { userId, orderPrice } = req.body;
+  const { orderPrice, orderId, userId } = req.body;
   const amount = Math.round(orderPrice * 100);
+  let success_url;
+  let cancel_url;
+  if (userId) {
+    success_url = `http://localhost:3000/${userId}/cart?success=true${orderId}`;
+    cancel_url = `http://localhost:3000/${userId}/cart?canceled=true`;
+  } else {
+    success_url = `http://localhost:3000/guest?success=true${orderId}`;
+    cancel_url = `http://localhost:3000/guest?canceled=true`;
+  }
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
@@ -29,12 +38,8 @@ app.post("/create-checkout-session", async (req, res) => {
       },
     ],
     mode: "payment",
-    // Enable for front end testing
-    // success_url: `http://localhost:3000/${userId}/cart?success=true`,
-    // cancel_url: `http://localhost:3000/${userId}/cart?canceled=true`,
-    // Enable for Tim's local testing
-    success_url: `http://localhost:3000/guest?success=true`,
-    cancel_url: `http://localhost:3000/guest?canceled=true`,
+    success_url,
+    cancel_url,
   });
   res.json({ url: session.url });
 });
