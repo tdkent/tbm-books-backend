@@ -19,9 +19,9 @@ app.post("/create-checkout-session", async (req, res) => {
     line_items: [
       {
         price_data: {
-          currency: 'usd',
+          currency: "usd",
           product_data: {
-            name: 'Fake Order',
+            name: "Fake Order",
           },
           unit_amount: amount,
         },
@@ -29,10 +29,14 @@ app.post("/create-checkout-session", async (req, res) => {
       },
     ],
     mode: "payment",
-    success_url: `http://localhost:3000/${userId}/cart?success=true`,
-    cancel_url: `http://localhost:3000/${userId}/cart?canceled=true`,
+    // Enable for front end testing
+    // success_url: `http://localhost:3000/${userId}/cart?success=true`,
+    // cancel_url: `http://localhost:3000/${userId}/cart?canceled=true`,
+    // Enable for Tim's local testing
+    success_url: `http://localhost:3000/guest?success=true`,
+    cancel_url: `http://localhost:3000/guest?canceled=true`,
   });
-  res.json({url: session.url});
+  res.json({ url: session.url });
 });
 
 // API Routes

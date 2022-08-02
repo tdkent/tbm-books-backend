@@ -11,7 +11,7 @@ const guestCheckout = async (guestEmail, guestCart) => {
       [guestEmail]
     );
     if (check.length && !check[0].isGuest) {
-      return "LoginRequired";
+      return "login";
     }
     let userId;
     if (check.length) {
@@ -41,7 +41,34 @@ const guestCheckout = async (guestEmail, guestCart) => {
     `,
       [userId, (isComplete = false), orderPrice]
     );
-    return userOrder;
+    for (const book of guestCart) {
+      await client.query(
+        `
+        insert into orders_details("orderId", "bookId", "bookPrice", quantity)
+        values($1, $2, $3, $4)
+        returning *;
+      `,
+        [userOrder[0].id, book.id, book.price, book.bookQuantity]
+      );
+    }
+    return { status: "checkout", orderId: userOrder[0].id, userId, orderPrice };
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const guestCompleteOrder = async (orderId) => {
+  try {
+    const { rows } = await client.query(
+      `
+      update users_orders
+      set "isComplete" = true
+      where id = $1
+      returning id, "isComplete";
+     `,
+      [orderId]
+    );
+    return rows;
   } catch (err) {
     console.error("An error occurred:", err);
   }
@@ -49,4 +76,5 @@ const guestCheckout = async (guestEmail, guestCart) => {
 
 module.exports = {
   guestCheckout,
+  guestCompleteOrder,
 };
