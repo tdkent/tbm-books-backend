@@ -2,16 +2,16 @@ const client = require("../client");
 const bcrpyt = require("bcrypt");
 const saltRounds = 10;
 
-const createUser = async ({ userEmail, password, isAdmin = false }) => {
+const createUser = async ({ userEmail, password, isAdmin = false, isGuest = false }) => {
   try {
     const hash = await bcrpyt.hash(password, saltRounds);
     const { rows } = await client.query(
       `
-      insert into users("userEmail", password, "isAdmin")
-      values($1, $2, $3)
-      returning id, "userEmail", "isAdmin", "isActive";
+      insert into users("userEmail", password, "isAdmin", "isGuest")
+      values($1, $2, $3, $4)
+      returning id, "userEmail", "isAdmin", "isActive", "isGuest";
     `,
-      [userEmail, hash, isAdmin]
+      [userEmail, hash, isAdmin, isGuest]
     );
     return rows[0];
   } catch (err) {
