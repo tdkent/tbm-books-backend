@@ -13,15 +13,24 @@ app.use(express.static("public"));
 
 // Stripe Route
 app.post("/create-checkout-session", async (req, res) => {
-  const { userId, orderPrice } = req.body;
+  const { orderPrice, orderId, userId } = req.body;
   const amount = Math.round(orderPrice * 100);
+  let success_url;
+  let cancel_url;
+  if (userId) {
+    success_url = `http://localhost:3000/${userId}/cart?success=true${orderId}`;
+    cancel_url = `http://localhost:3000/${userId}/cart?canceled=true`;
+  } else {
+    success_url = `http://localhost:3000/guest?success=true${orderId}`;
+    cancel_url = `http://localhost:3000/guest?canceled=true`;
+  }
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
         price_data: {
-          currency: 'usd',
+          currency: "usd",
           product_data: {
-            name: 'Fake Order',
+            name: "Fake Order",
           },
           unit_amount: amount,
         },
@@ -29,10 +38,10 @@ app.post("/create-checkout-session", async (req, res) => {
       },
     ],
     mode: "payment",
-    success_url: `http://localhost:3000/${userId}/cart?success=true`,
-    cancel_url: `http://localhost:3000/${userId}/cart?canceled=true`,
+    success_url,
+    cancel_url,
   });
-  res.json({url: session.url});
+  res.json({ url: session.url });
 });
 
 // API Routes
