@@ -93,13 +93,13 @@ router.post("/:orderId", async (req, res, next) => {
     });
   } else {
     const { orderId } = req.params;
-    // const { id: userId } = req.user;
     try {
       const result = await userCompleteOrder(orderId);
-      if (result[0].isComplete) {
+      if (result.isComplete) {
         res.send({
           name: "Order Complete",
           message: "Your order is complete. Thanks for your business!",
+          result,
         });
       } else {
         next({
