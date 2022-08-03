@@ -45,17 +45,12 @@ const createTables = async () => {
         "isAdmin" boolean default false,
         "isGuest" boolean default false,
         "isActive" boolean default true
-        state varchar(255) default 'CA',
-        city varchar(255) default 'Los Angeles',
-        zip varchar(255) default '90278',
-        street varchar(255) default '117 Marshallfield lane'
-        
       );
       create table users_orders(
         id serial primary key,
         "userId" smallint references users(id) not null,
         "isComplete" boolean default false,
-        "orderPrice" numeric(6, 2) not null,
+        "orderPrice" numeric(6, 2) not null
       );
       create table orders_details(
         id serial primary key,
