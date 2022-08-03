@@ -5,7 +5,7 @@ const {
   postAddItemToCart,
   deleteItemFromCart,
   editCartQuantity,
-  completeOrder,
+  userCompleteOrder,
 } = require("../db");
 
 // POST /api/orders/cart
@@ -93,9 +93,9 @@ router.post("/:orderId", async (req, res, next) => {
     });
   } else {
     const { orderId } = req.params;
-    const { id: userId } = req.user;
+    // const { id: userId } = req.user;
     try {
-      const result = await completeOrder(orderId, userId);
+      const result = await userCompleteOrder(orderId);
       if (result[0].isComplete) {
         res.send({
           name: "Order Complete",

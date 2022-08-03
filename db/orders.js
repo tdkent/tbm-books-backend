@@ -32,15 +32,14 @@ const createOrderDetails = async ({ orderId, bookId, bookPrice, quantity }) => {
   }
 };
 
-const completeOrder = async (orderId, userId) => {
+const userCompleteOrder = async (orderId) => {
   try {
     const { rows } = await client.query(`
       update users_orders
       set "isComplete" = true
       where id = $1
-      and "userId" = $2
       returning id, "isComplete";
-    `, [orderId, userId]);
+    `, [orderId]);
     return rows;
   } catch (err) {
     console.error("An error occurred:", err);
@@ -50,5 +49,5 @@ const completeOrder = async (orderId, userId) => {
 module.exports = {
   createUserOrder,
   createOrderDetails,
-  completeOrder,
+  userCompleteOrder,
 };
