@@ -21,8 +21,8 @@ app.post("/create-checkout-session", async (req, res) => {
     success_url = `http://localhost:3000/${userId}/cart?success=true${orderId}`;
     cancel_url = `http://localhost:3000/${userId}/cart?canceled=true`;
   } else {
-    success_url = `http://localhost:3000/guest?success=true${orderId}`;
-    cancel_url = `http://localhost:3000/guest?canceled=true`;
+    success_url = `http://localhost:3000/GuestCart?success=true${orderId}`;
+    cancel_url = `http://localhost:3000/GuestCart?canceled=true`;
   }
   const session = await stripe.checkout.sessions.create({
     line_items: [
