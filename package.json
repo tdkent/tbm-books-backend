@@ -2,11 +2,11 @@
   "name": "gs_db",
   "version": "1.0.0",
   "description": "Database serving our book emporium",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "seed:dev": "nodemon ./seed/index.js",
     "seed": "node ./seed/index.js",
-    "start:dev": "nodemon app.js",
+    "start:dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

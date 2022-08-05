@@ -65,10 +65,10 @@ router.post("/register", async (req, res, next) => {
 
 // POST /api/users/login
 router.post("/login", async (req, res, next) => {
-  const { userEmail, password } = req.body;
+  const { userEmail, password, userCart } = req.body;
   try {
     const check = await getUserByUserEmail(userEmail);
-    if (!check.length) {
+    if (!check.length || check[0].isGuest) {
       next({
         name: "Authorization Error",
         message: `No accounts exist for user ${userEmail}. Please try again, or create an account.`,
@@ -95,6 +95,14 @@ router.post("/login", async (req, res, next) => {
           },
           JWT_SECRET
         );
+        // account is verified, token is prepared. 
+        // add any cart items to tables
+        // check if the user has an open order
+        // if not, create a new order
+        // is yes, add to existing order
+        if(userCart.length) {
+          // add items to users_orders
+        }
         res.send({
           message: `Welcome back, ${user[0].userEmail}. You're logged in!`,
           token,
