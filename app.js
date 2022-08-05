@@ -62,5 +62,14 @@ apiRouter.use((error, req, res, next) => {
     message: error.message,
   });
 });
+const PORT = process.env["PORT"] ?? 4000;
+
+const client = require('./client');
+
+app.listen(PORT, () => {
+  console.log(`CORS-enabled server listening on port ${PORT}`)
+})
+
+client.connect();
 
 module.exports = app;
