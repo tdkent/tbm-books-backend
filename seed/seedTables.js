@@ -43,6 +43,7 @@ const createTables = async () => {
         "userEmail" varchar(255) unique not null,
         password varchar(255) not null,
         "isAdmin" boolean default false,
+        "isGuest" boolean default false,
         "isActive" boolean default true
       );
       create table users_orders(

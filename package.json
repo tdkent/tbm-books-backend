@@ -2,11 +2,11 @@
   "name": "gs_db",
   "version": "1.0.0",
   "description": "Database serving our book emporium",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "seed:dev": "nodemon ./seed/index.js",
     "seed": "node ./seed/index.js",
-    "start:dev": "nodemon server.js",
+    "start:dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -25,7 +25,8 @@
     "faker": "^4.1.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
-    "pg": "^8.7.3"
+    "pg": "^8.7.3",
+    "stripe": "^9.16.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.3.0",

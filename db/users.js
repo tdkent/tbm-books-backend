@@ -1,17 +1,16 @@
 const client = require("../client");
 const bcrpyt = require("bcrypt");
-const saltRounds = 10;
 
-const createUser = async ({ userEmail, password, isAdmin = false }) => {
+const createUser = async ({userEmail, password, isAdmin = false, isGuest = false}) => {
   try {
-    const hash = await bcrpyt.hash(password, saltRounds);
+    const hash = await bcrpyt.hash(password, 10);
     const { rows } = await client.query(
       `
-      insert into users("userEmail", password, "isAdmin")
-      values($1, $2, $3)
-      returning id, "userEmail", "isAdmin", "isActive";
+      insert into users("userEmail", password, "isAdmin", "isGuest")
+      values($1, $2, $3, $4)
+      returning id, "userEmail", "isAdmin", "isActive", "isGuest";
     `,
-      [userEmail, hash, isAdmin]
+      [userEmail, hash, isAdmin, isGuest]
     );
     return rows[0];
   } catch (err) {
@@ -36,12 +35,12 @@ const checkUser = async (userEmail, password) => {
   }
 };
 
-const getUserByEmail = async (userEmail) => {
+const getUserByUserEmail = async (userEmail) => {
   try {
     const { rows } = await client.query(
       `
-      select * from users
-      where "userEmail"=$1;
+      select id, "userEmail", "isAdmin", "isGuest", "isActive" from users
+      where "userEmail" = $1;
     `,
       [userEmail]
     );
@@ -166,7 +165,7 @@ const getUserCartById = async (userId) => {
 
 module.exports = {
   createUser,
-  getUserByEmail,
+  getUserByUserEmail,
   checkUser,
   getUserProfileById,
   getUserCartById,

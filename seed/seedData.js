@@ -4,7 +4,7 @@ const {
   createUser,
   createUserOrder,
   createOrderDetails,
-  getAllOrders,
+  getOrdersPaginated,
   getAllFeatured,
 } = require("../db");
 
@@ -54,13 +54,26 @@ const createBooks = async () => {
 const createUsers = async () => {
   try {
     console.log("Adding users to the 'users' table...");
+    const createFakeUsers = () => {
+      const arr = [];
+      for (let i = 1; i <= 200; i++) {
+        const fakeUser = {
+          userEmail: faker.internet.email(),
+          password: faker.internet.password(10),
+        };
+        arr.push(fakeUser);
+      }
+      return arr;
+    };
+    const fakes = createFakeUsers();
     const usersData = [
       { userEmail: "fake1@fakemail", password: "password123" },
       { userEmail: "fake2@fakemail", password: "password123" },
-      {userEmail: "admin@fakemail", password: "admin123", isAdmin: true},
+      { userEmail: "admin@fakemail", password: "admin123", isAdmin: true },
+      ...fakes,
     ];
     const users = await Promise.all(usersData.map(createUser));
-    console.log(users);
+    console.log("Finished creating new users.");
   } catch (err) {
     console.error("An error occurred:", err);
   }
@@ -69,33 +82,46 @@ const createUsers = async () => {
 const createOrders = async () => {
   try {
     console.log("Adding orders to users_orders table...");
+    const createFakeOrders = () => {
+      let arr = [];
+      const fakeUserId = () => Math.floor(Math.random() * 198) + 3;
+      const setStatus = () => {
+        if (Math.round(Math.random())) return true;
+        else return false;
+      };
+      for (let i = 1; i <= 450; i++) {
+        const order = {
+          userId: fakeUserId(),
+          isComplete: setStatus(),
+          orderPrice: faker.commerce.price(10, 400, 2),
+        };
+        arr.push(order);
+      }
+      return arr;
+    };
+    const fakes = createFakeOrders();
     const [book1, book2, book3, book4, book5, book6] = await getAllFeatured();
     const data = [
       {
         userId: 1,
         isComplete: true,
-        orderPrice:
-          Number(book1.price) * 2 +
-          Number(book2.price) 
+        orderPrice: Number(book1.price) * 2 + Number(book2.price),
       },
       {
         userId: 1,
         isComplete: true,
-        orderPrice:
-          Number(book4.price) * 2 +
-          Number(book5.price),
+        orderPrice: Number(book4.price) * 2 + Number(book5.price),
       },
       {
         userId: 1,
         isComplete: false,
-        orderPrice:
-          Number(book6.price) * 4 +
-          Number(book3.price),
+        orderPrice: Number(book6.price) * 4 + Number(book3.price),
       },
+      ...fakes,
     ];
     const newOrders = await Promise.all(data.map(createUserOrder));
     console.log("New orders added to users_orders: ", newOrders);
-    const [userOrder1, userOrder2, userOrder3] = await getAllOrders();
+    const [userOrder1, userOrder2, userOrder3] = await getOrdersPaginated(1);
     const detailsData = [
       {
         orderId: userOrder1.id,

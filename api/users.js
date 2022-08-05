@@ -4,19 +4,21 @@ const jwt = require("jsonwebtoken");
 const { JWT_SECRET = "fullstack" } = process.env;
 
 const {
-  getUserByEmail,
+  getUserByUserEmail,
   createUser,
   checkUser,
   getUserProfileById,
   getUserCartById,
+  guestToUserCart,
+  guestToUser,
 } = require("../db");
 
 // POST /api/users/register
 router.post("/register", async (req, res, next) => {
-  const { userEmail, password } = req.body;
+  const { userEmail, password, guestCart } = req.body;
   try {
-    const check = await getUserByEmail(userEmail);
-    if (check.length) {
+    const check = await getUserByUserEmail(userEmail);
+    if (check.length && !check[0].isGuest) {
       next({
         name: "Registration Error",
         message: `An account using ${userEmail} already exists.`,
@@ -27,17 +29,32 @@ router.post("/register", async (req, res, next) => {
         message: "Passwords need to be at least 8 characters long.",
       });
     } else {
-      const newUser = createUser({ userEmail, password });
+      let newUser;
+      if (check.length && check[0].isGuest) {
+        newUser = await guestToUser(userEmail, password);
+      } else {
+        newUser = await createUser({userEmail, password});
+      }
       const token = jwt.sign(
-        { id: newUser.id, email: newUser.email },
+        {
+          id: newUser.id,
+          userEmail: newUser.userEmail,
+          isAdmin: newUser.isAdmin,
+        },
         JWT_SECRET
       );
+      let order = [];
+      if (guestCart.length) {
+        order = await guestToUserCart(newUser.id, guestCart);
+      }
       res.send({
         message: `New account created using ${userEmail}. Thanks for signing up!`,
         token,
         user: {
           id: newUser.id,
           userEmail: newUser.userEmail,
+          isAdmin: newUser.isAdmin,
+          order,
         },
       });
     }
@@ -50,11 +67,17 @@ router.post("/register", async (req, res, next) => {
 router.post("/login", async (req, res, next) => {
   const { userEmail, password } = req.body;
   try {
-    const check = await getUserByEmail(userEmail);
+    const check = await getUserByUserEmail(userEmail);
     if (!check.length) {
       next({
         name: "Authorization Error",
         message: `No accounts exist for user ${userEmail}. Please try again, or create an account.`,
+      });
+    } else if (!check[0].isActive) {
+      res.status(403);
+      next({
+        name: "Account Forbidden",
+        message: "This account has been deactivated.",
       });
     } else {
       const user = await checkUser(userEmail, password);
@@ -65,7 +88,11 @@ router.post("/login", async (req, res, next) => {
         });
       } else {
         const token = jwt.sign(
-          { id: user[0].id, userEmail: user[0].userEmail, isAdmin: user[0].isAdmin },
+          {
+            id: user[0].id,
+            userEmail: user[0].userEmail,
+            isAdmin: user[0].isAdmin,
+          },
           JWT_SECRET
         );
         res.send({
