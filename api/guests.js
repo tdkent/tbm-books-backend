@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { guestCheckout, guestCompleteOrder } = require("../db/guests");
+const { guestCheckout, guestCompleteOrder } = require("../db");
 
 // POST /api/guests/checkout
 router.post("/checkout", async (req, res, next) => {
