@@ -6,4 +6,5 @@ module.exports = {
   ...require('./search'),
   ...require('./cart'),
   ...require('./admin'),
+  ...require('./guests'),
 }
