@@ -9,6 +9,7 @@ const {
   checkUser,
   getUserProfileById,
   getUserCartById,
+  editUserAddress,
 } = require("../db");
 
 // POST /api/users/register
@@ -108,6 +109,46 @@ router.get("/me", async (req, res, next) => {
     try {
       const user = await getUserProfileById(userId);
       res.send(user);
+    } catch (err) {
+      next(err);
+    }
+  }
+});
+
+// PATCH /api/:userId/update
+
+// router.patch("/:userId/update", async (req, res, next) => {
+// const {state, city, street, zip} = req.body;
+// const {userId} = req.params
+// console.log(state, city, street, zip);
+// console.log(userId);
+// try {
+//   const newAddress = await editUserAddress(
+//     state,
+//     city,
+//     street,
+//     zip
+//   );
+//   res.send(newAddress);
+// } catch (err) {
+//   next(err)
+// }});
+router.patch("/:userId/update", async (req, res, next) => {
+  if (!req.user) {
+    res.status(401);
+    next({
+      name: "Authorization Error",
+      message: "You must be logged in to perform this action.",
+    });
+  } else {
+    const { userId } = req.params;
+    const {state, city, street, zip} = req.body;
+    const data = {userId, state, city, street, zip}
+    console.log(data)
+    console.log("works?" , userId)
+    try {
+      const newAddress = await editUserAddress(data)
+      console.log(newAddress)
     } catch (err) {
       next(err);
     }
