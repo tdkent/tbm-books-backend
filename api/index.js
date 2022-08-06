@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-// const { JWT_SECRET = "fullstack" } = process.env;
 
 const { getUserById } = require("../db");
 
