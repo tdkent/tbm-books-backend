@@ -7,6 +7,7 @@
     "seed:dev": "nodemon ./seed/index.js",
     "seed": "node ./seed/index.js",
     "start:dev": "nodemon app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

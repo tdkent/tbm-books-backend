@@ -11,5 +11,3 @@
 // })
 
 // client.connect();
-
-// // Hello CORS
