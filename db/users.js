@@ -1,9 +1,5 @@
 const client = require("../client");
 const bcrpyt = require("bcrypt");
-const id = require("faker/lib/locales/id_ID");
-const saltRounds = 10;
-
-
 
 const createUser = async ({
   userEmail,

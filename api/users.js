@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-const { JWT_SECRET = "fullstack" } = process.env;
+// const { JWT_SECRET = "fullstack" } = process.env;
 
 const {
   getUserByUserEmail,
@@ -43,7 +43,7 @@ router.post("/register", async (req, res, next) => {
           userEmail: newUser.userEmail,
           isAdmin: newUser.isAdmin,
         },
-        JWT_SECRET
+        process.env.JWT_SECRET
       );
       let order = [];
       if (guestCart.length) {
@@ -95,7 +95,7 @@ router.post("/login", async (req, res, next) => {
             userEmail: user[0].userEmail,
             isAdmin: user[0].isAdmin,
           },
-          JWT_SECRET
+          process.env.JWT_SECRET
         );
         let cart = [];
         if(guestCart.length) {
@@ -139,24 +139,6 @@ router.get("/me", async (req, res, next) => {
   }
 });
 
-// PATCH /api/:userId/update
-
-// router.patch("/:userId/update", async (req, res, next) => {
-// const {state, city, street, zip} = req.body;
-// const {userId} = req.params
-// console.log(state, city, street, zip);
-// console.log(userId);
-// try {
-//   const newAddress = await editUserAddress(
-//     state,
-//     city,
-//     street,
-//     zip
-//   );
-//   res.send(newAddress);
-// } catch (err) {
-//   next(err)
-// }});
 router.patch("/:userId/update", async (req, res, next) => {
   if (!req.user) {
     res.status(401);
