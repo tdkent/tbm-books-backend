@@ -1,21 +1,29 @@
 const client = require("../client");
 const bcrpyt = require("bcrypt");
+const id = require("faker/lib/locales/id_ID");
+const saltRounds = 10;
+
+
 
 const createUser = async ({
   userEmail,
   password,
   isAdmin = false,
   isGuest = false,
+  state, 
+  city, 
+  street, 
+  zip
 }) => {
   try {
     const hash = await bcrpyt.hash(password, 10);
     const { rows } = await client.query(
       `
-      insert into users("userEmail", password, "isAdmin", "isGuest")
-      values($1, $2, $3, $4)
-      returning id, "userEmail", "isAdmin", "isActive", "isGuest";
+      insert into users("userEmail", password, "isAdmin", "isGuest", state, city, street, zip)
+      values($1, $2, $3, $4, $5, $6, $7, $8)
+      returning id, "userEmail", "isAdmin", "isActive", "isGuest", state, city, street, zip;
     `,
-      [userEmail, hash, isAdmin, isGuest]
+      [userEmail, hash, isAdmin, isGuest, state, city, street, zip]
     );
     return rows[0];
   } catch (err) {
@@ -74,7 +82,7 @@ const getUserProfileById = async (userId) => {
   try {
     const { rows: user } = await client.query(
       `
-      select id, "userEmail" from users
+      select id, "userEmail", state, city, street, zip from users
       where id = $1;
     `,
       [userId]
@@ -120,7 +128,6 @@ const getUserProfileById = async (userId) => {
       ...user[0],
       orders: arr,
     };
-    console.log("user profile: ", userProfile);
     return userProfile;
   } catch (err) {
     console.error("An error occurred:", err);
@@ -167,6 +174,32 @@ const getUserCartById = async (userId) => {
     console.error("An error occurred:", err);
   }
 };
+
+const editUserAddress = async ({userId, ...fields}) => {
+  const {state, city, street, zip} = fields
+    try {
+      const { rows } = await client.query(
+        `
+        update users set
+          state = coalesce ($1, state),
+          city = coalesce ($2, city),
+          street = coalesce ($3, street),
+          zip = coalesce ($4, zip)
+        where id = $5
+        and($1 is distinct from state or
+          $2 is distinct from city or
+          $3 is distinct from street or
+          $4 is distinct from zip)
+        returning id, state, city, street, zip; 
+      `,
+        [state, city, street, zip, userId]
+      );
+      return rows;
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
 
 const guestToLoginCart = async (userId, guestCart) => {
   try {
@@ -256,5 +289,6 @@ module.exports = {
   getUserProfileById,
   getUserCartById,
   getUserById,
+  editUserAddress,
   guestToLoginCart,
 };
