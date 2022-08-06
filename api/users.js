@@ -9,8 +9,9 @@ const {
   checkUser,
   getUserProfileById,
   getUserCartById,
-  guestToUserCart,
+  guestToRegisterCart,
   guestToUser,
+  guestToLoginCart,
 } = require("../db");
 
 // POST /api/users/register
@@ -45,7 +46,7 @@ router.post("/register", async (req, res, next) => {
       );
       let order = [];
       if (guestCart.length) {
-        order = await guestToUserCart(newUser.id, guestCart);
+        order = await guestToRegisterCart(newUser.id, guestCart);
       }
       res.send({
         message: `New account created using ${userEmail}. Thanks for signing up!`,
@@ -65,7 +66,7 @@ router.post("/register", async (req, res, next) => {
 
 // POST /api/users/login
 router.post("/login", async (req, res, next) => {
-  const { userEmail, password, userCart } = req.body;
+  const { userEmail, password, guestCart } = req.body;
   try {
     const check = await getUserByUserEmail(userEmail);
     if (!check.length || check[0].isGuest) {
@@ -95,13 +96,11 @@ router.post("/login", async (req, res, next) => {
           },
           JWT_SECRET
         );
-        // account is verified, token is prepared. 
-        // add any cart items to tables
-        // check if the user has an open order
-        // if not, create a new order
-        // is yes, add to existing order
-        if(userCart.length) {
-          // add items to users_orders
+        let cart = [];
+        if(guestCart.length) {
+          console.log("guestCart", guestCart);
+          cart = await guestToLoginCart(user[0].id, guestCart);
+          console.log("cart", cart);
         }
         res.send({
           message: `Welcome back, ${user[0].userEmail}. You're logged in!`,
@@ -110,6 +109,7 @@ router.post("/login", async (req, res, next) => {
             id: user[0].id,
             userEmail: user[0].userEmail,
             isAdmin: user[0].isAdmin,
+            cart,
           },
         });
       }
