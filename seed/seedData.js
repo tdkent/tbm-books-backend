@@ -60,6 +60,10 @@ const createUsers = async () => {
         const fakeUser = {
           userEmail: faker.internet.email(),
           password: faker.internet.password(10),
+          state: faker.address.stateAbbr(),
+          city: faker.address.city(),
+          street: faker.address.streetAddress(true),
+          zip: faker.address.zipCode()
         };
         arr.push(fakeUser);
       }

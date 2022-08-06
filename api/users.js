@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-const { JWT_SECRET = "fullstack" } = process.env;
+// const { JWT_SECRET = "fullstack" } = process.env;
 
 const {
   getUserByUserEmail,
@@ -9,6 +9,7 @@ const {
   checkUser,
   getUserProfileById,
   getUserCartById,
+  editUserAddress,
   guestToRegisterCart,
   guestToUser,
   guestToLoginCart,
@@ -42,7 +43,7 @@ router.post("/register", async (req, res, next) => {
           userEmail: newUser.userEmail,
           isAdmin: newUser.isAdmin,
         },
-        JWT_SECRET
+        process.env.JWT_SECRET
       );
       let order = [];
       if (guestCart.length) {
@@ -94,7 +95,7 @@ router.post("/login", async (req, res, next) => {
             userEmail: user[0].userEmail,
             isAdmin: user[0].isAdmin,
           },
-          JWT_SECRET
+          process.env.JWT_SECRET
         );
         let cart = [];
         if(guestCart.length) {
@@ -132,6 +133,28 @@ router.get("/me", async (req, res, next) => {
     try {
       const user = await getUserProfileById(userId);
       res.send(user);
+    } catch (err) {
+      next(err);
+    }
+  }
+});
+
+router.patch("/:userId/update", async (req, res, next) => {
+  if (!req.user) {
+    res.status(401);
+    next({
+      name: "Authorization Error",
+      message: "You must be logged in to perform this action.",
+    });
+  } else {
+    const { userId } = req.params;
+    const {state, city, street, zip} = req.body;
+    const data = {userId, state, city, street, zip}
+    console.log(data)
+    console.log("works?" , userId)
+    try {
+      const newAddress = await editUserAddress(data)
+      console.log(newAddress)
     } catch (err) {
       next(err);
     }

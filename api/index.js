@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-const { JWT_SECRET = "fullstack" } = process.env;
+// const { JWT_SECRET = "fullstack" } = process.env;
 
 const { getUserById } = require("../db");
 
@@ -19,7 +19,7 @@ router.use(async (req, res, next) => {
   else if (auth.startsWith(prefix)) {
     const token = auth.slice(prefix.length);
     try {
-      const { id: userId } = jwt.verify(token, JWT_SECRET);
+      const { id: userId } = jwt.verify(token, process.env.JWT_SECRET);
       if (userId) {
         req.user = await getUserById(userId);
         next();
