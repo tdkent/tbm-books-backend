@@ -10,6 +10,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.all('*', function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+  res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+  next();
+ });
 
 // Stripe Route
 app.post("/create-checkout-session", async (req, res) => {
@@ -22,7 +28,7 @@ app.post("/create-checkout-session", async (req, res) => {
     cancel_url = `http://localhost:3000/${userId}/cart?canceled=true`;
   } else {
     success_url = `http://localhost:3000/GuestCart?success=true${orderId}`;
-    cancel_url = `http://localhost:3000/GuestCart?canceled=true`;
+    cancel_url = `http://localhost:3000/GuestCart?canceled=true${orderId}`;
   }
   const session = await stripe.checkout.sessions.create({
     line_items: [
@@ -62,5 +68,14 @@ apiRouter.use((error, req, res, next) => {
     message: error.message,
   });
 });
+// const PORT = process.env["PORT"] ?? 4000;
+
+// const client = require('./client');
+
+// app.listen(PORT, () => {
+//   console.log(`CORS-enabled server listening on port ${PORT}`)
+// })
+
+// client.connect();
 
 module.exports = app;

@@ -3,9 +3,20 @@ const bcrpyt = require("bcrypt");
 const id = require("faker/lib/locales/id_ID");
 const saltRounds = 10;
 
-const createUser = async ({ userEmail, password, isAdmin = false, isGuest = false, state, city, street, zip}) => {
+
+
+const createUser = async ({
+  userEmail,
+  password,
+  isAdmin = false,
+  isGuest = false,
+  state, 
+  city, 
+  street, 
+  zip
+}) => {
   try {
-    const hash = await bcrpyt.hash(password, saltRounds);
+    const hash = await bcrpyt.hash(password, 10);
     const { rows } = await client.query(
       `
       insert into users("userEmail", password, "isAdmin", "isGuest", state, city, street, zip)
@@ -37,12 +48,12 @@ const checkUser = async (userEmail, password) => {
   }
 };
 
-const getUserByEmail = async (userEmail) => {
+const getUserByUserEmail = async (userEmail) => {
   try {
     const { rows } = await client.query(
       `
-      select * from users
-      where "userEmail"=$1;
+      select id, "userEmail", "isAdmin", "isGuest", "isActive" from users
+      where "userEmail" = $1;
     `,
       [userEmail]
     );
@@ -190,13 +201,94 @@ const editUserAddress = async ({userId, ...fields}) => {
   }
 
 
+const guestToLoginCart = async (userId, guestCart) => {
+  try {
+    const { rows: openOrder } = await client.query(
+      `
+    select * from users_orders
+    where "userId" = $1 and "isComplete" = false;
+    `,
+      [userId]
+    );
+    if (openOrder.length) {
+      let updatedOrderPrice = Number(openOrder[0].orderPrice);
+      for (const book of guestCart) {
+        updatedOrderPrice += Number(book.price) * Number(book.bookQuantity);
+      }
+      const { rows: updateUserOrder } = await client.query(
+        `
+        update users_orders set
+          "orderPrice" = $1
+        where id = $2
+        returning *;
+      `,
+        [updatedOrderPrice, openOrder[0].id]
+      );
+      for (const book of guestCart) {
+        const { rows: check } = await client.query(
+          `
+        select * from orders_details
+        where "orderId" = $1 and "bookId" = $2;
+      `,
+          [openOrder[0].id, book.id]
+        );
+        if (check.length) {
+          await client.query(
+            `
+            update orders_details set
+              quantity = (quantity + $1)
+            where "orderId" = $2 and "bookId" = $3;
+          `,
+            [Number(book.bookQuantity), openOrder[0].id, book.id]
+          );
+        } else {
+          await client.query(
+            `
+            insert into orders_details("orderId", "bookId", "bookPrice", quantity)
+            values($1, $2, $3, $4)
+          `,
+            [openOrder[0].id, book.id, book.price, book.bookQuantity]
+          );
+        }
+      }
+      return updateUserOrder;
+    } else {
+      let orderPrice = 0;
+      for (const book of guestCart) {
+        orderPrice += book.price * book.bookQuantity;
+      }
+      const { rows: newUserOrder } = await client.query(
+        `
+        insert into users_orders("userId", "isComplete", "orderPrice")
+        values($1, $2, $3)
+        returning *;
+      `,
+        [userId, (isComplete = false), orderPrice]
+      );
+      for (const book of guestCart) {
+        await client.query(
+          `
+        insert into orders_details("orderId", "bookId", "bookPrice", quantity)
+        values($1, $2, $3, $4)
+        returning *;
+      `,
+          [newUserOrder[0].id, book.id, book.price, book.bookQuantity]
+        );
+      }
+      return newUserOrder;
+    }
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
 
 module.exports = {
   createUser,
-  getUserByEmail,
+  getUserByUserEmail,
   checkUser,
   getUserProfileById,
   getUserCartById,
   getUserById,
-  editUserAddress
+  editUserAddress,
+  guestToLoginCart,
 };
