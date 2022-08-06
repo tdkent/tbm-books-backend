@@ -6,11 +6,11 @@ const express = require("express");
 const app = express();
 
 app.use(morgan("dev"));
-app.use(cors({
-  origin: [
-    'http://localhost:3000', 'https://sensationnel-maison-12931.herokuapp.com',
-  ]
-}));
+app.use(
+  cors({
+    origin: [process.env.FRONTEND_URL, process.env.BACKEND_URL],
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -22,11 +22,11 @@ app.post("/create-checkout-session", async (req, res) => {
   let success_url;
   let cancel_url;
   if (userId) {
-    success_url = `http://localhost:3000/${userId}/cart?success=true${orderId}`;
-    cancel_url = `http://localhost:3000/${userId}/cart?canceled=true`;
+    success_url = `${process.env.FRONTEND_URL}/${userId}/cart?success=true${orderId}`;
+    cancel_url = `${process.env.FRONTEND_URL}/${userId}/cart?canceled=true`;
   } else {
-    success_url = `http://localhost:3000/GuestCart?success=true${orderId}`;
-    cancel_url = `http://localhost:3000/GuestCart?canceled=true${orderId}`;
+    success_url = `${process.env.FRONTEND_URL}/GuestCart?success=true${orderId}`;
+    cancel_url = `${process.env.FRONTEND_URL}/GuestCart?canceled=true${orderId}`;
   }
   const session = await stripe.checkout.sessions.create({
     line_items: [
@@ -68,11 +68,11 @@ apiRouter.use((error, req, res, next) => {
 });
 const PORT = process.env["PORT"] ?? 4000;
 
-const client = require('./client');
+const client = require("./client");
 
 app.listen(PORT, () => {
-  console.log(`CORS-enabled server listening on port ${PORT}`)
-})
+  console.log(`CORS-enabled server listening on port ${PORT}`);
+});
 
 client.connect();
 
