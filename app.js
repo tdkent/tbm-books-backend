@@ -8,7 +8,7 @@ const app = express();
 app.use(morgan("dev"));
 app.use(cors({
   origin: [
-    'http://localhost:4000', 'https://sensationnel-maison-12931.herokuapp.com',
+    'http://localhost:3000', 'https://sensationnel-maison-12931.herokuapp.com',
   ]
 }));
 app.use(express.json());
