@@ -148,6 +148,7 @@ const getUserCartById = async (userId) => {
           orders_details."bookPrice",
           orders_details.quantity,
           books.title,
+          books.inventory,
           books."imageLinkS"
         from orders_details
         join books

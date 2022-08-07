@@ -131,6 +131,7 @@ router.get("/me", async (req, res, next) => {
     const { id: userId } = req.user;
     try {
       const user = await getUserProfileById(userId);
+      console.log("user", user);
       res.send(user);
     } catch (err) {
       next(err);
