@@ -19,7 +19,7 @@ const getUsersPaginated = async (currentPage) => {
     const endIdx = startIdx + 99;
     const { rows } = await client.query(
       `
-      select * from users
+      select id, "userEmail", "isAdmin", "isGuest", "isActive", state, city, street, zip from users
       where id between $1 and $2
       order by id asc;
     `,
@@ -92,6 +92,18 @@ const getTotalOrdersCount = async () => {
   try {
     const { rows } = await client.query(`
       select count(*) from users_orders;
+    `);
+    return rows[0].count;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const getOpenOrdersCount = async () => {
+  try {
+    const { rows } = await client.query(`
+      select count(*) from users_orders
+      where "isComplete" = false;
     `);
     return rows[0].count;
   } catch (err) {
@@ -323,4 +335,5 @@ module.exports = {
   getTotalOrdersCount,
   getOrdersClosed,
   getOrdersOpen,
+  getOpenOrdersCount,
 };
