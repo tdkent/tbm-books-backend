@@ -37,7 +37,15 @@ router.get("/genre/:genre/:currentPage", async (req, res, next) => {
   const { genre, currentPage } = req.params;
   try {
     const result = await getBooksByGenrePaginated(genre, currentPage);
-    res.send(result);
+    if (result.length) {
+      res.send(result);
+    } else {
+      res.status(404);
+      next({
+        name: "No Results Error",
+        message: "No results found for the selected genre",
+      });
+    }
   } catch (err) {
     next(err);
   }
