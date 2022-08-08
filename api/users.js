@@ -34,7 +34,7 @@ router.post("/register", async (req, res, next) => {
       if (check.length && check[0].isGuest) {
         newUser = await guestToUser(userEmail, password);
       } else {
-        newUser = await createUser({userEmail, password});
+        newUser = await createUser({ userEmail, password });
       }
       const token = jwt.sign(
         {
@@ -97,7 +97,7 @@ router.post("/login", async (req, res, next) => {
           process.env.JWT_SECRET
         );
         let cart = [];
-        if(guestCart.length) {
+        if (guestCart.length) {
           console.log("guestCart", guestCart);
           cart = await guestToLoginCart(user[0].id, guestCart);
           console.log("cart", cart);
@@ -131,7 +131,6 @@ router.get("/me", async (req, res, next) => {
     const { id: userId } = req.user;
     try {
       const user = await getUserProfileById(userId);
-      console.log("user", user);
       res.send(user);
     } catch (err) {
       next(err);
@@ -148,13 +147,11 @@ router.patch("/:userId/update", async (req, res, next) => {
     });
   } else {
     const { userId } = req.params;
-    const {state, city, street, zip} = req.body;
-    const data = {userId, state, city, street, zip}
-    console.log(data)
-    console.log("works?" , userId)
+    const { state, city, street, zip } = req.body;
+    const data = { userId, state, city, street, zip };
     try {
-      const newAddress = await editUserAddress(data)
-      console.log(newAddress)
+      const newAddress = await editUserAddress(data);
+      res.send(newAddress);
     } catch (err) {
       next(err);
     }
