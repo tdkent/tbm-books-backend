@@ -6,10 +6,10 @@ const createUser = async ({
   password,
   isAdmin = false,
   isGuest = false,
-  state, 
-  city, 
-  street, 
-  zip
+  state,
+  city,
+  street,
+  zip,
 }) => {
   try {
     const hash = await bcrpyt.hash(password, 10);
@@ -172,11 +172,41 @@ const getUserCartById = async (userId) => {
   }
 };
 
-const editUserAddress = async ({userId, ...fields}) => {
-  const {state, city, street, zip} = fields
-    try {
-      const { rows } = await client.query(
-        `
+const createWishlist = async ({ userId, bookId }) => {
+  try {
+    const { rows } = await client.query(
+      `
+      insert into wishlist("userId", "bookId")
+      values ($1, $2)
+      returning *;
+    `,
+      [userId, bookId]
+    );
+    return rows;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const getUserWishlist = async ({ userId }) => {
+  try {
+    const { rows: wishlist } = await client.query(
+      `
+      select id as "wishlistId" from wishlist
+      where "userId" = $1
+    `,
+      [userId]
+    );
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const editUserAddress = async ({ userId, ...fields }) => {
+  const { state, city, street, zip } = fields;
+  try {
+    const { rows } = await client.query(
+      `
         update users set
           state = coalesce ($1, state),
           city = coalesce ($2, city),
@@ -189,14 +219,13 @@ const editUserAddress = async ({userId, ...fields}) => {
           $4 is distinct from zip)
         returning id, state, city, street, zip; 
       `,
-        [state, city, street, zip, userId]
-      );
-      return rows;
-    } catch (err) {
-      console.log(err)
-    }
+      [state, city, street, zip, userId]
+    );
+    return rows;
+  } catch (err) {
+    console.log(err);
   }
-
+};
 
 const guestToLoginCart = async (userId, guestCart) => {
   try {
@@ -288,4 +317,6 @@ module.exports = {
   getUserById,
   editUserAddress,
   guestToLoginCart,
+  createWishlist,
+  getUserWishlist
 };
