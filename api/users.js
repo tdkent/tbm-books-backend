@@ -13,6 +13,8 @@ const {
   guestToUser,
   guestToLoginCart,
   getUserWishlist,
+  postItemToWishlist,
+  deleteBookFromWishlist,
 } = require("../db");
 
 // POST /api/users/register
@@ -179,7 +181,7 @@ router.get("/me/cart", async (req, res, next) => {
 });
 
 // GET /api/users/me/wishlist
-router.get("me/wishlist", async (req, res, next) => {
+router.get("/me/wishlist", async (req, res, next) => {
   if (!req.user) {
     res.status(401);
     next({
@@ -194,6 +196,47 @@ router.get("me/wishlist", async (req, res, next) => {
     } catch (err) {
       next(err);
     }
+  }
+});
+
+// POST /api/users/me/wishlist
+router.post("/me/wishlist", async (req, res, next) => {
+  const { userId, bookId } = req.body;
+  try {
+    const result = await postItemToWishlist(userId, bookId);
+    if (result.length) {
+      res.send({
+        name: "Wishlist Updated",
+        message: "Item added to wishlist.",
+      });
+    } else {
+      next({
+        name: "Wishlist Not Updated",
+        message: "An unknown error occurred. Please try again.",
+      });
+    }
+  } catch (err) {
+    next(err);
+  }
+});
+// DELETE /api/users/me/wishlist
+router.delete("/me/wishlist", async (req, res, next) => {
+  const { wishlistId, bookId } = req.body;
+  try {
+    const result = await deleteBookFromWishlist(wishlistId, bookId);
+    if (result.length) {
+      res.send({
+        name: "Wishlist Updated",
+        message: "Item deleted successfully from your wishlist.",
+      });
+    } else {
+      next({
+        name: "Wishlist Not Updated",
+        message: "An unknown error occurred. Please try again.",
+      });
+    }
+  } catch (err) {
+    next(err);
   }
 });
 

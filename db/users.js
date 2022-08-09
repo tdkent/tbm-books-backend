@@ -188,6 +188,48 @@ const createWishlist = async ({ userId, bookId }) => {
   }
 };
 
+const postItemToWishlist = async (userId, bookId) => {
+  const { rows: checkBook } = await client.query(
+    `
+    select "bookId", "userId" from wishlist
+    where "bookId" = $1
+    and "userId" = $2;
+  `,
+    [bookId, userId]
+  );
+
+  if (!checkBook.length) {
+    //want to return something where it says book is already in your wishlist?
+  } else {
+    const { rows: wishlist } = await client.query(
+      `
+      insert into wishlist("userId", "bookId")
+      values($1, $2)
+      returning *;
+    `,
+      [userId, bookId]
+    );
+    return wishlist;
+  }
+};
+
+const deleteBookFromWishlist = async (wishlistId, bookId) => {
+  try {
+    const { rows: deleted } = await client.query(
+      `
+      delete from wishlist
+      where id = $1
+      and "bookId" = $2
+      returning "bookId";
+    `,
+      [wishlistId, bookId]
+    );
+    return deleted;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
 const getUserWishlist = async ({ userId }) => {
   try {
     const { rows: wishlist } = await client.query(
@@ -318,5 +360,7 @@ module.exports = {
   editUserAddress,
   guestToLoginCart,
   createWishlist,
-  getUserWishlist
+  getUserWishlist,
+  postItemToWishlist,
+  deleteBookFromWishlist
 };
