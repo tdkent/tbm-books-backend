@@ -5244,16 +5244,6 @@ const booksData = [
     imageLinkL: 'http://images.amazon.com/images/P/1566635500.01.LZZZZZZZ.jpg'
   },
   {
-    isbn: '1566565529',
-    title: 'The New Pearl Harbor: Disturbing Questions About the Bush Administration and 9/11',
-    author: 'David Ray Griffin',
-    year: '2004',
-    publisher: 'Interlink',
-    imageLinkS: 'http://images.amazon.com/images/P/1566565529.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1566565529.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1566565529.01.LZZZZZZZ.jpg'
-  },
-  {
     isbn: '1566499518',
     title: 'Bend It Like Beckham',
     author: 'Narinder Dhami',
@@ -7774,16 +7764,6 @@ const booksData = [
     imageLinkL: 'http://images.amazon.com/images/P/1400082773.01.LZZZZZZZ.jpg'
   },
   {
-    isbn: '1400078660',
-    title: 'Same-Sex Marriage: Pro and Con (Vintage Original)',
-    author: 'ANDREW SULLIVAN',
-    year: '2004',
-    publisher: 'Vintage',
-    imageLinkS: 'http://images.amazon.com/images/P/1400078660.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1400078660.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1400078660.01.LZZZZZZZ.jpg'
-  },
-  {
     isbn: '1400077087',
     title: 'Portuguese Irregular Verbs',
     author: 'ALEXANDER MCCALL SMITH',
@@ -7892,26 +7872,6 @@ const booksData = [
     imageLinkS: 'http://images.amazon.com/images/P/140007021X.01.THUMBZZZ.jpg',
     imageLinkM: 'http://images.amazon.com/images/P/140007021X.01.MZZZZZZZ.jpg',
     imageLinkL: 'http://images.amazon.com/images/P/140007021X.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '1400063272',
-    title: 'Trump: How to Get Rich',
-    author: 'Donald J. Trump',
-    year: '2004',
-    publisher: 'Random House',
-    imageLinkS: 'http://images.amazon.com/images/P/1400063272.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1400063272.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1400063272.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '1400062888',
-    title: 'Obliviously On He Sails : The Bush Administration in Rhyme',
-    author: 'CALVIN TRILLIN',
-    year: '2004',
-    publisher: 'Random House',
-    imageLinkS: 'http://images.amazon.com/images/P/1400062888.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1400062888.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1400062888.01.LZZZZZZZ.jpg'
   },
   {
     isbn: '1400062853',
@@ -10264,16 +10224,6 @@ const booksData = [
     imageLinkL: 'http://images.amazon.com/images/P/0895260859.01.LZZZZZZZ.jpg'
   },
   {
-    isbn: '0895260174',
-    title: 'Unfit for Command: Swift Boat Veterans Speak Out Against John Kerry',
-    author: "John E. O'Neill",
-    year: '2004',
-    publisher: 'Regnery Publishing',
-    imageLinkS: 'http://images.amazon.com/images/P/0895260174.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0895260174.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0895260174.01.LZZZZZZZ.jpg'
-  },
-  {
     isbn: '0892968133',
     title: 'Falling Off Air',
     author: 'Catherine Sampson',
@@ -11022,16 +10972,6 @@ const booksData = [
     imageLinkS: 'http://images.amazon.com/images/P/0849918154.01.THUMBZZZ.jpg',
     imageLinkM: 'http://images.amazon.com/images/P/0849918154.01.MZZZZZZZ.jpg',
     imageLinkL: 'http://images.amazon.com/images/P/0849918154.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0849918111',
-    title: 'A Man Of Faith : The Spiritual Journey of George W. Bush',
-    author: 'David Aikman',
-    year: '2004',
-    publisher: 'W Publishing Group',
-    imageLinkS: 'http://images.amazon.com/images/P/0849918111.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0849918111.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0849918111.01.LZZZZZZZ.jpg'
   },
   {
     isbn: '0849917913',
@@ -17614,16 +17554,6 @@ const booksData = [
     imageLinkL: 'http://images.amazon.com/images/P/1595620036.01.LZZZZZZZ.jpg'
   },
   {
-    isbn: '1595230009',
-    title: 'A Matter Of Character: Inside The White House Of George W. Bush',
-    author: 'Ronald Kessler',
-    year: '2004',
-    publisher: 'Sentinel',
-    imageLinkS: 'http://images.amazon.com/images/P/1595230009.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1595230009.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1595230009.01.LZZZZZZZ.jpg'
-  },
-  {
     isbn: '1594740089',
     title: 'How To Clone The Perfect Blonde: Using Science To Make Your Wildest Dreams Come True',
     author: 'Sue Nelson',
@@ -22954,16 +22884,6 @@ const booksData = [
     imageLinkL: 'http://images.amazon.com/images/P/0785264825.01.LZZZZZZZ.jpg'
   },
   {
-    isbn: '0785263195',
-    title: "If It's Not Close, They Can't Cheat: Crushing the Democrats in Every Election and Why Your Life Depends on It",
-    author: 'Hugh Hewitt',
-    year: '2004',
-    publisher: 'Nelson Books',
-    imageLinkS: 'http://images.amazon.com/images/P/0785263195.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0785263195.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0785263195.01.LZZZZZZZ.jpg'
-  },
-  {
     isbn: '0785261958',
     title: 'High Calling : The Courageous Life and Faith of Space Shuttle Columbia Commander Rick Husband',
     author: 'Evelyn Husband',
@@ -23922,16 +23842,6 @@ const booksData = [
     imageLinkS: 'http://images.amazon.com/images/P/076791841X.01.THUMBZZZ.jpg',
     imageLinkM: 'http://images.amazon.com/images/P/076791841X.01.MZZZZZZZ.jpg',
     imageLinkL: 'http://images.amazon.com/images/P/076791841X.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0767917847',
-    title: 'The George W. Bush Quiz Book',
-    author: 'PAUL SLANSKY',
-    year: '2004',
-    publisher: 'Broadway Books',
-    imageLinkS: 'http://images.amazon.com/images/P/0767917847.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0767917847.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0767917847.01.LZZZZZZZ.jpg'
   },
   {
     isbn: '0767917405',
@@ -29714,16 +29624,6 @@ const booksData = [
     imageLinkL: 'http://images.amazon.com/images/P/074325547X.01.LZZZZZZZ.jpg'
   },
   {
-    isbn: '0743255453',
-    title: "The Price of Loyalty: George W. Bush, the White House, and the Education of Paul O'Neill",
-    author: 'Ron Suskind',
-    year: '2004',
-    publisher: 'Simon &amp; Schuster',
-    imageLinkS: 'http://images.amazon.com/images/P/0743255453.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0743255453.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0743255453.01.LZZZZZZZ.jpg'
-  },
-  {
     isbn: '0743255356',
     title: 'The Geography of Thought : How Asians and Westerners Think Differently...and Why',
     author: 'Richard Nisbett',
@@ -30652,16 +30552,6 @@ const booksData = [
     imageLinkS: 'http://images.amazon.com/images/P/0740746901.01.THUMBZZZ.jpg',
     imageLinkM: 'http://images.amazon.com/images/P/0740746901.01.MZZZZZZZ.jpg',
     imageLinkL: 'http://images.amazon.com/images/P/0740746901.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0740743708',
-    title: '449 Stupid Things Democrats Have Said',
-    author: 'Ted Rueter',
-    year: '2004',
-    publisher: 'Andrews McMeel Publishing',
-    imageLinkS: 'http://images.amazon.com/images/P/0740743708.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0740743708.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0740743708.01.LZZZZZZZ.jpg'
   },
   {
     isbn: '0740743406',
@@ -60942,16 +60832,6 @@ const booksData = [
     imageLinkS: 'http://images.amazon.com/images/P/0060549289.01.THUMBZZZ.jpg',
     imageLinkM: 'http://images.amazon.com/images/P/0060549289.01.MZZZZZZZ.jpg',
     imageLinkL: 'http://images.amazon.com/images/P/0060549289.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0060548533',
-    title: "The Buying of the President 2004 : Who's Really Bankrolling Bush and His Democratic Challengers--and What They Expect in Return (Buying of the President)",
-    author: 'Charles Lewis',
-    year: '2004',
-    publisher: 'Perennial',
-    imageLinkS: 'http://images.amazon.com/images/P/0060548533.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0060548533.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0060548533.01.LZZZZZZZ.jpg'
   },
   {
     isbn: '0060548452',
