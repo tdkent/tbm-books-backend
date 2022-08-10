@@ -198,8 +198,8 @@ const postItemToWishlist = async (userId, bookId) => {
     [bookId, userId]
   );
 
-  if (!checkBook.length) {
-    //want to return something where it says book is already in your wishlist?
+  if (checkBook.length) {
+    return [];
   } else {
     const { rows: wishlist } = await client.query(
       `

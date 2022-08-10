@@ -208,6 +208,7 @@ router.post("/me/wishlist", async (req, res, next) => {
       res.send({
         name: "Wishlist Updated",
         message: "Item added to wishlist.",
+        result
       });
     } else {
       next({
