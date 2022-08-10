@@ -22,8 +22,11 @@ const createBooks = async () => {
         "Romance",
         "Science-Fiction",
         "Thriller",
+        "Rom-Com",
+        "Classic",
+        "Historical-Fiction"
       ];
-      return genres[Math.floor(Math.random() * 7)];
+      return genres[Math.floor(Math.random() * 10)];
     };
     const assignRating = () => Number((2 + Math.random() * 3).toFixed(1));
     const assignGlobalRating = () => Math.floor(Math.random() * 5001);
@@ -43,8 +46,8 @@ const createBooks = async () => {
     });
     const books = await Promise.all(addKeysToBooksData.map(createBook));
     console.log(
-      "Books created. Current count: 397. Random example:",
-      books[Math.floor(Math.random() * 398)]
+      "Books created. Current count: 6139. Random example:",
+      books[Math.floor(Math.random() * 6138)]
     );
   } catch (err) {
     console.error("An error occurred:", err);

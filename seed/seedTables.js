@@ -67,7 +67,7 @@ const createTables = async () => {
       create table wishlist(
         id serial primary key,
         "userId" smallint references users(id) not null,
-        "bookId smallint references books(id) not null,
+        "bookId" smallint references books(id) not null
       );
     `);
     console.log("Finished building new tables.");

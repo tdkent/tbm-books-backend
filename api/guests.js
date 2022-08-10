@@ -14,7 +14,7 @@ router.post("/checkout", async (req, res, next) => {
     const result = await guestCheckout(guestEmail, guestCart);
     if (result === "login") {
       next({
-        name: "Authentication Error",
+        name: "Guest Checkout Error",
         message: `The email address ${guestEmail} is already registered with TBM Books. Log in to your account?`,
       });
     } else if (result.status === "checkout") {
