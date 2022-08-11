@@ -106,7 +106,7 @@ const getUserProfileById = async (userId) => {
       orders_details."bookPrice",
       orders_details.quantity,
       books.title,
-      books."imageLinkS"
+      books."imageLinkM"
     from orders_details
     join books
     on orders_details."bookId" = books.id

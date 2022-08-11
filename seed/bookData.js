@@ -636,17 +636,6 @@ const booksData = [
     imageLinkL: "http://images.amazon.com/images/P/1904153003.01.LZZZZZZZ.jpg",
   },
   {
-    isbn: "1902636481",
-    title:
-      "Birth And Breastfeeding: Rediscovering The Needs Of Women During Pregnancy And Childbirth",
-    author: "Michel Odent",
-    year: "2004",
-    publisher: "Clairview Books",
-    imageLinkS: "http://images.amazon.com/images/P/1902636481.01.THUMBZZZ.jpg",
-    imageLinkM: "http://images.amazon.com/images/P/1902636481.01.MZZZZZZZ.jpg",
-    imageLinkL: "http://images.amazon.com/images/P/1902636481.01.LZZZZZZZ.jpg",
-  },
-  {
     isbn: "1894663616",
     title: "Meet Me in the Parking Lot",
     author: "Alexandra Leggat",
@@ -4394,16 +4383,6 @@ const booksData = [
     imageLinkL: 'http://images.amazon.com/images/P/1579547451.01.LZZZZZZZ.jpg'
   },
   {
-    isbn: '1579547370',
-    title: "Great Sex : A Man's Guide to the Secret Principles of Total-Body Sex",
-    author: 'Michael Castleman',
-    year: '2004',
-    publisher: 'Rodale Books',
-    imageLinkS: 'http://images.amazon.com/images/P/1579547370.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1579547370.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1579547370.01.LZZZZZZZ.jpg'
-  },
-  {
     isbn: '1579400914',
     title: 'The Fenway Project',
     author: 'Bill Nowlin',
@@ -7352,16 +7331,6 @@ const booksData = [
     imageLinkS: 'http://images.amazon.com/images/P/1401352049.01.THUMBZZZ.jpg',
     imageLinkM: 'http://images.amazon.com/images/P/1401352049.01.MZZZZZZZ.jpg',
     imageLinkL: 'http://images.amazon.com/images/P/1401352049.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '1401352014',
-    title: 'Emergency Sex and Other Desperate Measures : A True Story from Hell on Earth',
-    author: 'Kenneth Cain',
-    year: '2004',
-    publisher: 'Miramax',
-    imageLinkS: 'http://images.amazon.com/images/P/1401352014.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1401352014.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1401352014.01.LZZZZZZZ.jpg'
   },
   {
     isbn: '1401351964',
@@ -16254,16 +16223,6 @@ const booksData = [
     imageLinkL: 'http://images.amazon.com/images/P/1902825225.01.LZZZZZZZ.jpg'
   },
   {
-    isbn: '1902636481',
-    title: 'Birth And Breastfeeding: Rediscovering The Needs Of Women During Pregnancy And Childbirth',
-    author: 'Michel Odent',
-    year: '2004',
-    publisher: 'Clairview Books',
-    imageLinkS: 'http://images.amazon.com/images/P/1902636481.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1902636481.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1902636481.01.LZZZZZZZ.jpg'
-  },
-  {
     isbn: '1898799822',
     title: 'Das Reich: The Story Of The 2nd Ss Division',
     author: 'James Lucas',
@@ -17592,16 +17551,6 @@ const booksData = [
     imageLinkS: 'http://images.amazon.com/images/P/1594574073.01.THUMBZZZ.jpg',
     imageLinkM: 'http://images.amazon.com/images/P/1594574073.01.MZZZZZZZ.jpg',
     imageLinkL: 'http://images.amazon.com/images/P/1594574073.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '1594572550',
-    title: 'Addicted to Sex: Behind the Apron Series',
-    author: 'Christine Calnin',
-    year: '2004',
-    publisher: 'Global Book Publisher',
-    imageLinkS: 'http://images.amazon.com/images/P/1594572550.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1594572550.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1594572550.01.LZZZZZZZ.jpg'
   },
   {
     isbn: '1594562687',
@@ -19054,16 +19003,6 @@ const booksData = [
     imageLinkL: 'http://images.amazon.com/images/P/1592330770.01.LZZZZZZZ.jpg'
   },
   {
-    isbn: '1592284035',
-    title: 'How My Breasts Saved the World : Misadventures of a Nursing Mother',
-    author: 'Lisa  Wood Shapiro',
-    year: '2004',
-    publisher: 'The Lyons Press',
-    imageLinkS: 'http://images.amazon.com/images/P/1592284035.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1592284035.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1592284035.01.LZZZZZZZ.jpg'
-  },
-  {
     isbn: '159228275X',
     title: 'Beeing : Life, Motherhood, and 180,000 Honeybees',
     author: 'Rosanne Daryl Thomas',
@@ -20322,16 +20261,6 @@ const booksData = [
     imageLinkS: 'http://images.amazon.com/images/P/1587670585.01.THUMBZZZ.jpg',
     imageLinkM: 'http://images.amazon.com/images/P/1587670585.01.MZZZZZZZ.jpg',
     imageLinkL: 'http://images.amazon.com/images/P/1587670585.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '1587611953',
-    title: 'Bestfeeding: How to Breastfeed Your Baby',
-    author: 'Mary Renfrew',
-    year: '2004',
-    publisher: 'Ten Speed Press',
-    imageLinkS: 'http://images.amazon.com/images/P/1587611953.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/1587611953.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/1587611953.01.LZZZZZZZ.jpg'
   },
   {
     isbn: '1587430665',
@@ -28194,16 +28123,6 @@ const booksData = [
     imageLinkL: 'http://images.amazon.com/images/P/0743471105.01.LZZZZZZZ.jpg'
   },
   {
-    isbn: '0743471091',
-    title: "Generation S.L.U.T. : A Brutal Feel-up Session with Today's Sex-Crazed Adolescent Populace",
-    author: 'Marty Beckerman',
-    year: '2004',
-    publisher: 'MTV',
-    imageLinkS: 'http://images.amazon.com/images/P/0743471091.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0743471091.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0743471091.01.LZZZZZZZ.jpg'
-  },
-  {
     isbn: '0743471059',
     title: 'Experiencing the Next World Now',
     author: 'Michael Grosso',
@@ -28482,16 +28401,6 @@ const booksData = [
     imageLinkS: 'http://images.amazon.com/images/P/0743466306.01.THUMBZZZ.jpg',
     imageLinkM: 'http://images.amazon.com/images/P/0743466306.01.MZZZZZZZ.jpg',
     imageLinkL: 'http://images.amazon.com/images/P/0743466306.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0743466268',
-    title: "The Dead Father's Guide to Sex &amp; Marriage",
-    author: 'John Scott Shepherd',
-    year: '2004',
-    publisher: 'Downtown Press',
-    imageLinkS: 'http://images.amazon.com/images/P/0743466268.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0743466268.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0743466268.01.LZZZZZZZ.jpg'
   },
   {
     isbn: '0743465067',
@@ -37324,16 +37233,6 @@ const booksData = [
     imageLinkL: 'http://images.amazon.com/images/P/044669133X.01.LZZZZZZZ.jpg'
   },
   {
-    isbn: '0446691275',
-    title: 'Daily Sex : 365 Positions and Activities for a Year of Great Sex!',
-    author: 'Jane Seddon',
-    year: '2004',
-    publisher: 'Warner Books',
-    imageLinkS: 'http://images.amazon.com/images/P/0446691275.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0446691275.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0446691275.01.LZZZZZZZ.jpg'
-  },
-  {
     isbn: '0446691232',
     title: 'The Little Strength Training Book',
     author: 'Erika Dillman',
@@ -45034,296 +44933,6 @@ const booksData = [
     imageLinkL: 'http://images.amazon.com/images/P/0373872453.01.LZZZZZZZ.jpg'
   },
   {
-    isbn: '0373836368',
-    title: "Every Woman's Fantasy (Harlequin Single Title)",
-    author: 'Vicki Lewis Thompson',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373836368.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373836368.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373836368.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373836333',
-    title: 'Reading Between The Lines (Decadent Escapes Promotion)',
-    author: 'Vicki Lewis Thompson',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373836333.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373836333.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373836333.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373836325',
-    title: 'Strangers In Paradise (Decadent Escapes Promotion)',
-    author: 'Joanne Rock',
-    year: '2004',
-    publisher: 'Harlequin Books',
-    imageLinkS: 'http://images.amazon.com/images/P/0373836325.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373836325.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373836325.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373836309',
-    title: 'Lip Service (National Consumer Promotion)',
-    author: 'Lori Foster',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373836309.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373836309.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373836309.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373836295',
-    title: 'Forbidden (Harlequin Single Title)',
-    author: 'Helen Kirkman',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373836295.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373836295.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373836295.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '037383621X',
-    title: 'In Their Footsteps (Harlequin Single Title)',
-    author: 'Tess Gerritsen',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/037383621X.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/037383621X.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/037383621X.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373836155',
-    title: 'Killing Time',
-    author: 'Leslie Kelly',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373836155.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373836155.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373836155.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373836139',
-    title: 'Alligator Moon (Author Spotlight)',
-    author: 'Joanna Wayne',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373836139.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373836139.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373836139.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373836120',
-    title: 'Always A Bridesmaid (Feature Anthology)',
-    author: 'Isabel Sharpe',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373836120.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373836120.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373836120.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373836082',
-    title: 'Sylvester (Harlequin Single Title)',
-    author: 'Georgette Heyer',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373836082.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373836082.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373836082.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373836066',
-    title: 'The Masqueraders (Harlequin Single Title)',
-    author: 'Georgette Heyer',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373836066.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373836066.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373836066.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373836058',
-    title: 'Mother, Please! (Harlequin Single Title)',
-    author: 'Alison Kent',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373836058.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373836058.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373836058.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '037383604X',
-    title: 'Beauvallet',
-    author: 'Georgette Heyer',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/037383604X.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/037383604X.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/037383604X.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373836031',
-    title: 'Faces Of A Clown (Harlequin Single Title)',
-    author: 'Stella Cameron',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373836031.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373836031.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373836031.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373836023',
-    title: 'Powder and Patch',
-    author: 'Georgette Heyer',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373836023.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373836023.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373836023.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373836015',
-    title: 'Fallen Angels (Harlequin Single Title)',
-    author: 'Lori Foster',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373836015.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373836015.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373836015.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373836007',
-    title: 'Cold Feet (Harlequin Single Title)',
-    author: 'Brenda Novak',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373836007.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373836007.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373836007.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '037383599X',
-    title: 'Simply Sensual (Harlequin Single Title)',
-    author: 'Carly Phillips',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/037383599X.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/037383599X.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/037383599X.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373835981',
-    title: 'The Private Eye (Harlequin Single Title)',
-    author: 'Jayne Ann Krentz',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373835981.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373835981.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373835981.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373835973',
-    title: 'Date With A Devil (Harlequin Single Title)',
-    author: 'Anne Stuart',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373835973.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373835973.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373835973.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '037383585X',
-    title: 'The Dewilde Affair (Harlequin Single Title)',
-    author: 'Jasmine Cresswell',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/037383585X.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/037383585X.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/037383585X.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373835825',
-    title: 'Private Scandals (Feature Anthology)',
-    author: 'Joanna Wayne',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373835825.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373835825.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373835825.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373835663',
-    title: 'Fool For Love (Feature Anthology)',
-    author: 'Vicki Lewis Thompson',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373835663.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373835663.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373835663.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373810652',
-    title: 'Love Can Wait',
-    author: 'Betty Neels',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373810652.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373810652.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373810652.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373810636',
-    title: 'A Winter Love Story',
-    author: 'Betty Neels',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373810636.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373810636.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373810636.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373806248',
-    title: 'A Very Secret Affair (Promotional Presents)',
-    author: 'Miranda Lee',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373806248.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373806248.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373806248.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373806213',
-    title: "The Boss's Mistress (Promotional Presents)",
-    author: 'Kathryn Ross',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373806213.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373806213.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373806213.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373806140',
-    title: "The Italian's Touch (Promotional Presents)",
-    author: 'Carol Marinelli',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373806140.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373806140.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373806140.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373806132',
-    title: 'Deceitful Lover (Promotional Presents)',
-    author: 'Helen Brooks',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373806132.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373806132.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373806132.01.LZZZZZZZ.jpg'
-  },
-  {
     isbn: '0373802110',
     title: 'Shield of the Sky',
     author: 'Susan Krinard',
@@ -45484,16 +45093,6 @@ const booksData = [
     imageLinkL: 'http://images.amazon.com/images/P/0373791461.01.LZZZZZZZ.jpg'
   },
   {
-    isbn: '0373791445',
-    title: 'The Sex Diet (Blaze)',
-    author: 'Rhonda Nelson',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373791445.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373791445.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373791445.01.LZZZZZZZ.jpg'
-  },
-  {
     isbn: '0373791437',
     title: 'Date With A Diva : Single In South Beach (Blaze)',
     author: 'Joanne Rock',
@@ -45612,16 +45211,6 @@ const booksData = [
     imageLinkS: 'http://images.amazon.com/images/P/0373791321.01.THUMBZZZ.jpg',
     imageLinkM: 'http://images.amazon.com/images/P/0373791321.01.MZZZZZZZ.jpg',
     imageLinkL: 'http://images.amazon.com/images/P/0373791321.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0373791313',
-    title: 'The Sex Solution (Harlequin Blaze, No. 127)',
-    author: 'Kimberly Raye',
-    year: '2004',
-    publisher: 'Harlequin',
-    imageLinkS: 'http://images.amazon.com/images/P/0373791313.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0373791313.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0373791313.01.LZZZZZZZ.jpg'
   },
   {
     isbn: '0373791305',
@@ -58664,16 +58253,6 @@ const booksData = [
     imageLinkL: 'http://images.amazon.com/images/P/0060745908.01.LZZZZZZZ.jpg'
   },
   {
-    isbn: '0060741570',
-    title: 'Ill-Equipped for a Life of Sex : A Memoir',
-    author: 'Jennifer Lehr',
-    year: '2004',
-    publisher: 'Regan Books',
-    imageLinkS: 'http://images.amazon.com/images/P/0060741570.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0060741570.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0060741570.01.LZZZZZZZ.jpg'
-  },
-  {
     isbn: '006074068X',
     title: 'Death at La Fenice : A Commissario Guido Brunetti Mystery',
     author: 'Donna Leon',
@@ -59594,16 +59173,6 @@ const booksData = [
     imageLinkL: 'http://images.amazon.com/images/P/0060586370.01.LZZZZZZZ.jpg'
   },
   {
-    isbn: '0060586311',
-    title: 'Sextrology: The Astrology of Sex and the Sexes',
-    author: 'Starsky and Cox',
-    year: '2004',
-    publisher: 'HarperResource',
-    imageLinkS: 'http://images.amazon.com/images/P/0060586311.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0060586311.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0060586311.01.LZZZZZZZ.jpg'
-  },
-  {
     isbn: '0060586249',
     title: 'Holy Fools : A Novel',
     author: 'Joanne Harris',
@@ -60192,16 +59761,6 @@ const booksData = [
     imageLinkS: 'http://images.amazon.com/images/P/006056668X.01.THUMBZZZ.jpg',
     imageLinkM: 'http://images.amazon.com/images/P/006056668X.01.MZZZZZZZ.jpg',
     imageLinkL: 'http://images.amazon.com/images/P/006056668X.01.LZZZZZZZ.jpg'
-  },
-  {
-    isbn: '0060566663',
-    title: 'Sex, Sex, and More Sex',
-    author: 'Sue Johanson',
-    year: '2004',
-    publisher: 'Regan Books',
-    imageLinkS: 'http://images.amazon.com/images/P/0060566663.01.THUMBZZZ.jpg',
-    imageLinkM: 'http://images.amazon.com/images/P/0060566663.01.MZZZZZZZ.jpg',
-    imageLinkL: 'http://images.amazon.com/images/P/0060566663.01.LZZZZZZZ.jpg'
   },
   {
     isbn: '0060565632',
