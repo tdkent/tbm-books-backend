@@ -4,6 +4,7 @@ const dropTables = async () => {
   try {
     console.log("Dropping tables...");
     await client.query(`
+      drop table if exists wishlist;
       drop table if exists orders_details;
       drop table if exists users_orders;
       drop table if exists users;
@@ -45,10 +46,10 @@ const createTables = async () => {
         "isAdmin" boolean default false,
         "isGuest" boolean default false,
         "isActive" boolean default true,
-        state varchar(255) , 
-        city varchar(255) ,
-        street varchar (255) ,
-        zip varchar (255) 
+        state varchar(255), 
+        city varchar(255),
+        street varchar(255),
+        zip varchar(255) 
       );
       create table users_orders(
         id serial primary key,
@@ -62,6 +63,11 @@ const createTables = async () => {
         "bookId" smallint references books(id) not null,
         "bookPrice" numeric(4, 2),
         quantity smallint not null
+      );
+      create table wishlist(
+        id serial primary key,
+        "userId" smallint references users(id) not null,
+        "bookId" smallint references books(id) not null
       );
     `);
     console.log("Finished building new tables.");

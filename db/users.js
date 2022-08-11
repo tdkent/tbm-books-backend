@@ -6,10 +6,10 @@ const createUser = async ({
   password,
   isAdmin = false,
   isGuest = false,
-  state, 
-  city, 
-  street, 
-  zip
+  state,
+  city,
+  street,
+  zip,
 }) => {
   try {
     const hash = await bcrpyt.hash(password, 10);
@@ -106,7 +106,7 @@ const getUserProfileById = async (userId) => {
       orders_details."bookPrice",
       orders_details.quantity,
       books.title,
-      books."imageLinkS"
+      books."imageLinkM"
     from orders_details
     join books
     on orders_details."bookId" = books.id
@@ -148,6 +148,7 @@ const getUserCartById = async (userId) => {
           orders_details."bookPrice",
           orders_details.quantity,
           books.title,
+          books.inventory,
           books."imageLinkS"
         from orders_details
         join books
@@ -171,11 +172,95 @@ const getUserCartById = async (userId) => {
   }
 };
 
-const editUserAddress = async ({userId, ...fields}) => {
-  const {state, city, street, zip} = fields
-    try {
-      const { rows } = await client.query(
+const createWishlist = async ({ userId, bookId }) => {
+  try {
+    const { rows } = await client.query(
+      `
+      insert into wishlist("userId", "bookId")
+      values ($1, $2)
+      returning *;
+    `,
+      [userId, bookId]
+    );
+    return rows;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const postItemToWishlist = async (userId, bookId) => {
+  try {
+    const { rows: checkBook } = await client.query(
+      `
+    select "bookId", "userId" from wishlist
+    where "bookId" = $1
+    and "userId" = $2;
+  `,
+      [bookId, userId]
+    );
+    if (checkBook.length) {
+      return [];
+    } else {
+      const { rows: wishlist } = await client.query(
         `
+      insert into wishlist("userId", "bookId")
+      values($1, $2)
+      returning *;
+    `,
+        [userId, bookId]
+      );
+      return wishlist;
+    }
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const deleteBookFromWishlist = async (wishlistId) => {
+  try {
+    const { rows: deleted } = await client.query(
+      `
+      delete from wishlist
+      where id = $1
+      returning id;
+    `,
+      [wishlistId]
+    );
+    return deleted;
+  } catch (err) {
+    console.error("An error occurred:", err);
+  }
+};
+
+const getUserWishlist = async (userId) => {
+  try {
+    const { rows } = await client.query(
+      `
+      select
+        wishlist.id as "wishlistId",
+        wishlist."bookId",
+        books.title,
+        books.author,
+        books.price,
+        books."imageLinkM",
+        books.inventory  
+      from wishlist
+      join books on wishlist."bookId" = books.id
+      where wishlist."userId" = $1;
+    `,
+      [userId]
+    );
+    return rows;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const editUserAddress = async ({ userId, ...fields }) => {
+  const { state, city, street, zip } = fields;
+  try {
+    const { rows } = await client.query(
+      `
         update users set
           state = coalesce ($1, state),
           city = coalesce ($2, city),
@@ -188,14 +273,13 @@ const editUserAddress = async ({userId, ...fields}) => {
           $4 is distinct from zip)
         returning id, state, city, street, zip; 
       `,
-        [state, city, street, zip, userId]
-      );
-      return rows;
-    } catch (err) {
-      console.log(err)
-    }
+      [state, city, street, zip, userId]
+    );
+    return rows;
+  } catch (err) {
+    console.log(err);
   }
-
+};
 
 const guestToLoginCart = async (userId, guestCart) => {
   try {
@@ -287,4 +371,8 @@ module.exports = {
   getUserById,
   editUserAddress,
   guestToLoginCart,
+  createWishlist,
+  getUserWishlist,
+  postItemToWishlist,
+  deleteBookFromWishlist,
 };

@@ -22,8 +22,11 @@ const createBooks = async () => {
         "Romance",
         "Science-Fiction",
         "Thriller",
+        "Rom-Com",
+        "Classic",
+        "Historical-Fiction"
       ];
-      return genres[Math.floor(Math.random() * 7)];
+      return genres[Math.floor(Math.random() * 10)];
     };
     const assignRating = () => Number((2 + Math.random() * 3).toFixed(1));
     const assignGlobalRating = () => Math.floor(Math.random() * 5001);
@@ -43,8 +46,8 @@ const createBooks = async () => {
     });
     const books = await Promise.all(addKeysToBooksData.map(createBook));
     console.log(
-      "Books created. Current count: 397. Random example:",
-      books[Math.floor(Math.random() * 398)]
+      "Books created. Current count: 6139. Random example:",
+      books[Math.floor(Math.random() * 6138)]
     );
   } catch (err) {
     console.error("An error occurred:", err);
@@ -71,9 +74,9 @@ const createUsers = async () => {
     };
     const fakes = createFakeUsers();
     const usersData = [
-      { userEmail: "fake1@fakemail", password: "password123" },
-      { userEmail: "fake2@fakemail", password: "password123" },
-      { userEmail: "admin@fakemail", password: "admin123", isAdmin: true },
+      { userEmail: "fake1@fakemail.com", password: "password123" },
+      { userEmail: "fake2@fakemail.com", password: "password123" },
+      { userEmail: "admin@tbm.com", password: "admin123", isAdmin: true },
       ...fakes,
     ];
     const users = await Promise.all(usersData.map(createUser));

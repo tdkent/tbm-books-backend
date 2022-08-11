@@ -12,6 +12,9 @@ const {
   guestToRegisterCart,
   guestToUser,
   guestToLoginCart,
+  getUserWishlist,
+  postItemToWishlist,
+  deleteBookFromWishlist,
 } = require("../db");
 
 // POST /api/users/register
@@ -34,7 +37,7 @@ router.post("/register", async (req, res, next) => {
       if (check.length && check[0].isGuest) {
         newUser = await guestToUser(userEmail, password);
       } else {
-        newUser = await createUser({userEmail, password});
+        newUser = await createUser({ userEmail, password });
       }
       const token = jwt.sign(
         {
@@ -97,7 +100,7 @@ router.post("/login", async (req, res, next) => {
           process.env.JWT_SECRET
         );
         let cart = [];
-        if(guestCart.length) {
+        if (guestCart.length) {
           console.log("guestCart", guestCart);
           cart = await guestToLoginCart(user[0].id, guestCart);
           console.log("cart", cart);
@@ -147,13 +150,11 @@ router.patch("/:userId/update", async (req, res, next) => {
     });
   } else {
     const { userId } = req.params;
-    const {state, city, street, zip} = req.body;
-    const data = {userId, state, city, street, zip}
-    console.log(data)
-    console.log("works?" , userId)
+    const { state, city, street, zip } = req.body;
+    const data = { userId, state, city, street, zip };
     try {
-      const newAddress = await editUserAddress(data)
-      console.log(newAddress)
+      const newAddress = await editUserAddress(data);
+      res.send(newAddress);
     } catch (err) {
       next(err);
     }
@@ -173,6 +174,78 @@ router.get("/me/cart", async (req, res, next) => {
     try {
       const result = await getUserCartById(userId);
       res.send(result);
+    } catch (err) {
+      next(err);
+    }
+  }
+});
+
+// GET /api/users/me/wishlist
+router.get("/me/wishlist", async (req, res, next) => {
+  if (!req.user) {
+    res.status(401);
+    next({
+      name: "Authorization Error",
+      message: "You must be logged in to perform this action.",
+    });
+  } else {
+    const { id: userId } = req.user;
+    try {
+      const result = await getUserWishlist(userId);
+      res.send(result);
+    } catch (err) {
+      next(err);
+    }
+  }
+});
+
+// POST /api/users/me/wishlist
+router.post("/me/wishlist", async (req, res, next) => {
+  const { userId, bookId } = req.body;
+  try {
+    const result = await postItemToWishlist(userId, bookId);
+    if (result.length) {
+      res.send({
+        name: "Wishlist Updated",
+        message: "Item added to wishlist.",
+        result,
+      });
+    } else {
+      next({
+        name: "Wishlist Not Updated",
+        message: "An unknown error occurred. Please try again.",
+      });
+    }
+  } catch (err) {
+    next(err);
+  }
+});
+
+// DELETE /api/users/me/wishlist
+router.delete("/me/wishlist", async (req, res, next) => {
+  if (!req.user) {
+    res.status(401);
+    next({
+      name: "Authorization Error",
+      message: "You must be logged in to perform this action.",
+    });
+  } else {
+    const { wishlistId } = req.body;
+    console.log("id", wishlistId);
+    try {
+      const result = await deleteBookFromWishlist(wishlistId);
+      if (result.length) {
+        res.send({
+          name: "Wishlist Updated",
+          message: "Item deleted successfully from your wishlist.",
+          result,
+        });
+      } else {
+        next({
+          name: "Wishlist Not Updated",
+          message: "An unknown error occurred. Please try again.",
+        });
+      }
     } catch (err) {
       next(err);
     }

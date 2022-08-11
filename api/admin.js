@@ -15,6 +15,7 @@ const {
   editBook,
   getTotalProductsCount,
   getOrdersOpen,
+  getOpenOrdersCount,
 } = require("../db");
 
 // USERS
@@ -138,10 +139,10 @@ router.get("/orders/:currentPage", async (req, res, next) => {
       next(err);
     }
   }
-})
+});
 
 // GET /api/admin/orders/closed/:currentPage
-router.get("/orders/closed/:currentPage", async(req, res, next) => {
+router.get("/orders/closed/:currentPage", async (req, res, next) => {
   const { isAdmin } = req.user;
   if (!isAdmin) {
     res.status(403);
@@ -158,10 +159,20 @@ router.get("/orders/closed/:currentPage", async(req, res, next) => {
       next(err);
     }
   }
-})
+});
+
+//GET /api/admin/orders/open/list/count
+router.get("/orders/open/list/count", async (req, res, next) => {
+  try {
+    const result = await getOpenOrdersCount();
+    res.send(result);
+  } catch (err) {
+    next(err);
+  }
+});
 
 // GET /api/admin/orders/open/:currentPage
-router.get("/orders/open/:currentPage", async(req, res, next) => {
+router.get("/orders/open/:currentPage", async (req, res, next) => {
   const { isAdmin } = req.user;
   if (!isAdmin) {
     res.status(403);
@@ -178,7 +189,7 @@ router.get("/orders/open/:currentPage", async(req, res, next) => {
       next(err);
     }
   }
-})
+});
 
 // PRODUCTS
 // GET /api/admin/books/:currentPage
