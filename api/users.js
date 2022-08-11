@@ -208,7 +208,7 @@ router.post("/me/wishlist", async (req, res, next) => {
       res.send({
         name: "Wishlist Updated",
         message: "Item added to wishlist.",
-        result
+        result,
       });
     } else {
       next({
@@ -220,24 +220,35 @@ router.post("/me/wishlist", async (req, res, next) => {
     next(err);
   }
 });
+
 // DELETE /api/users/me/wishlist
 router.delete("/me/wishlist", async (req, res, next) => {
-  const { wishlistId, bookId } = req.body;
-  try {
-    const result = await deleteBookFromWishlist(wishlistId, bookId);
-    if (result.length) {
-      res.send({
-        name: "Wishlist Updated",
-        message: "Item deleted successfully from your wishlist.",
-      });
-    } else {
-      next({
-        name: "Wishlist Not Updated",
-        message: "An unknown error occurred. Please try again.",
-      });
+  if (!req.user) {
+    res.status(401);
+    next({
+      name: "Authorization Error",
+      message: "You must be logged in to perform this action.",
+    });
+  } else {
+    const { wishlistId } = req.body;
+    console.log("id", wishlistId);
+    try {
+      const result = await deleteBookFromWishlist(wishlistId);
+      if (result.length) {
+        res.send({
+          name: "Wishlist Updated",
+          message: "Item deleted successfully from your wishlist.",
+          result,
+        });
+      } else {
+        next({
+          name: "Wishlist Not Updated",
+          message: "An unknown error occurred. Please try again.",
+        });
+      }
+    } catch (err) {
+      next(err);
     }
-  } catch (err) {
-    next(err);
   }
 });
 
