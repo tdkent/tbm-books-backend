@@ -74,9 +74,9 @@ const createUsers = async () => {
     };
     const fakes = createFakeUsers();
     const usersData = [
-      { userEmail: "fake1@fakemail", password: "password123" },
-      { userEmail: "fake2@fakemail", password: "password123" },
-      { userEmail: "admin@fakemail", password: "admin123", isAdmin: true },
+      { userEmail: "fake1@fakemail.com", password: "password123" },
+      { userEmail: "fake2@fakemail.com", password: "password123" },
+      { userEmail: "admin@tbm.com", password: "admin123", isAdmin: true },
       ...fakes,
     ];
     const users = await Promise.all(usersData.map(createUser));
