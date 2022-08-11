@@ -189,40 +189,42 @@ const createWishlist = async ({ userId, bookId }) => {
 };
 
 const postItemToWishlist = async (userId, bookId) => {
-  const { rows: checkBook } = await client.query(
-    `
+  try {
+    const { rows: checkBook } = await client.query(
+      `
     select "bookId", "userId" from wishlist
     where "bookId" = $1
     and "userId" = $2;
   `,
-    [bookId, userId]
-  );
-
-  if (checkBook.length) {
-    return [];
-  } else {
-    const { rows: wishlist } = await client.query(
-      `
+      [bookId, userId]
+    );
+    if (checkBook.length) {
+      return [];
+    } else {
+      const { rows: wishlist } = await client.query(
+        `
       insert into wishlist("userId", "bookId")
       values($1, $2)
       returning *;
     `,
-      [userId, bookId]
-    );
-    return wishlist;
+        [userId, bookId]
+      );
+      return wishlist;
+    }
+  } catch (err) {
+    console.error("An error occurred:", err);
   }
 };
 
-const deleteBookFromWishlist = async (wishlistId, bookId) => {
+const deleteBookFromWishlist = async (wishlistId) => {
   try {
     const { rows: deleted } = await client.query(
       `
       delete from wishlist
       where id = $1
-      and "bookId" = $2
-      returning "bookId";
+      returning id;
     `,
-      [wishlistId, bookId]
+      [wishlistId]
     );
     return deleted;
   } catch (err) {
@@ -230,15 +232,25 @@ const deleteBookFromWishlist = async (wishlistId, bookId) => {
   }
 };
 
-const getUserWishlist = async ({ userId }) => {
+const getUserWishlist = async (userId) => {
   try {
-    const { rows: wishlist } = await client.query(
+    const { rows } = await client.query(
       `
-      select id as "wishlistId" from wishlist
-      where "userId" = $1
+      select
+        wishlist.id as "wishlistId",
+        wishlist."bookId",
+        books.title,
+        books.author,
+        books.price,
+        books."imageLinkM",
+        books.inventory  
+      from wishlist
+      join books on wishlist."bookId" = books.id
+      where wishlist."userId" = $1;
     `,
       [userId]
     );
+    return rows;
   } catch (err) {
     console.log(err);
   }
@@ -362,5 +374,5 @@ module.exports = {
   createWishlist,
   getUserWishlist,
   postItemToWishlist,
-  deleteBookFromWishlist
+  deleteBookFromWishlist,
 };
