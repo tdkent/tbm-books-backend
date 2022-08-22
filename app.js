@@ -9,7 +9,8 @@ app.use(morgan("dev"));
 app.use(
   cors({
     origin: [
-      process.env.FRONTEND_URL || process.env.ALT_FRONTEND_URL,
+      process.env.FRONTEND_URL,
+      process.env.ALT_FRONTEND_URL,
       process.env.BACKEND_URL,
     ],
   })
