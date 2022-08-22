@@ -8,11 +8,7 @@ const app = express();
 app.use(morgan("dev"));
 app.use(
   cors({
-    origin: [
-      process.env.FRONTEND_URL,
-      process.env.ALT_FRONTEND_URL,
-      process.env.BACKEND_URL,
-    ],
+    origin: [process.env.FRONTEND_URL, process.env.BACKEND_URL],
   })
 );
 app.use(express.json());
@@ -21,28 +17,17 @@ app.use(express.static("public"));
 
 // Stripe Route
 app.post("/create-checkout-session", async (req, res) => {
-  const { orderPrice, orderId, userId, url } = req.body;
+  const { orderPrice, orderId, userId } = req.body;
   const amount = Math.round(orderPrice * 100);
   let success_url;
   let cancel_url;
-  if (url.includes("1d1822")) {
-    if (userId) {
-      success_url = `${process.env.ALT_FRONTEND_URL}/${userId}/cart?success=true${orderId}`;
-      cancel_url = `${process.env.ALT_FRONTEND_URL}/${userId}/cart?canceled=true`;
-    } else {
-      success_url = `${process.env.ALT_FRONTEND_URL}/GuestCart?success=true${orderId}`;
-      cancel_url = `${process.env.ALT_FRONTEND_URL}/GuestCart?canceled=true${orderId}`;
-    }
+  if (userId) {
+    success_url = `${process.env.FRONTEND_URL}/${userId}/cart?success=true${orderId}`;
+    cancel_url = `${process.env.FRONTEND_URL}/${userId}/cart?canceled=true`;
   } else {
-    if (userId) {
-      success_url = `${process.env.FRONTEND_URL}/${userId}/cart?success=true${orderId}`;
-      cancel_url = `${process.env.FRONTEND_URL}/${userId}/cart?canceled=true`;
-    } else {
-      success_url = `${process.env.FRONTEND_URL}/GuestCart?success=true${orderId}`;
-      cancel_url = `${process.env.FRONTEND_URL}/GuestCart?canceled=true${orderId}`;
-    }
+    success_url = `${process.env.FRONTEND_URL}/GuestCart?success=true${orderId}`;
+    cancel_url = `${process.env.FRONTEND_URL}/GuestCart?canceled=true${orderId}`;
   }
-
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
