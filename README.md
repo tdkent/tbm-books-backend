@@ -13,7 +13,7 @@ The database is currently seeded with 200 dummy user accounts. Here are three to
 
 1. userEmail: fake1@fakemail | password: password123 | isAdmin: false
 2. userEmail: fake2@fakemail | password: password123 | isAdmin: false
-3. userEmail: admin@tbm.com | password: admin123 | isAdmin:true
+3. userEmail: admin@tbm<dot>com | password: admin123 | isAdmin:true
 
 ### Errors
 
